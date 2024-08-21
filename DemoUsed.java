@@ -36,17 +36,17 @@ public class DemoUsed {
             SortingAlgorithms.selectionSort(list1);
             System.out.println("Sublist after selection sorting: \n" + list1 + "\n");
 
-            // Test Merge sort
-            //SortingAlgorithms.combSort(list2);
-            System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
+            // Test merge sort
+            //SortingAlgorithms.mergeSort(list2);
+            //System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
             
-            // Test Comb sort
-            //SortingAlgorithms.mergeSort(list3);
+            // Test comb sort
+            SortingAlgorithms.combSort(list3);
             System.out.println("Sublist after comb sorting: \n" + list3 + "\n");
 
             // Test Counting sort
             //SortingAlgorithms.countingSort(list4);
-            System.out.println("Sublist after counting sorting: \n" + list4 + "\n");
+            //System.out.println("Sublist after counting sorting: \n" + list4 + "\n");
         } else if (list instanceof LinkedList) {
             Node list1 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
             Node list2 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
@@ -63,15 +63,17 @@ public class DemoUsed {
 
             // Test Merge sort
             //SortingAlgorithms.mergeSort(list2);
-            System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
+            //System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
             
             // Test Comb sort
-            //SortingAlgorithms.combSort(list3);
-            System.out.println("Sublist after comb sorting: \n" + list3 + "\n");
+            Node sortedList3 = SortingAlgorithms.combSort(list3);
+            System.out.println("Sublist after comb sorting: ");
+            SortingAlgorithms.printList(sortedList3);
+            System.out.println();
 
             // Test Counting sort
             //SortingAlgorithms.countingSort(list4);
-            System.out.println("Sublist after counting sorting: \n" + list4 + "\n");
+            //System.out.println("Sublist after counting sorting: \n" + list4 + "\n");
         }
     }
 }
