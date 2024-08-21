@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Collections;
 
 public class SizeSorting {
     public static void sortSizeSorting(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm) {
@@ -28,6 +29,43 @@ public class SizeSorting {
         }
     }
 
+    // Reverse the entire list
+    public static void sortReverseList(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm){
+        Collections.reverse(numArrayList);
+        sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+
+        Collections.reverse(numLinkedList);
+        sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+    }
+
+    public static void sortReverseList(ArrayList<String> wordArrayList, String sortAlgorithm){
+        Collections.reverse(wordArrayList);
+        sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+    }
+
+    // Reverse the first half of the list
+    public static void sortReversePartialList(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm){
+        int mid;
+        mid = numArrayList.size() / 2;
+        List<Integer> sublist = numArrayList.subList(0, mid);
+        Collections.reverse(sublist);
+        sortAndPrintTimeInteger(sublist, sublist.size(), "arraylist integer", sortAlgorithm);
+
+        mid = numLinkedList.size() / 2;
+        List<Integer> subLinkedList = numLinkedList.subList(0, mid);
+        Collections.reverse(subLinkedList);
+        sortAndPrintTimeInteger(subLinkedList, subLinkedList.size(), "linkedlist integer", sortAlgorithm);
+    }
+
+    public static void sortReversePartialList(ArrayList<String> wordArrayList, String sortAlgorithm){
+        int mid;
+        mid = wordArrayList.size() / 2;
+        List<String> sublist = wordArrayList.subList(0, mid);
+        Collections.reverse(sublist);
+        ArrayList<String> subArrayList = new ArrayList<>(sublist);
+        sortAndPrintTimeString(subArrayList, subArrayList.size(), "arraylist string", sortAlgorithm);
+    }
+
     // Generic method to sort a new list created from the original list and print elapsed time
     private static void sortAndPrintTimeInteger(List<Integer> list, int size, String listType, String sortAlgorithm) {
         List<Integer> newList;
@@ -36,7 +74,6 @@ public class SizeSorting {
         if (list instanceof ArrayList) {
             // Handle ArrayList
             newList = new ArrayList<>(((ArrayList<Integer>) list).subList(0, Math.min(size, list.size())));
-           
             start = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
@@ -79,7 +116,7 @@ public class SizeSorting {
             throw new IllegalArgumentException("Unsupported list type: " + listType);
         }
         
-        
+
     }
 
     private static void sortAndPrintTimeString(ArrayList<String> list, int size, String listType, String sortAlgorithm) {

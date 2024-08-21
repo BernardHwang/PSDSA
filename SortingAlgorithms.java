@@ -135,7 +135,6 @@ public class SortingAlgorithms {
                     int temp = left.data;
                     left.data = right.data;
                     right.data = temp;
-
                     swapped = true;
                 }
                 left = left.next;
