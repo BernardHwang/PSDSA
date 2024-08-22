@@ -29,7 +29,7 @@ public class SortingAlgorithms {
         }
     }
 
-    //A ssign the LinkedList elemenent to Node
+    //Assign the LinkedList elemenent to Node
     public static Node assignNode(List<Integer> list) {
         Node head = null;
         Node tail = null;
@@ -84,5 +84,84 @@ public class SortingAlgorithms {
             temp = temp.next; 
         } 
         return head;
+    }
+
+    public static <T extends Comparable<T>> void combSort(List<T> list) {
+        int n = list.size();
+        int gap = n;
+        boolean swapped = true;
+        while (gap != 1 || swapped) {
+            // Calculate next gap value
+            gap = gap <= 1 ? 1: (gap*10/13);
+
+            // Initialize swapped as false so that we can check if swap happened or not
+            swapped = false;
+
+            // Compare all elements with the current gap
+            for (int i = 0; i < n - gap; i++) {
+                if (list.get(i).compareTo(list.get(i + gap)) > 0) {
+                    // Swap the elements
+                    T temp = list.get(i);
+                    list.set(i, list.get(i + gap));
+                    list.set(i + gap, temp);
+
+                    // Set swapped to true to indicate that swapping happened
+                    swapped = true;
+                }
+            }
+        }
+    }
+    // Comb sort for Linked List by swapping nodes
+    public static Node combSort(Node head) {
+        if (head == null) return null;
+
+        int n = getSize(head);
+        int gap = n;
+        boolean swapped = true;
+
+        while (gap != 1 || swapped) {
+            // Calculate next gap value
+            gap = (gap * 10) / 13;
+            if (gap < 1) gap = 1;
+
+            Node left = head;
+            swapped = false;
+
+            for (int i = 0; i < n - gap; i++) {
+                Node right = getNodeAt(head, i + gap);
+
+                if (left.data > right.data) {
+                    // Swap the data
+                    int temp = left.data;
+                    left.data = right.data;
+                    right.data = temp;
+                    swapped = true;
+                }
+                left = left.next;
+            }
+        }
+        return head;
+    }
+
+    private static int getSize(Node head) {
+        int size = 0;
+        Node current = head;
+        while (current != null) {
+            size++;
+            current = current.next;
+        }
+        return size;
+    }
+
+    private static Node getNodeAt(Node head, int index) {
+        Node current = head;
+        for (int i = 0; i < index; i++) {
+            if (current != null) {
+                current = current.next;
+            } else {
+                return null;
+            }
+        }
+        return current;
     }
 }

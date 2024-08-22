@@ -46,12 +46,31 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.SelectionSortSizeSorting(numArrayList, numLinkedList);
-                    SizeSorting.SelectionSortSizeSorting(wordArrayList);
+                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "selection");
+                    SizeSorting.sortSizeSorting(wordArrayList, "selection");
+
+                    System.out.println("\nSorting with fully reverse-ordered list");
+                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
+                    SizeSorting.sortReverseList(wordArrayList, "selection");
+                    
+                    System.out.println("\nSorting with partially reverse-ordered list");
+                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "selection");
+                    SizeSorting.sortReversePartialList(wordArrayList, "selection");
                     break;
                 case 3:
                     break;
                 case 4:
+                    System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
+                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "comb");
+                    SizeSorting.sortSizeSorting(wordArrayList, "comb");
+
+                    System.out.println("\nSorting with fully reverse-ordered list");
+                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
+                    SizeSorting.sortReverseList(wordArrayList, "selection");
+
+                    System.out.println("\nSorting with partially reverse-ordered list");
+                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "selection");
+                    SizeSorting.sortReversePartialList(wordArrayList, "selection");
                     break;
                 case 5:
                     break;
