@@ -143,6 +143,130 @@ public class SortingAlgorithms {
         return head;
     }
 
+    public static void countingSort(List<Integer> list) {
+        if (list == null || list.size() <= 1) return;
+    
+        // Find the maximum element to determine the size of the counting array
+        int max = Collections.max(list);
+    
+        // Create a counting array with a size of max + 1 (to include the max value)
+        int[] countArray = new int[max + 1];
+    
+        // Count each element in the original list
+        for (int num : list) {
+            countArray[num]++;
+        }
+    
+        // Overwrite the original list with sorted elements
+        int index = 0;
+        for (int i = 0; i < countArray.length; i++) {
+            while (countArray[i] > 0) {
+                list.set(index++, i);
+                countArray[i]--;
+            }
+        }
+    }    
+
+    public static Node countingSort(Node head) {
+        if (head == null || head.next == null) return head;
+    
+        // Find the maximum element to determine the size of the counting array
+        int max = findMax(head);
+    
+        // Create a counting array with a size of max + 1
+        int[] countArray = new int[max + 1];
+    
+        // Count each element in the linked list
+        Node current = head;
+        while (current != null) {
+            countArray[current.data]++;
+            current = current.next;
+        }
+    
+        // Overwrite the original linked list with sorted elements
+        current = head;
+        for (int i = 0; i < countArray.length; i++) {
+            while (countArray[i] > 0) {
+                current.data = i;
+                current = current.next;
+                countArray[i]--;
+            }
+        }
+    
+        return head;
+    }
+    
+    private static int findMax(Node head) {
+        int max = Integer.MIN_VALUE;
+        Node current = head;
+        while (current != null) {
+            if (current.data > max) {
+                max = current.data;
+            }
+            current = current.next;
+        }
+        return max;
+    }
+    
+    // Method to perform counting sort on the words based on a specific character index
+    public static void countingSortChar(ArrayList<String> words, int index) {
+        // Create a count array for characters A-Z, a-z, and '-'
+        int[] count = new int[54]; // 26 uppercase + lowercase letters + 1 for '-' + 1 for blank space
+
+        // Count occurrences of each character at the given index
+        for (String word : words) {
+            char charAtIdx = index < word.length() ? word.charAt(index) : ' ';
+            count[charToIndex(charAtIdx)]++;
+        }
+
+        // Update count array to positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Create a temporary list to store sorted words
+        ArrayList<String> temp = new ArrayList<>(Collections.nCopies(words.size(), ""));
+
+        // Build the temporary list
+        for (int i = words.size() - 1; i >= 0; i--) {
+            char charAtIdx = index < words.get(i).length() ? words.get(i).charAt(index) : ' ';
+            temp.set(--count[charToIndex(charAtIdx)], words.get(i));
+        }
+
+        // Copy the sorted words back to the original list
+        for (int i = 0; i < words.size(); i++) {
+            words.set(i, temp.get(i));
+        }
+    }
+
+    // Method to sort the words using counting sort on each character
+    public static void countingSortWords(ArrayList<String> words) {
+
+        // Find the maximum length of the words in the list
+        int maxLen = words.stream().mapToInt(String::length).max().orElse(0);
+
+        // Sort each character position starting from the last character
+        for (int index = maxLen - 1; index >= 0; index--) {
+            countingSortChar(words, index);
+        }
+    }
+
+    // Helper method to convert a character to an index for the count array
+    private static int charToIndex(char c) {
+        if (c == ' ') {
+            return 0; // blank space
+        } else if (c == '-') {
+            return 1; // hyphen
+        } else if (c >= 'A' && c <= 'Z') {
+            return c - 'A' + 2; // uppercase letters
+        } else if (c >= 'a' && c <= 'z') {
+            return c - 'a' + 28; // lowercase letters
+        } else {
+            throw new IllegalArgumentException("Unsupported character: " + c);
+        }
+    }
+
+/*
     @SuppressWarnings("unchecked")
     // Counting Sort for ArrayList (Generic)
     public static <T extends Comparable<T>> void countingSort(List<T> list) {
@@ -259,7 +383,7 @@ public class SortingAlgorithms {
         }
 
         return head;
-    }
+    }*/
 
     private static int getSize(Node head) {
         int size = 0;

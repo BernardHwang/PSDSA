@@ -65,14 +65,25 @@ public class Main {
                     SizeSorting.sortSizeSorting(wordArrayList, "comb");
 
                     System.out.println("\nSorting with fully reverse-ordered list");
-                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
-                    SizeSorting.sortReverseList(wordArrayList, "selection");
+                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "comb");
+                    SizeSorting.sortReverseList(wordArrayList, "comb");
 
                     System.out.println("\nSorting with partially reverse-ordered list");
-                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "selection");
-                    SizeSorting.sortReversePartialList(wordArrayList, "selection");
+                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "comb");
+                    SizeSorting.sortReversePartialList(wordArrayList, "comb");
                     break;
                 case 5:
+                    System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
+                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "counting");
+                    //SizeSorting.sortSizeSorting(wordArrayList, "counting");
+
+                    // System.out.println("\nSorting with fully reverse-ordered list");
+                    // SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
+                    // SizeSorting.sortReverseList(wordArrayList, "counting");
+
+                    // System.out.println("\nSorting with partially reverse-ordered list");
+                    // SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "counting");
+                    // SizeSorting.sortReversePartialList(wordArrayList, "counting");
                     break;
                 case 0:
                     exit = true;
