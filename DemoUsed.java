@@ -45,7 +45,12 @@ public class DemoUsed {
             System.out.println("Sublist after comb sorting: \n" + list3 + "\n");
 
             // Test Counting sort
-            SortingAlgorithms.countingSort(list4);
+            if (((ArrayList<?>) list4).get(0) instanceof Integer) {
+                SortingAlgorithms.countingSort((ArrayList<Integer>)list4);
+            }
+            else{
+                SortingAlgorithms.countingSortWords((ArrayList<String>)list4);
+            }
             System.out.println("Sublist after counting sorting: \n" + list4 + "\n");
 
         } else if (list instanceof LinkedList) {

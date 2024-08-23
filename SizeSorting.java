@@ -74,7 +74,8 @@ public class SizeSorting {
         if (list instanceof ArrayList) {
             // Handle ArrayList
             newList = new ArrayList<>(((ArrayList<Integer>) list).subList(0, Math.min(size, list.size())));
-            start = System.currentTimeMillis();
+            //start = System.currentTimeMillis();
+            start = System.nanoTime();
 
             if (algorithm.equals("selection")){
                 SortingAlgorithms.selectionSort(newList);
@@ -88,7 +89,8 @@ public class SizeSorting {
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
-            end = System.currentTimeMillis();
+            //end = System.currentTimeMillis();
+            end = System.nanoTime();
             System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
 
         } else if (list instanceof LinkedList) {
@@ -96,7 +98,8 @@ public class SizeSorting {
             newList = new LinkedList<>(((LinkedList<Integer>) list).subList(0, Math.min(size, list.size())));
             Node nodeList = SortingAlgorithms.assignNode(newList);
             
-            start = System.currentTimeMillis();
+            //start = System.currentTimeMillis();
+            start = System.nanoTime();
 
             if (algorithm.equals("selection")){
                 SortingAlgorithms.selectionSort(nodeList);
@@ -110,7 +113,8 @@ public class SizeSorting {
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
-            end = System.currentTimeMillis();
+            //end = System.currentTimeMillis();
+            end = System.nanoTime();
             System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
         } else {
             throw new IllegalArgumentException("Unsupported list type: " + listType);
@@ -124,7 +128,8 @@ public class SizeSorting {
         ArrayList<String> newList = new ArrayList<>(((ArrayList<String>) list).subList(0, Math.min(size, list.size())));
         String algorithm = sortAlgorithm.toLowerCase();
 
-        long start = System.currentTimeMillis();
+        //long start = System.currentTimeMillis();
+        long start = System.nanoTime();
 
         if (algorithm.equals("selection")){
             SortingAlgorithms.selectionSort(newList);
@@ -138,7 +143,9 @@ public class SizeSorting {
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
 
-        long end = System.currentTimeMillis();
+        //long end = System.currentTimeMillis();
+        long end = System.nanoTime();
+
         System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
     }
 }
