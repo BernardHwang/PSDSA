@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.Scanner;
 
 import Reader.NumberFileReader;
@@ -28,6 +30,11 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        // Create sets for sorting without duplicates
+        Set<Integer> numSet = new HashSet<>(numArrayList);
+        Set<String> wordSet = new HashSet<>(wordArrayList);
+
         boolean exit = false;
         Scanner in = new Scanner(System.in);;
         while (!exit) {
@@ -49,6 +56,10 @@ public class Main {
                     SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "selection");
                     SizeSorting.sortSizeSorting(wordArrayList, "selection");
 
+                    System.out.println("\nSorting set without duplicates");
+                    SizeSorting.sortIntegerSet(numSet, "selection");
+                    SizeSorting.sortStringSet(wordSet, "selection");
+
                     System.out.println("\nSorting with fully reverse-ordered list");
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
                     SizeSorting.sortReverseList(wordArrayList, "selection");
@@ -64,6 +75,10 @@ public class Main {
                     SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "comb");
                     SizeSorting.sortSizeSorting(wordArrayList, "comb");
 
+                    System.out.println("\nSorting set without duplicates");
+                    SizeSorting.sortIntegerSet(numSet, "comb");
+                    SizeSorting.sortStringSet(wordSet, "comb");
+
                     System.out.println("\nSorting with fully reverse-ordered list");
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "comb");
                     SizeSorting.sortReverseList(wordArrayList, "comb");
@@ -75,15 +90,19 @@ public class Main {
                 case 5:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                     SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "counting");
-                    //SizeSorting.sortSizeSorting(wordArrayList, "counting");
+                    SizeSorting.sortSizeSorting(wordArrayList, "counting");
 
-                    // System.out.println("\nSorting with fully reverse-ordered list");
-                    // SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
-                    // SizeSorting.sortReverseList(wordArrayList, "counting");
+                    System.out.println("\nSorting set without duplicates");
+                    SizeSorting.sortIntegerSet(numSet, "counting");
+                    SizeSorting.sortStringSet(wordSet, "counting");
 
-                    // System.out.println("\nSorting with partially reverse-ordered list");
-                    // SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "counting");
-                    // SizeSorting.sortReversePartialList(wordArrayList, "counting");
+                    System.out.println("\nSorting with fully reverse-ordered list");
+                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
+                    SizeSorting.sortReverseList(wordArrayList, "counting");
+
+                    System.out.println("\nSorting with partially reverse-ordered list");
+                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "counting");
+                    SizeSorting.sortReversePartialList(wordArrayList, "counting");
                     break;
                 case 0:
                     exit = true;

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Collections;
+import java.util.Set;
 
 public class SizeSorting {
     public static void sortSizeSorting(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm) {
@@ -27,6 +28,19 @@ public class SizeSorting {
         for (int size : sizes) {
             sortAndPrintTimeString(wordArrayList, size, "arraylist string", sortAlgorithm);
         }
+    }
+
+    // Sort set
+    public static void sortIntegerSet(Set<Integer> numSet, String sortAlgorithm) {
+        // Convert the set to a list for sorting
+        ArrayList<Integer> numList = new ArrayList<>(numSet);
+        sortAndPrintTimeInteger(numList, numList.size(), "set integer", sortAlgorithm);
+    }
+
+    public static void sortStringSet(Set<String> wordSet, String sortAlgorithm) {
+        // Convert the set to a list for sorting
+        ArrayList<String> wordList = new ArrayList<>(wordSet);
+        sortAndPrintTimeString(wordList, wordList.size(), "set string", sortAlgorithm);
     }
 
     // Reverse the entire list
@@ -84,7 +98,7 @@ public class SizeSorting {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSort(newList);
             }else if (algorithm.equals("counting")){
-                //SortingAlgorithms.countingSort(newList);
+                SortingAlgorithms.countingSort(newList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -108,7 +122,7 @@ public class SizeSorting {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSort(nodeList);
             }else if (algorithm.equals("counting")){
-                //SortingAlgorithms.countingSort(nodeList);
+                SortingAlgorithms.countingSort(nodeList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -138,7 +152,7 @@ public class SizeSorting {
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSort(newList);
         }else if (algorithm.equals("counting")){
-            //SortingAlgorithms.countingSort(newList);
+            SortingAlgorithms.countingSortWords(newList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
