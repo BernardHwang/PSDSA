@@ -57,30 +57,37 @@ public class SizeSorting {
         sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
     }
 
-    // Reverse the first half of the list
-    public static void sortReversePartialList(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm){
-        int mid;
-        mid = numArrayList.size() / 2;
-        List<Integer> sublist = numArrayList.subList(0, mid);
-        Collections.reverse(sublist);
-        sortAndPrintTimeInteger(sublist, sublist.size(), "arraylist integer", sortAlgorithm);
+    // test Counting Sort on a list with different ranges of value
+    public static void rangeTestCountingSort(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList){
+        int [] ranges = {100, 10000, 1000000, 9999999};
 
-        mid = numLinkedList.size() / 2;
-        List<Integer> subLinkedList = numLinkedList.subList(0, mid);
-        Collections.reverse(subLinkedList);
-        sortAndPrintTimeInteger(subLinkedList, subLinkedList.size(), "linkedlist integer", sortAlgorithm);
+        for (int range: ranges){
+            List<Integer>numSubArrayList = filterNumbersByRange(numArrayList, range);            
+            sortAndPrintTimeInteger(numSubArrayList, numSubArrayList.size(), "arraylist integer", "counting");
+            List<Integer>numSubLinkedList = filterNumbersByRange(numLinkedList, range);
+            sortAndPrintTimeInteger(numSubLinkedList, numSubLinkedList.size(), "linkedlist integer", "counting");
+        }
     }
 
-    public static void sortReversePartialList(ArrayList<String> wordArrayList, String sortAlgorithm){
-        int mid;
-        mid = wordArrayList.size() / 2;
-        List<String> sublist = wordArrayList.subList(0, mid);
-        Collections.reverse(sublist);
-        ArrayList<String> subArrayList = new ArrayList<>(sublist);
-        sortAndPrintTimeString(subArrayList, subArrayList.size(), "arraylist string", sortAlgorithm);
+    // Extract subarrays with values within different ranges
+    private static List<Integer> filterNumbersByRange(List<Integer> numList, int maxRange){
+        List<Integer> filteredNumbers;
+        if (numList instanceof LinkedList){
+            filteredNumbers = new LinkedList<>();
+        }
+        else{
+            filteredNumbers = new ArrayList<>();
+        }
+        
+        for (int number: numList){
+            if (number <= maxRange){
+                filteredNumbers.add(number);
+            }
+        }
+        return filteredNumbers;
     }
 
-    // Generic method to sort a new list created from the original list and print elapsed time
+    // Method to sort a new list created from the original list for Number and print elapsed time
     private static void sortAndPrintTimeInteger(List<Integer> list, int size, String listType, String sortAlgorithm) {
         List<Integer> newList;
         String algorithm = sortAlgorithm.toLowerCase();
@@ -133,10 +140,9 @@ public class SizeSorting {
         } else {
             throw new IllegalArgumentException("Unsupported list type: " + listType);
         }
-        
-
     }
 
+    // Method to sort a new list created from the original list for Words and print elapsed time
     private static void sortAndPrintTimeString(ArrayList<String> list, int size, String listType, String sortAlgorithm) {
         // Handle ArrayList
         ArrayList<String> newList = new ArrayList<>(((ArrayList<String>) list).subList(0, Math.min(size, list.size())));

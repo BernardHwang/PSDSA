@@ -22,7 +22,9 @@ public class RandomWordsGenerator {
             while ((line = br.readLine()) != null) {
                 String[] nGramData = line.split(cvsSplitBy);
                 String word = nGramData[0];
-                words.add(word);
+                if (word.matches("[a-zA-Z]+")){
+                    words.add(word);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,18 +34,12 @@ public class RandomWordsGenerator {
         Random random = new Random();
 
         // Select 1 million words randomly
-        try (FileWriter write = new FileWriter("random_words2.txt")) {
+        try (FileWriter write = new FileWriter("random_words.txt")) {
             for (int i = 0; i < numberOfWords; i++) {
                 int randomIndex = random.nextInt(words.size());
                 selectedWords[i] = words.get(randomIndex);
                 write.write(selectedWords[i] + "\n");
             }
         }
-        
-
-        // Print the selected words
-        // for (String word : selectedWords) {
-        //     System.out.println(word);
-        // }
     }
 }

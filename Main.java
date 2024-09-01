@@ -3,9 +3,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.Scanner;
-
-import Reader.NumberFileReader;
-import Reader.WordFileReader;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,21 +13,9 @@ public class Main {
         ArrayList<Integer> numArrayList = new ArrayList<>();
         LinkedList<Integer> numLinkedList = new LinkedList<>();
 
-        // Create threads for reading files concurrently
-        Thread wordThread = new Thread(new WordFileReader(wordFile, wordArrayList));
-        Thread numThread = new Thread(new NumberFileReader(numFile, numArrayList, numLinkedList));
-
-        // Start the threads
-        wordThread.start();
-        numThread.start();
-
-        try {
-            // Wait for both threads to finish
-            wordThread.join();
-            numThread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // Read file
+        readNumbersFromFile(numFile, numArrayList, numLinkedList);
+        readWordsFromFile(wordFile, wordArrayList);
 
         // Create sets for sorting without duplicates
         Set<Integer> numSet = new HashSet<>(numArrayList);
@@ -64,9 +50,6 @@ public class Main {
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
                     SizeSorting.sortReverseList(wordArrayList, "selection");
                     
-                    System.out.println("\nSorting with partially reverse-ordered list");
-                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "selection");
-                    SizeSorting.sortReversePartialList(wordArrayList, "selection");
                     break;
                 case 3:
                     break;
@@ -79,13 +62,23 @@ public class Main {
                     SizeSorting.sortIntegerSet(numSet, "comb");
                     SizeSorting.sortStringSet(wordSet, "comb");
 
+                    //worst case
                     System.out.println("\nSorting with fully reverse-ordered list");
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "comb");
                     SizeSorting.sortReverseList(wordArrayList, "comb");
 
-                    System.out.println("\nSorting with partially reverse-ordered list");
-                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "comb");
-                    SizeSorting.sortReversePartialList(wordArrayList, "comb");
+                    //20% sorted
+                    System.out.println("\nSorting with 20% sorted list");
+
+                    //50% sorted
+                    System.out.println("\nSorting with 50% sorted list");
+
+                    //70% sorted
+                    System.out.println("\nSorting with 70% sorted list");
+
+                    //100% sorted
+                    System.out.println("\nSorting with fully sorted list");
+
                     break;
                 case 5:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
@@ -100,16 +93,52 @@ public class Main {
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
                     SizeSorting.sortReverseList(wordArrayList, "counting");
 
-                    System.out.println("\nSorting with partially reverse-ordered list");
-                    SizeSorting.sortReversePartialList(numArrayList, numLinkedList, "counting");
-                    SizeSorting.sortReversePartialList(wordArrayList, "counting");
+                    //20% sorted
+                    System.out.println("\nSorting with 20% sorted list");
+
+                    //50% sorted
+                    System.out.println("\nSorting with 50% sorted list");
+
+                    //70% sorted
+                    System.out.println("\nSorting with 70% sorted list");
+
+                    //100% sorted
+                    System.out.println("\nSorting with fully sorted list");
+
+                    //Test counting sort with different ranges of value
+                    System.out.println("\nSorting with different ranges of value (100, 10000, 1000000, 9999999)");
+                    SizeSorting.rangeTestCountingSort(numArrayList, numLinkedList);
                     break;
                 case 0:
                     exit = true;
                     break;
-
             }
         }
         in.close();
+    }
+
+    private static void readWordsFromFile(String fileName, ArrayList<String> wordArrayList) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                wordArrayList.add(line.trim());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method to read numbers from a file into both an ArrayList and a LinkedList
+    private static void readNumbersFromFile(String fileName, ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                int number = Integer.parseInt(line.trim());
+                numArrayList.add(number);
+                numLinkedList.add(number);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
