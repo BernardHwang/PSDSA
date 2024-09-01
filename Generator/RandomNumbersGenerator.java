@@ -21,10 +21,5 @@ public class RandomNumbersGenerator {
                 writer.write(number + "\n");
             }
         }
-
-        // Print a sample of the generated numbers
-        // for (int number : numList) {
-        //     System.out.println(number);
-        // }
     }
 }

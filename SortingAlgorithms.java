@@ -11,24 +11,6 @@ class Node {
 }
 
 public class SortingAlgorithms {
-    // Optimized for ArrayList
-    public static <T extends Comparable<T>> void selectionSort(List<T> list) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(j).compareTo(list.get(minIndex)) < 0) {
-                    minIndex = j;
-                }
-            }
-            // Swap the elements
-            if (minIndex != i) {
-                T temp = list.get(minIndex);
-                list.set(minIndex, list.get(i));
-                list.set(i, temp);
-            }
-        }
-    }
-
     //Assign the LinkedList elemenent to Node
     public static Node assignNode(List<Integer> list) {
         Node head = null;
@@ -58,6 +40,24 @@ public class SortingAlgorithms {
             current = current.next;
         }
         System.out.print("]\n");
+    }
+
+    // Optimized for ArrayList
+    public static <T extends Comparable<T>> void selectionSort(List<T> list) {
+        for (int i = 0; i < list.size() - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(j).compareTo(list.get(minIndex)) < 0) {
+                    minIndex = j;
+                }
+            }
+            // Swap the elements
+            if (minIndex != i) {
+                T temp = list.get(minIndex);
+                list.set(minIndex, list.get(i));
+                list.set(i, temp);
+            }
+        }
     }
 
     // Optimized for LinkedList
@@ -143,6 +143,28 @@ public class SortingAlgorithms {
         return head;
     }
 
+    private static int getSize(Node head) {
+        int size = 0;
+        Node current = head;
+        while (current != null) {
+            size++;
+            current = current.next;
+        }
+        return size;
+    }
+
+    private static Node getNodeAt(Node head, int index) {
+        Node current = head;
+        for (int i = 0; i < index; i++) {
+            if (current != null) {
+                current = current.next;
+            } else {
+                return null;
+            }
+        }
+        return current;
+    }
+
     public static void countingSort(List<Integer> list) {
         if (list == null || list.size() <= 1) return;
     
@@ -207,11 +229,23 @@ public class SortingAlgorithms {
         }
         return max;
     }
-    
+
+    // Method to sort the words using counting sort on each character
+    public static void countingSortWords(ArrayList<String> words) {
+
+        // Find the maximum length of the words in the list
+        int maxLen = words.stream().mapToInt(String::length).max().orElse(0);
+
+        // Sort each character position starting from the last character
+        for (int index = maxLen - 1; index >= 0; index--) {
+            countingSortChar(words, index);
+        }
+    }
+
     // Method to perform counting sort on the words based on a specific character index
-    public static void countingSortChar(ArrayList<String> words, int index) {
+    private static void countingSortChar(ArrayList<String> words, int index) {
         // Create a count array for characters A-Z, a-z, and '-'
-        int[] count = new int[54]; // 26 uppercase + lowercase letters + 1 for '-' + 1 for blank space
+        int[] count = new int[53]; // 26 uppercase + lowercase letters + 1 for space
 
         // Count occurrences of each character at the given index
         for (String word : words) {
@@ -239,52 +273,17 @@ public class SortingAlgorithms {
         }
     }
 
-    // Method to sort the words using counting sort on each character
-    public static void countingSortWords(ArrayList<String> words) {
-
-        // Find the maximum length of the words in the list
-        int maxLen = words.stream().mapToInt(String::length).max().orElse(0);
-
-        // Sort each character position starting from the last character
-        for (int index = maxLen - 1; index >= 0; index--) {
-            countingSortChar(words, index);
-        }
-    }
-
     // Helper method to convert a character to an index for the count array
     private static int charToIndex(char c) {
         if (c == ' ') {
             return 0; // blank space
-        } else if (c == '-') {
-            return 1; // hyphen
         } else if (c >= 'A' && c <= 'Z') {
-            return c - 'A' + 2; // uppercase letters
+            return c - 'A' + 1; // uppercase letters
         } else if (c >= 'a' && c <= 'z') {
-            return c - 'a' + 28; // lowercase letters
+            return c - 'a' + 27; // lowercase letters
         } else {
             throw new IllegalArgumentException("Unsupported character: " + c);
         }
     }
 
-    private static int getSize(Node head) {
-        int size = 0;
-        Node current = head;
-        while (current != null) {
-            size++;
-            current = current.next;
-        }
-        return size;
-    }
-
-    private static Node getNodeAt(Node head, int index) {
-        Node current = head;
-        for (int i = 0; i < index; i++) {
-            if (current != null) {
-                current = current.next;
-            } else {
-                return null;
-            }
-        }
-        return current;
-    }
 }
