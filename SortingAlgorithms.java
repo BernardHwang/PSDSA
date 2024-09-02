@@ -243,13 +243,13 @@ public class SortingAlgorithms {
         }
     }
     
-    public static <T extends Comparable<T>> void combSort(List<T> list) {
+    public static void combSortWords(List<String> list) {
         int n = list.size();
         int gap = n;
         boolean swapped = true;
         while (gap != 1 || swapped) {
             // Calculate next gap value
-            gap = gap <= 1 ? 1: (gap*10/13);
+            gap = Math.max(1, (gap*10)/13);
 
             // Initialize swapped as false so that we can check if swap happened or not
             swapped = false;
@@ -258,7 +258,7 @@ public class SortingAlgorithms {
             for (int i = 0; i < n - gap; i++) {
                 if (list.get(i).compareTo(list.get(i + gap)) > 0) {
                     // Swap the elements
-                    T temp = list.get(i);
+                    String temp = list.get(i);
                     list.set(i, list.get(i + gap));
                     list.set(i + gap, temp);
 
@@ -268,59 +268,60 @@ public class SortingAlgorithms {
             }
         }
     }
-    // Comb sort for Linked List by swapping nodes
-    public static Node combSort(Node head) {
-        if (head == null) return null;
 
-        int n = getSize(head);
+    public static void combSortNumber(List<Integer> list) {
+        int n = list.size();
         int gap = n;
         boolean swapped = true;
-
         while (gap != 1 || swapped) {
             // Calculate next gap value
-            gap = (gap * 10) / 13;
-            if (gap < 1) gap = 1;
+            gap = Math.max(1, (gap*10)/13);
 
-            Node left = head;
+            // Initialize swapped as false so that we can check if swap happened or not
             swapped = false;
 
+            // Compare all elements with the current gap
             for (int i = 0; i < n - gap; i++) {
-                Node right = getNodeAt(head, i + gap);
+                if (list.get(i) > list.get(i+gap)){
+                    Integer temp = list.get(i);
+                    list.set(i, list.get(i + gap));
+                    list.set(i + gap, temp);
+                    swapped=true;
+                }
+            }
+        }
+    }
 
-                if (left.data > right.data) {
-                    // Swap the data
-                    int temp = left.data;
-                    left.data = right.data;
-                    right.data = temp;
+    // Comb sort for Linked List
+    public static void combSortNumber(LinkedList<Integer> list) {
+        int gap = list.size();
+        boolean swapped = true;
+    
+        while (gap > 1 || swapped) {  // Corrected the gap condition to avoid infinite loop
+            gap = Math.max(1, (gap * 10) / 13);
+            swapped = false;
+    
+            ListIterator<Integer> iter1 = list.listIterator();
+            ListIterator<Integer> iter2 = list.listIterator(gap);
+    
+            while (iter2.hasNext()) {
+                Integer val1 = iter1.next();
+                Integer val2 = iter2.next();
+    
+                if (val1 > val2) {
+                    iter1.set(val2);
+                    iter2.set(val1);
                     swapped = true;
                 }
-                left = left.next;
+    
+                // Ensure iter1 and iter2 advance correctly
+                if (!iter1.hasNext() || !iter2.hasNext()) {
+                    break;
+                }
             }
         }
-        return head;
     }
-
-    private static int getSize(Node head) {
-        int size = 0;
-        Node current = head;
-        while (current != null) {
-            size++;
-            current = current.next;
-        }
-        return size;
-    }
-
-    private static Node getNodeAt(Node head, int index) {
-        Node current = head;
-        for (int i = 0; i < index; i++) {
-            if (current != null) {
-                current = current.next;
-            } else {
-                return null;
-            }
-        }
-        return current;
-    }
+    
 
     public static void countingSort(List<Integer> list) {
         if (list == null || list.size() <= 1) return;
