@@ -197,6 +197,51 @@ public class SortingAlgorithms {
 
         return dummyNode.next;
     }
+
+    public static void mergeSortWords(List<String> list) {
+        int n = list.size();
+        // Use a single auxiliary array to avoid multiple allocations
+        String[] aux = new String[n];
+        mergeSortHelper(list, aux, 0, n - 1);
+    }
+
+    private static void mergeSortHelper(List<String> list, String[] aux, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+
+        int mid = left + (right - left) / 2;
+
+        // Recursively sort both halves
+        mergeSortHelper(list, aux, left, mid);
+        mergeSortHelper(list, aux, mid + 1, right);
+
+        // Merge the sorted halves
+        merge(list, aux, left, mid, right);
+    }
+
+    private static void merge(List<String> list, String[] aux, int left, int mid, int right) {
+        // Copy the data to the auxiliary array
+        for (int i = left; i <= right; i++) {
+            aux[i] = list.get(i);
+        }
+
+        int i = left, j = mid + 1, k = left;
+
+        // Merge back into the list
+        while (i <= mid && j <= right) {
+            if (aux[i].compareTo(aux[j]) <= 0) {  // Lexicographical comparison of strings
+                list.set(k++, aux[i++]);
+            } else {
+                list.set(k++, aux[j++]);
+            }
+        }
+
+        // Copy any remaining elements from the left half
+        while (i <= mid) {
+            list.set(k++, aux[i++]);
+        }
+    }
     
     public static <T extends Comparable<T>> void combSort(List<T> list) {
         int n = list.size();
