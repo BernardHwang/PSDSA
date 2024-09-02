@@ -101,7 +101,7 @@ public class SizeSorting {
             if (algorithm.equals("selection")){
                 SortingAlgorithms.selectionSort(newList);
             }else if (algorithm.equals("merge")){
-                //SortingAlgorithms.mergeSort(newList);
+                SortingAlgorithms.mergeSort(newList);
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSort(newList);
             }else if (algorithm.equals("counting")){
@@ -125,7 +125,7 @@ public class SizeSorting {
             if (algorithm.equals("selection")){
                 SortingAlgorithms.selectionSort(nodeList);
             }else if (algorithm.equals("merge")){
-                //SortingAlgorithms.mergeSort(nodeList);
+                SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSort(nodeList);
             }else if (algorithm.equals("counting")){
@@ -154,7 +154,7 @@ public class SizeSorting {
         if (algorithm.equals("selection")){
             SortingAlgorithms.selectionSort(newList);
         }else if (algorithm.equals("merge")){
-            //SortingAlgorithms.mergeSort(newList);
+            SortingAlgorithms.mergeSortWords(newList);
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSort(newList);
         }else if (algorithm.equals("counting")){
