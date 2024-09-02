@@ -42,9 +42,13 @@ public class Main {
                     SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "selection");
                     SizeSorting.sortSizeSorting(wordArrayList, "selection");
 
-                    System.out.println("\nSorting set without duplicates");
+                    System.out.println("\nSorting without duplicates");
                     SizeSorting.sortIntegerSet(numSet, "selection");
                     SizeSorting.sortStringSet(wordSet, "selection");
+
+                    System.out.println("\nSorting duplicates");
+                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "selection");
+                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "selection");
 
                     System.out.println("\nSorting with fully reverse-ordered list");
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
@@ -58,9 +62,13 @@ public class Main {
                     SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "comb");
                     SizeSorting.sortSizeSorting(wordArrayList, "comb");
 
-                    System.out.println("\nSorting set without duplicates");
+                    System.out.println("\nSorting without duplicates");
                     SizeSorting.sortIntegerSet(numSet, "comb");
                     SizeSorting.sortStringSet(wordSet, "comb");
+
+                    System.out.println("\nSorting duplicates");
+                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "comb");
+                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "comb");
 
                     //worst case
                     System.out.println("\nSorting with fully reverse-ordered list");
@@ -85,9 +93,13 @@ public class Main {
                     SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "counting");
                     SizeSorting.sortSizeSorting(wordArrayList, "counting");
 
-                    System.out.println("\nSorting set without duplicates");
+                    System.out.println("\nSorting without duplicates");
                     SizeSorting.sortIntegerSet(numSet, "counting");
                     SizeSorting.sortStringSet(wordSet, "counting");
+
+                    System.out.println("\nSorting duplicates");
+                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "counting");
+                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "counting");
 
                     System.out.println("\nSorting with fully reverse-ordered list");
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
