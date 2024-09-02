@@ -53,6 +53,29 @@ public class Main {
                     System.out.println("\nSorting with fully reverse-ordered list");
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
                     SizeSorting.sortReverseList(wordArrayList, "selection");
+
+                    System.out.println("** Sorting ArrayList of Integers **\n");
+                    PartitionSorted.numArray1PartitionSorted(numArrayList);
+                    PartitionSorted.numArray2PartitionSorted(numArrayList);
+                    PartitionSorted.numArray3PartitionSorted(numArrayList);
+                    PartitionSorted.numArray4PartitionSorted(numArrayList);
+                    PartitionSorted.numArrayHalfSorted(numArrayList);
+                    PartitionSorted.numArray75PercentSorted(numArrayList);
+                    PartitionSorted.numArray100PercentSorted(numArrayList);
+            
+                    System.out.println("\n** Sorting LinkedList of Integers **\n");
+                    PartitionSorted.numLinked1PartitionSorted(numLinkedList);
+                    PartitionSorted.numLinked2PartitionSorted(numLinkedList);
+                    PartitionSorted.numLinked3PartitionSorted(numLinkedList);
+                    PartitionSorted.numLinked4PartitionSorted(numLinkedList);
+                    PartitionSorted.numLinkedHalfSorted(numLinkedList);
+                    PartitionSorted.numLinked75PercentSorted(numLinkedList);
+            
+                    System.out.println("\n** Sorting ArrayList of Strings **\n");
+                    PartitionSorted.wordArray1PartitionSorted(wordArrayList);
+                    PartitionSorted.wordArray2PartitionSorted(wordArrayList);
+                    PartitionSorted.wordArray3PartitionSorted(wordArrayList);
+                    PartitionSorted.wordArray4PartitionSorted(wordArrayList);
                     
                     break;
                 case 3:
