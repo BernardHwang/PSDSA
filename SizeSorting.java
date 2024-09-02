@@ -114,7 +114,7 @@ public class SizeSorting {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(newList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(newList);
+                SortingAlgorithms.combSortNumber(newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(newList);
             }else{
@@ -123,7 +123,7 @@ public class SizeSorting {
 
             //end = System.currentTimeMillis();
             end = System.nanoTime();
-            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
+            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
 
         } else if (list instanceof LinkedList) {
             // Handle LinkedList
@@ -138,7 +138,7 @@ public class SizeSorting {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(nodeList);
+                SortingAlgorithms.combSortNumber((LinkedList<Integer>) newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(nodeList);
             }else{
@@ -147,7 +147,7 @@ public class SizeSorting {
 
             //end = System.currentTimeMillis();
             end = System.nanoTime();
-            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
+            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
         } else {
             throw new IllegalArgumentException("Unsupported list type: " + listType);
         }
@@ -167,7 +167,7 @@ public class SizeSorting {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(newList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(newList);
+            SortingAlgorithms.combSortWords(newList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(newList);
         }else{
@@ -177,7 +177,7 @@ public class SizeSorting {
         //long end = System.currentTimeMillis();
         long end = System.nanoTime();
 
-        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
+        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
     }
 }
 

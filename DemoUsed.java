@@ -41,7 +41,12 @@ public class DemoUsed {
             //System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
             
             // Test comb sort
-            SortingAlgorithms.combSort(list3);
+            if (list.get(0) instanceof Integer){
+                SortingAlgorithms.combSortNumber((List<Integer>)list3);
+            } 
+            else if (list.get(0) instanceof String){
+                SortingAlgorithms.combSortWords((List<String>)list3);
+            }
             System.out.println("Sublist after comb sorting: \n" + list3 + "\n");
 
             // Test Counting sort
@@ -56,7 +61,7 @@ public class DemoUsed {
         } else if (list instanceof LinkedList) {
             Node list1 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
             Node list2 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
-            Node list3 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
+            LinkedList<Integer> list3 = new LinkedList<>((List<Integer>)list);
             Node list4 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
 
             System.out.println("Sublist before sorting: \n" + list + "\n");
@@ -72,10 +77,8 @@ public class DemoUsed {
             //System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
             
             // Test Comb sort
-            Node sortedList3 = SortingAlgorithms.combSort(list3);
-            System.out.println("Sublist after comb sorting: ");
-            SortingAlgorithms.printList(sortedList3);
-            System.out.println();
+            SortingAlgorithms.combSortNumber(list3);
+            System.out.println("Sublist after comb sorting: \n" + list3 + "\n");
 
             // Test Counting sort
             Node sortedList4 = SortingAlgorithms.countingSort(list4);
