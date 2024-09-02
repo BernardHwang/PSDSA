@@ -32,7 +32,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
             }else{
@@ -78,7 +78,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
             }else{
@@ -125,7 +125,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
             }else{
@@ -165,7 +165,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
             }else{
@@ -205,7 +205,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(nodeList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(nodeList);
             }else{
@@ -252,7 +252,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(nodeList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(nodeList);
             }else{
@@ -300,7 +300,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(nodeList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(nodeList);
             }else{
@@ -341,7 +341,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(nodeList);
+                SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(nodeList);
             }else{
@@ -379,7 +379,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
             }else{
@@ -425,7 +425,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
             }else{
@@ -472,7 +472,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
             }else{
@@ -512,7 +512,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullList);
+                SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
             }else{
@@ -540,7 +540,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullArrayList);
             }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSort(fullArrayList);
+                SortingAlgorithms.combSortNumber(fullArrayList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullArrayList);
             }else{
@@ -561,7 +561,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
         }else{
@@ -588,7 +588,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
         }else{
@@ -609,7 +609,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
         }else{
@@ -632,7 +632,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullList);
+            SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullList);
         }else{
@@ -660,7 +660,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(nodeList);
+            SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(nodeList);
         }else{
@@ -682,7 +682,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(nodeList);
+            SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(nodeList);
         }else{
@@ -710,7 +710,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(nodeList);
+            SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(nodeList);
         }else{
@@ -732,7 +732,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(nodeList);
+            SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(nodeList);
         }else{
@@ -756,7 +756,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(nodeList);
+            SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(nodeList);
         }else{
@@ -783,7 +783,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
         }else{
@@ -804,7 +804,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
         }else{
@@ -831,7 +831,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
         }else{
@@ -852,7 +852,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullArrayList);
+            SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
         }else{
@@ -875,7 +875,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullList);
         }else if (algorithm.equals("comb")){
-            SortingAlgorithms.combSort(fullList);
+            SortingAlgorithms.combSortWords(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullList);
         }else{
