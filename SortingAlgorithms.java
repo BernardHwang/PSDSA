@@ -86,6 +86,118 @@ public class SortingAlgorithms {
         return head;
     }
 
+    public static void mergeSort(List<Integer> list) {
+        int n = list.size();
+        // Use a single auxiliary array to avoid multiple allocations
+        int[] aux = new int[n];
+        mergeSortHelper(list, aux, 0, n - 1);
+    }
+
+    private static void mergeSortHelper(List<Integer> list, int[] aux, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+
+        int mid = left + (right - left) / 2;
+
+        // Recursively sort both halves
+        mergeSortHelper(list, aux, left, mid);
+        mergeSortHelper(list, aux, mid + 1, right);
+
+        // Merge the sorted halves
+        merge(list, aux, left, mid, right);
+    }
+
+    private static void merge(List<Integer> list, int[] aux, int left, int mid, int right) {
+        // Copy the data to the auxiliary array
+        for (int i = left; i <= right; i++) {
+            aux[i] = list.get(i);
+        }
+
+        int i = left, j = mid + 1, k = left;
+
+        // Merge back into the list
+        while (i <= mid && j <= right) {
+            if (aux[i] <= aux[j]) {
+            } else {
+                list.set(k++, aux[i++]);
+                list.set(k++, aux[j++]);
+            }
+        }
+
+        // Copy any remaining elements from the left half
+        while (i <= mid) {
+            list.set(k++, aux[i++]);
+        }
+    }
+    
+    public static Node mergeSort(Node head) {
+        // Base case: if head is null or there is only one element in the list
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // Step 1: Divide the list into two halves
+        Node middle = getMiddle(head);
+        Node nextOfMiddle = middle.next;
+
+        // Split the list into two halves
+        middle.next = null;
+
+        // Step 2: Recursively sort both halves
+        Node left = mergeSort(head);
+        Node right = mergeSort(nextOfMiddle);
+
+        // Step 3: Merge the sorted halves
+        Node sortedList = merge(left, right);
+        return sortedList;
+    }
+
+    public static Node getMiddle(Node head) {
+        if (head == null) {
+            return head;
+        }
+
+        Node slow = head;
+        Node fast = head.next;
+
+        // Move fast by two and slow by one
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public static Node merge(Node left, Node right) {
+        Node dummyNode = new Node(0);
+        Node tail = dummyNode;
+
+        while (left != null && right != null) {
+            if (left.data <= right.data) {
+                tail.next = left;
+                left = left.next;
+            } else {
+                tail.next = right;
+                right = right.next;
+            }
+            tail = tail.next;
+        }
+
+        // If left has remaining elements
+        if (left != null) {
+            tail.next = left;
+        }
+
+        // If right has remaining elements
+        if (right != null) {
+            tail.next = right;
+        }
+
+        return dummyNode.next;
+    }
+    
     public static <T extends Comparable<T>> void combSort(List<T> list) {
         int n = list.size();
         int gap = n;
