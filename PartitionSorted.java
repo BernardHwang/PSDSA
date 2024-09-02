@@ -56,7 +56,6 @@ public class PartitionSorted {
                 List<Integer> partition = fullList.subList(startIndex, endIndex);
                 Collections.sort(partition);
             }
-            System.out.println(fullList);
             // Final step: Sort the entire list
             long startFull = System.currentTimeMillis();
             SortingAlgorithms.selectionSort(fullList);
@@ -178,7 +177,6 @@ public class PartitionSorted {
                 List<Integer> partition = fullList.subList(startIndex, endIndex);
                 Collections.sort(partition);
             }
-            System.out.println(fullList);
             // Final step: Sort the entire list
             Node nodeList = SortingAlgorithms.assignNode(fullList);
             long startFull = System.currentTimeMillis();
@@ -272,7 +270,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
             SortingAlgorithms.selectionSort(fullList);
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (100000k) arraylist String: " + (endFull - startFull) + " ms\n");
+            System.out.println("Elapsed Time for sorting entire (100k) arraylist String: " + (endFull - startFull) + " ms\n");
         }
     }
 
@@ -301,12 +299,11 @@ public class PartitionSorted {
                 List<String> partition = fullList.subList(startIndex, endIndex);
                 Collections.sort(partition);
             }
-            System.out.println(fullList);
             // Final step: Sort the entire list
             long startFull = System.currentTimeMillis();
             SortingAlgorithms.selectionSort(fullList);
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
+            System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
 
@@ -340,7 +337,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
             SortingAlgorithms.selectionSort(fullList);
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting partitions " + (triple[0] + 1) + ", " + (triple[1] + 1) + ", and " + (triple[2] + 1) + ": " + (endFull - startFull) + " ms");
+            System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting partitions " + (triple[0] + 1) + ", " + (triple[1] + 1) + ", and " + (triple[2] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
 
@@ -367,7 +364,7 @@ public class PartitionSorted {
         long startFull = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullList);
         long endFull = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting each partition individually: : " + (endFull - startFull) + " ms\n");
+        System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting each partition individually: : " + (endFull - startFull) + " ms\n");
     }
 
     public static void numArrayHalfSorted(ArrayList<Integer> numArrayList) {
@@ -433,7 +430,7 @@ public class PartitionSorted {
         long start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullList);
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after 100000% sorted: " + (end - start) + "ms\n");
+        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after 100% sorted: " + (end - start) + "ms\n");
     }
 
     public static void numLinkedHalfSorted(LinkedList<Integer> numLinkedList) {
@@ -503,7 +500,7 @@ public class PartitionSorted {
         long start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(nodeList);
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after 100000% sorted: " + (end - start) + "ms\n");
+        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after 100% sorted: " + (end - start) + "ms\n");
     }
 
     public static void wordArrayHalfSorted(ArrayList<String> wordArrayList) {
@@ -519,7 +516,7 @@ public class PartitionSorted {
         long start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullArrayList);
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting first half: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting first half: " + (end - start) + " ms");
 
         // Second case: Sort the second half
         fullArrayList = new ArrayList<>(wordArrayList.subList(0, totalSize));
@@ -530,7 +527,7 @@ public class PartitionSorted {
         start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullArrayList);
         end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting second half: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting second half: " + (end - start) + " ms");
     }
     
     public static void wordArray75PercentSorted(ArrayList<String> wordArrayList) {
@@ -546,7 +543,7 @@ public class PartitionSorted {
         long start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullArrayList);
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting first 75%: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting first 75%: " + (end - start) + " ms");
 
         // Second case: Sort the last 75%
         fullArrayList = new ArrayList<>(wordArrayList.subList(0, totalSize));
@@ -557,7 +554,7 @@ public class PartitionSorted {
         start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullArrayList);
         end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after sorting last 75%: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire (100k) arraylist String after sorting last 75%: " + (end - start) + " ms");
     }
 
     public static void wordArray100PercentSorted(ArrayList<String> wordArrayList) {
@@ -569,7 +566,7 @@ public class PartitionSorted {
         long start = System.currentTimeMillis();
         SortingAlgorithms.selectionSort(fullList);
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (100000k) arraylist String after 100000% sorted: " + (end - start) + "ms\n");
+        System.out.println("Elapsed Time for sorting entire (100k) arraylist String after 100% sorted: " + (end - start) + "ms\n");
     }
 }
 
