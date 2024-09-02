@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.Scanner;
@@ -55,30 +55,69 @@ public class Main {
                     SizeSorting.sortReverseList(wordArrayList, "selection");
 
                     System.out.println("** Sorting ArrayList of Integers **\n");
-                    PartitionSorted.numArray1PartitionSorted(numArrayList);
-                    PartitionSorted.numArray2PartitionSorted(numArrayList);
-                    PartitionSorted.numArray3PartitionSorted(numArrayList);
-                    PartitionSorted.numArray4PartitionSorted(numArrayList);
-                    PartitionSorted.numArrayHalfSorted(numArrayList);
-                    PartitionSorted.numArray75PercentSorted(numArrayList);
-                    PartitionSorted.numArray100PercentSorted(numArrayList);
+                    PartitionSorted.numArray1PartitionSorted(numArrayList, "selection");
+                    PartitionSorted.numArray2PartitionSorted(numArrayList, "selection");
+                    PartitionSorted.numArray3PartitionSorted(numArrayList, "selection");
+                    PartitionSorted.numArray4PartitionSorted(numArrayList, "selection");
+                    PartitionSorted.numArrayHalfSorted(numArrayList, "selection");
+                    PartitionSorted.numArray75PercentSorted(numArrayList, "selection");
+                    PartitionSorted.numArray100PercentSorted(numArrayList, "selection");
             
                     System.out.println("\n** Sorting LinkedList of Integers **\n");
-                    PartitionSorted.numLinked1PartitionSorted(numLinkedList);
-                    PartitionSorted.numLinked2PartitionSorted(numLinkedList);
-                    PartitionSorted.numLinked3PartitionSorted(numLinkedList);
-                    PartitionSorted.numLinked4PartitionSorted(numLinkedList);
-                    PartitionSorted.numLinkedHalfSorted(numLinkedList);
-                    PartitionSorted.numLinked75PercentSorted(numLinkedList);
+                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "selection");
+                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "selection");
+                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "selection");
+                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "selection");
+                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "selection");
+                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "selection");
             
                     System.out.println("\n** Sorting ArrayList of Strings **\n");
-                    PartitionSorted.wordArray1PartitionSorted(wordArrayList);
-                    PartitionSorted.wordArray2PartitionSorted(wordArrayList);
-                    PartitionSorted.wordArray3PartitionSorted(wordArrayList);
-                    PartitionSorted.wordArray4PartitionSorted(wordArrayList);
+                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "selection");
+                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "selection");
+                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "selection");
+                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "selection");
                     
                     break;
                 case 3:
+                    System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
+                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "merge");
+                    SizeSorting.sortSizeSorting(wordArrayList, "merge");
+
+                    System.out.println("\nSorting without duplicates");
+                    SizeSorting.sortIntegerSet(numSet, "merge");
+                    SizeSorting.sortStringSet(wordSet, "merge");
+
+                    System.out.println("\nSorting duplicates");
+                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "merge");
+                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "merge");
+
+                    //worst case
+                    System.out.println("\nSorting with fully reverse-ordered list");
+                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "merge");
+                    SizeSorting.sortReverseList(wordArrayList, "merge");
+
+                    System.out.println("** Sorting ArrayList of Integers **\n");
+                    PartitionSorted.numArray1PartitionSorted(numArrayList, "merge");
+                    PartitionSorted.numArray2PartitionSorted(numArrayList, "merge");
+                    PartitionSorted.numArray3PartitionSorted(numArrayList, "merge");
+                    PartitionSorted.numArray4PartitionSorted(numArrayList, "merge");
+                    PartitionSorted.numArrayHalfSorted(numArrayList, "merge");
+                    PartitionSorted.numArray75PercentSorted(numArrayList, "merge");
+                    PartitionSorted.numArray100PercentSorted(numArrayList, "merge");
+            
+                    System.out.println("\n** Sorting LinkedList of Integers **\n");
+                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "merge");
+                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "merge");
+                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "merge");
+                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "merge");
+                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "merge");
+                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "merge");
+            
+                    System.out.println("\n** Sorting ArrayList of Strings **\n");
+                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "merge");
+                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "merge");
+                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "merge");
+                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "merge");
                     break;
                 case 4:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
@@ -98,17 +137,28 @@ public class Main {
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "comb");
                     SizeSorting.sortReverseList(wordArrayList, "comb");
 
-                    //20% sorted
-                    System.out.println("\nSorting with 20% sorted list");
-
-                    //50% sorted
-                    System.out.println("\nSorting with 50% sorted list");
-
-                    //70% sorted
-                    System.out.println("\nSorting with 70% sorted list");
-
-                    //100% sorted
-                    System.out.println("\nSorting with fully sorted list");
+                    System.out.println("** Sorting ArrayList of Integers **\n");
+                    PartitionSorted.numArray1PartitionSorted(numArrayList, "comb");
+                    PartitionSorted.numArray2PartitionSorted(numArrayList, "comb");
+                    PartitionSorted.numArray3PartitionSorted(numArrayList, "comb");
+                    PartitionSorted.numArray4PartitionSorted(numArrayList, "comb");
+                    PartitionSorted.numArrayHalfSorted(numArrayList, "comb");
+                    PartitionSorted.numArray75PercentSorted(numArrayList, "comb");
+                    PartitionSorted.numArray100PercentSorted(numArrayList, "comb");
+            
+                    System.out.println("\n** Sorting LinkedList of Integers **\n");
+                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "comb");
+                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "comb");
+                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "comb");
+                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "comb");
+                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "comb");
+                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "comb");
+            
+                    System.out.println("\n** Sorting ArrayList of Strings **\n");
+                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "comb");
+                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "comb");
+                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "comb");
+                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "comb");
 
                     break;
                 case 5:
@@ -128,17 +178,28 @@ public class Main {
                     SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
                     SizeSorting.sortReverseList(wordArrayList, "counting");
 
-                    //20% sorted
-                    System.out.println("\nSorting with 20% sorted list");
-
-                    //50% sorted
-                    System.out.println("\nSorting with 50% sorted list");
-
-                    //70% sorted
-                    System.out.println("\nSorting with 70% sorted list");
-
-                    //100% sorted
-                    System.out.println("\nSorting with fully sorted list");
+                    System.out.println("** Sorting ArrayList of Integers **\n");
+                    PartitionSorted.numArray1PartitionSorted(numArrayList, "counting");
+                    PartitionSorted.numArray2PartitionSorted(numArrayList, "counting");
+                    PartitionSorted.numArray3PartitionSorted(numArrayList, "counting");
+                    PartitionSorted.numArray4PartitionSorted(numArrayList, "counting");
+                    PartitionSorted.numArrayHalfSorted(numArrayList, "counting");
+                    PartitionSorted.numArray75PercentSorted(numArrayList, "counting");
+                    PartitionSorted.numArray100PercentSorted(numArrayList, "counting");
+            
+                    System.out.println("\n** Sorting LinkedList of Integers **\n");
+                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "counting");
+                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "counting");
+                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "counting");
+                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "counting");
+                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "counting");
+                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "counting");
+            
+                    System.out.println("\n** Sorting ArrayList of Strings **\n");
+                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "counting");
+                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "counting");
+                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "counting");
+                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "counting");
 
                     //Test counting sort with different ranges of value
                     System.out.println("\nSorting with different ranges of value (100, 10000, 1000000, 9999999)");
