@@ -9,7 +9,7 @@ public class SizeSorting {
     public static void sortSizeSorting(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm) {
         
         // Define the list sizes to sort 
-        int[] sizes = {10000, 50000, 100000, 500000, 1000000};
+        int[] sizes = {10000, 50000, 100000, 500000, 1000000, 10000000};
 
         // Sort and measure time for each list size
         for (int size : sizes) {
@@ -30,11 +30,22 @@ public class SizeSorting {
         }
     }
 
+    // Sort duplicate integer arraylist and linkedlist
+    public static void sortDuplicateList(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, int size, String sortAlgorithm){
+        sortAndPrintTimeInteger(numArrayList, size, "arraylist integer", sortAlgorithm);
+        sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
+    }
+
     // Sort set
     public static void sortIntegerSet(Set<Integer> numSet, String sortAlgorithm) {
         // Convert the set to a list for sorting
         ArrayList<Integer> numList = new ArrayList<>(numSet);
         sortAndPrintTimeInteger(numList, numList.size(), "set integer", sortAlgorithm);
+    }
+
+    // Sort duplicate string arraylist
+    public static void sortDuplicateList(ArrayList<String> wordArrayList, int size, String sortAlgorithm){
+        sortAndPrintTimeString(wordArrayList, size, "arraylist string", sortAlgorithm);
     }
 
     public static void sortStringSet(Set<String> wordSet, String sortAlgorithm) {
