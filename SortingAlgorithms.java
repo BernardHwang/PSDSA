@@ -119,8 +119,8 @@ public class SortingAlgorithms {
         // Merge back into the list
         while (i <= mid && j <= right) {
             if (aux[i] <= aux[j]) {
-            } else {
                 list.set(k++, aux[i++]);
+            } else {
                 list.set(k++, aux[j++]);
             }
         }
