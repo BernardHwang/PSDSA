@@ -51,7 +51,7 @@ public class DemoUsed {
 
             // Test Counting sort
             if (((ArrayList<?>) list4).get(0) instanceof Integer) {
-                SortingAlgorithms.countingSort((ArrayList<Integer>)list4);
+                SortingAlgorithms.countingSort2((ArrayList<Integer>)list4);
             }
             else{
                 SortingAlgorithms.countingSortWords((ArrayList<String>)list4);

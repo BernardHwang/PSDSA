@@ -116,7 +116,7 @@ public class SizeSorting {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber(newList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort(newList);
+                SortingAlgorithms.countingSort2(newList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }

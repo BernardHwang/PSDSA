@@ -339,7 +339,32 @@ public class SortingAlgorithms {
         }
     }
     
-
+    //testing for counting sort arraylist
+    public static void countingSort2(List<Integer> list) {
+        if (list == null || list.size() <= 1) return;
+    
+        // Find the maximum element to determine the size of the counting array
+        int max = Collections.max(list);
+    
+        // Create a counting array with a size of max + 1
+        int[] countArray = new int[max + 1];
+    
+        // Count each element in the original list
+        for (int num : list) {
+            countArray[num]++;
+        }
+    
+        // Reconstruct the original list in a single pass
+        int index = 0;
+        for (int i = 0; i < countArray.length; i++) {
+            while (countArray[i] > 0) {
+                list.set(index++, i);
+                countArray[i]--;
+            }
+        }
+    }
+    
+    
     public static void countingSort(List<Integer> list) {
         if (list == null || list.size() <= 1) return;
     
