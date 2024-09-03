@@ -28,7 +28,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortNumber(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
@@ -74,7 +74,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortNumber(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
@@ -121,7 +121,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortNumber(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
@@ -161,7 +161,7 @@ public class PartitionSorted {
         long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortNumber(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullList);
             }else if (algorithm.equals("comb")){
@@ -201,7 +201,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(nodeList);
+                SortingAlgorithms.selectionSortNode(nodeList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
@@ -248,7 +248,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(nodeList);
+                SortingAlgorithms.selectionSortNode(nodeList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
@@ -296,7 +296,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(nodeList);
+                SortingAlgorithms.selectionSortNode(nodeList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
@@ -337,7 +337,7 @@ public class PartitionSorted {
         long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(nodeList);
+                SortingAlgorithms.selectionSortNode(nodeList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
@@ -375,7 +375,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortWords(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
@@ -421,7 +421,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortWords(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
@@ -468,7 +468,7 @@ public class PartitionSorted {
             long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortWords(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
@@ -508,7 +508,7 @@ public class PartitionSorted {
         long startFull = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullList);
+                SortingAlgorithms.selectionSortWords(fullList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSortWords(fullList);
             }else if (algorithm.equals("comb")){
@@ -536,7 +536,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list
         long start = System.currentTimeMillis();
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(fullArrayList);
+                SortingAlgorithms.selectionSortNumber(fullArrayList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(fullArrayList);
             }else if (algorithm.equals("comb")){
@@ -557,7 +557,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list again
         start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortNumber(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -584,7 +584,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortNumber(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -605,7 +605,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list again
         start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortNumber(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -628,7 +628,7 @@ public class PartitionSorted {
 
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullList);
+            SortingAlgorithms.selectionSortNumber(fullList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(fullList);
         }else if (algorithm.equals("comb")){
@@ -656,7 +656,7 @@ public class PartitionSorted {
         Node nodeList = SortingAlgorithms.assignNode(fullLinkedList);
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(nodeList);
+            SortingAlgorithms.selectionSortNode(nodeList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
@@ -678,7 +678,7 @@ public class PartitionSorted {
         nodeList = SortingAlgorithms.assignNode(fullLinkedList);
         start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(nodeList);
+            SortingAlgorithms.selectionSortNode(nodeList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
@@ -706,7 +706,7 @@ public class PartitionSorted {
         Node nodeList = SortingAlgorithms.assignNode(fullArrayList);
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(nodeList);
+            SortingAlgorithms.selectionSortNode(nodeList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
@@ -728,7 +728,7 @@ public class PartitionSorted {
         nodeList = SortingAlgorithms.assignNode(fullArrayList);
         start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(nodeList);
+            SortingAlgorithms.selectionSortNode(nodeList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
@@ -752,7 +752,7 @@ public class PartitionSorted {
         Node nodeList = SortingAlgorithms.assignNode(fullList);
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(nodeList);
+            SortingAlgorithms.selectionSortNode(nodeList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSort(nodeList);
         }else if (algorithm.equals("comb")){
@@ -779,7 +779,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortWords(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -800,7 +800,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list again
         start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortWords(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -827,7 +827,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortWords(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -848,7 +848,7 @@ public class PartitionSorted {
         // Final step: Sort the entire list again
         start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullArrayList);
+            SortingAlgorithms.selectionSortWords(fullArrayList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullArrayList);
         }else if (algorithm.equals("comb")){
@@ -871,7 +871,7 @@ public class PartitionSorted {
 
         long start = System.currentTimeMillis();
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(fullList);
+            SortingAlgorithms.selectionSortWords(fullList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(fullList);
         }else if (algorithm.equals("comb")){
@@ -885,4 +885,3 @@ public class PartitionSorted {
         System.out.println("Elapsed Time for sorting entire (100k) arraylist String after 100% sorted: " + (end - start) + "ms\n");
     }
 }
-
