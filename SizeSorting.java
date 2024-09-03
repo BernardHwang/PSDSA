@@ -110,7 +110,7 @@ public class SizeSorting {
             start = System.nanoTime();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(newList);
+                SortingAlgorithms.selectionSortNumber(newList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(newList);
             }else if (algorithm.equals("comb")){
@@ -134,7 +134,7 @@ public class SizeSorting {
             start = System.nanoTime();
 
             if (algorithm.equals("selection")){
-                SortingAlgorithms.selectionSort(nodeList);
+                SortingAlgorithms.selectionSortNode(nodeList);
             }else if (algorithm.equals("merge")){
                 SortingAlgorithms.mergeSort(nodeList);
             }else if (algorithm.equals("comb")){
@@ -163,7 +163,7 @@ public class SizeSorting {
         long start = System.nanoTime();
 
         if (algorithm.equals("selection")){
-            SortingAlgorithms.selectionSort(newList);
+            SortingAlgorithms.selectionSortWords(newList);
         }else if (algorithm.equals("merge")){
             SortingAlgorithms.mergeSortWords(newList);
         }else if (algorithm.equals("comb")){
@@ -180,4 +180,3 @@ public class SizeSorting {
         System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
     }
 }
-
