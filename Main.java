@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Set;
@@ -18,8 +18,8 @@ public class Main {
         readWordsFromFile(wordFile, wordArrayList);
 
         // Create sets for sorting without duplicates
-        Set<Integer> numSet = new HashSet<>(numArrayList);
-        Set<String> wordSet = new HashSet<>(wordArrayList);
+        Set<Integer> numSet = new LinkedHashSet<>(numArrayList);
+        Set<String> wordSet = new LinkedHashSet<>(wordArrayList);
 
         boolean exit = false;
         Scanner in = new Scanner(System.in);;
