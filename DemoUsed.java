@@ -33,7 +33,13 @@ public class DemoUsed {
             System.out.println("Sublist before sorting: \n" + list + "\n");
 
             // Test selection sort
-            SortingAlgorithms.selectionSort(list1);
+            if (list.get(0) instanceof Integer){
+                SortingAlgorithms.selectionSortNumber((List<Integer>)list1);
+            } 
+            else if (list.get(0) instanceof String){
+                SortingAlgorithms.selectionSortWords((List<String>)list1);
+            }
+            
             System.out.println("Sublist after selection sorting: \n" + list1 + "\n");
 
             // Test merge sort
@@ -67,7 +73,7 @@ public class DemoUsed {
             System.out.println("Sublist before sorting: \n" + list + "\n");
 
             // Test Selection sort
-            Node sortedList1 = SortingAlgorithms.selectionSort(list1);
+            Node sortedList1 = SortingAlgorithms.selectionSortNode(list1);
             System.out.println("Sublist after selection sorting: ");
             SortingAlgorithms.printList(sortedList1);
             System.out.println();
