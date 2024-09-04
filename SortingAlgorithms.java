@@ -364,72 +364,81 @@ public class SortingAlgorithms {
         }
     }
     
-    
+    //Counting sort for ArrayList
     public static void countingSort(List<Integer> list) {
-        if (list == null || list.size() <= 1) return;
-    
-        // Find the maximum element to determine the size of the counting array
-        int max = Collections.max(list);
-    
-        // Create a counting array with a size of max + 1 (to include the max value)
-        int[] countArray = new int[max + 1];
-    
-        // Count each element in the original list
-        for (int num : list) {
-            countArray[num]++;
+        if (list.isEmpty()) {
+            return;
         }
     
-        // Overwrite the original list with sorted elements
-        int index = 0;
-        for (int i = 0; i < countArray.length; i++) {
-            while (countArray[i] > 0) {
-                list.set(index++, i);
-                countArray[i]--;
-            }
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int range = max - min + 1;
+    
+        int[] count = new int[range];
+        int[] output = new int[list.size()];
+    
+        // Count occurrences of each number
+        for (int number : list) {
+            count[number - min]++;
+        }
+    
+        // Modify count array to hold actual positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+    
+        // Build the output array using a for-each loop for better cache performance
+        for (int i = list.size() - 1; i >= 0; i--) {
+            int current = list.get(i);
+            output[count[current - min] - 1] = current;
+            count[current - min]--;
+        }
+    
+        // Copy the output array to list
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, output[i]);
         }
     }    
 
-    public static Node countingSort(Node head) {
-        if (head == null || head.next == null) return head;
-    
-        // Find the maximum element to determine the size of the counting array
-        int max = findMax(head);
-    
-        // Create a counting array with a size of max + 1
-        int[] countArray = new int[max + 1];
-    
-        // Count each element in the linked list
-        Node current = head;
-        while (current != null) {
-            countArray[current.data]++;
-            current = current.next;
+    //Counting sort for LinkedList
+    public static void countingSort(LinkedList<Integer> list) {
+        if (list.size() == 0) {
+            return;
         }
     
-        // Overwrite the original linked list with sorted elements
-        current = head;
-        for (int i = 0; i < countArray.length; i++) {
-            while (countArray[i] > 0) {
-                current.data = i;
-                current = current.next;
-                countArray[i]--;
-            }
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int range = max - min + 1;
+    
+        int[] count = new int[range];
+        int[] output = new int[list.size()];
+    
+        // Store count of each number
+        for (int number : list) {
+            count[number - min]++;
         }
     
-        return head;
+        // Change count[i] so that it contains the actual position of this number in the output array
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+    
+        // Build the output array
+        ListIterator<Integer> iter = list.listIterator(list.size());
+        while (iter.hasPrevious()) {
+            int val = iter.previous();
+            output[count[val - min] - 1] = val;
+            count[val - min]--;
+        }
+    
+        // Copy the output array to the list, so that list now contains sorted numbers
+        iter = list.listIterator();
+        for (int num : output) {
+            iter.next();
+            iter.set(num);
+        }
     }
     
-    private static int findMax(Node head) {
-        int max = Integer.MIN_VALUE;
-        Node current = head;
-        while (current != null) {
-            if (current.data > max) {
-                max = current.data;
-            }
-            current = current.next;
-        }
-        return max;
-    }
-
     // Method to sort the words using counting sort on each character
     public static void countingSortWords(ArrayList<String> words) {
 
