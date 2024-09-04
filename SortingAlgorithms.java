@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 class Node {
     int data;
@@ -439,6 +441,101 @@ public class SortingAlgorithms {
         }
     }
     
+    //Multithreaded Counting Sort for ArrayList
+    public static void MultithreadedCountingSort(List<Integer> list) {
+        if (list.isEmpty()) {
+            return;
+        }
+
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int range = max - min + 1;
+
+        int[] count = new int[range];
+        int[] output = new int[list.size()];
+
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool pool = new ForkJoinPool();
+
+        // Parallel Count
+        pool.submit(() -> list.parallelStream().forEach(number -> {
+            synchronized (count) {
+                count[number - min]++;
+            }
+        })).join();
+
+        // Modify count array to hold actual positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Parallel Build Output Array
+        pool.submit(() -> {
+            IntStream.range(0, list.size()).parallel().forEach(i -> {
+                int current = list.get(i);
+                synchronized (count) {
+                    output[--count[current - min]] = current;
+                }
+            });
+        }).join();
+
+        // Copy the output array to the list
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, output[i]);
+        }
+
+        pool.shutdown();
+    }
+
+    //Multithreaded Counting Sort for LinkedList
+    public static void MultithreadedCountingSort(LinkedList<Integer> list) {
+        if (list.size() == 0) {
+            return;
+        }
+
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int range = max - min + 1;
+
+        int[] count = new int[range];
+        int[] output = new int[list.size()];
+
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool pool = new ForkJoinPool();
+
+        // Parallel Count
+        pool.submit(() -> list.parallelStream().forEach(number -> {
+            synchronized (count) {
+                count[number - min]++;
+            }
+        })).join();
+
+        // Modify count array to hold actual positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Parallel Build Output Array
+        pool.submit(() -> {
+            ListIterator<Integer> iter = list.listIterator(list.size());
+            while (iter.hasPrevious()) {
+                int val = iter.previous();
+                synchronized (count) {
+                    output[--count[val - min]] = val;
+                }
+            }
+        }).join();
+
+        // Copy the output array to the list
+        ListIterator<Integer> iter = list.listIterator();
+        for (int num : output) {
+            iter.next();
+            iter.set(num);
+        }
+
+        pool.shutdown();
+    }
+
     // Method to sort the words using counting sort on each character
     public static void countingSortWords(ArrayList<String> words) {
 

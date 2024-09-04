@@ -116,7 +116,8 @@ public class SizeSorting {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber(newList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort2(newList);
+                SortingAlgorithms.countingSort(newList);
+                //SortingAlgorithms.MultithreadedCountingSort(newList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -141,6 +142,7 @@ public class SizeSorting {
                 SortingAlgorithms.combSortNumber((LinkedList<Integer>) newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort((LinkedList<Integer>) newList);
+                //SortingAlgorithms.MultithreadedCountingSort((LinkedList<Integer>) newList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
