@@ -75,7 +75,8 @@ public class DemoUsed {
             Node list1 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
             Node list2 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
             LinkedList<Integer> list3 = new LinkedList<>((List<Integer>)list);
-            Node list4 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
+            LinkedList<Integer> list4 = new LinkedList<>((List<Integer>)list);
+            //Node list4 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
 
             System.out.println("Sublist before sorting: \n" + list + "\n");
 
@@ -96,10 +97,8 @@ public class DemoUsed {
             System.out.println("Sublist after comb sorting: \n" + list3 + "\n");
 
             // Test Counting sort
-            Node sortedList4 = SortingAlgorithms.countingSort(list4);
-            System.out.println("Sublist after counting sorting: ");
-            SortingAlgorithms.printList(sortedList4);
-            System.out.println();
+            SortingAlgorithms.countingSort(list4);
+            System.out.println("Sublist after count sorting: \n" + list4 + "\n");
 
         }
     }

@@ -207,7 +207,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort(nodeList);
+                SortingAlgorithms.countingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -254,7 +254,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort(nodeList);
+                SortingAlgorithms.countingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -302,7 +302,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort(nodeList);
+                SortingAlgorithms.countingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -343,7 +343,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort(nodeList);
+                SortingAlgorithms.countingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -662,7 +662,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
-            SortingAlgorithms.countingSort(nodeList);
+            SortingAlgorithms.countingSort(fullLinkedList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -684,7 +684,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
-            SortingAlgorithms.countingSort(nodeList);
+            SortingAlgorithms.countingSort(fullLinkedList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -712,7 +712,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
-            SortingAlgorithms.countingSort(nodeList);
+            SortingAlgorithms.countingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -734,7 +734,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
-            SortingAlgorithms.countingSort(nodeList);
+            SortingAlgorithms.countingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -758,7 +758,7 @@ public class PartitionSorted {
         }else if (algorithm.equals("comb")){
             SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
-            SortingAlgorithms.countingSort(nodeList);
+            SortingAlgorithms.countingSort(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
