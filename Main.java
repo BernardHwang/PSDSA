@@ -39,7 +39,14 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "selection");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingArray(numArrayList, "selection");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingLinked(numLinkedList, "selection");
+                    System.out.println("\nWord ArrayList");
+                    System.out.println("_____________________________________________________");
                     SizeSorting.sortSizeSorting(wordArrayList, "selection");
 
                     System.out.println("\nSorting without duplicates");
@@ -80,8 +87,23 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "merge");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingArray(numArrayList, "merge");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingLinked(numLinkedList, "merge");
+                    System.out.println("\nWord ArrayList");
+                    System.out.println("_____________________________________________________");
                     SizeSorting.sortSizeSorting(wordArrayList, "merge");
+
+                    System.out.println("\nSorting with large data Size (1M, 5M, 10M, 20M)");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.bigSortSizeSortingArray(numArrayList, "merge");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.bigSortSizeSortingLinked(numLinkedList, "merge");
 
                     System.out.println("\nSorting without duplicates");
                     SizeSorting.sortIntegerSet(numSet, "merge");
@@ -121,8 +143,23 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "comb");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingArray(numArrayList, "comb");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingLinked(numLinkedList, "comb");
+                    System.out.println("\nWord ArrayList");
+                    System.out.println("_____________________________________________________");
                     SizeSorting.sortSizeSorting(wordArrayList, "comb");
+
+                    System.out.println("\nSorting with large data Size (1M, 5M, 10M, 20M)");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.bigSortSizeSortingArray(numArrayList, "comb");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.bigSortSizeSortingLinked(numLinkedList, "comb");
 
                     System.out.println("\nSorting without duplicates");
                     SizeSorting.sortIntegerSet(numSet, "comb");
@@ -163,8 +200,23 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "counting");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingArray(numArrayList, "counting");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.smallSortSizeSortingLinked(numLinkedList, "counting");
+                    System.out.println("\nWord ArrayList");
+                    System.out.println("_____________________________________________________");
                     SizeSorting.sortSizeSorting(wordArrayList, "counting");
+
+                    System.out.println("\nSorting with large data Size (1M, 5M, 10M, 20M)");
+                    System.out.println("\nInteger ArrayList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.bigSortSizeSortingArray(numArrayList, "counting");
+                    System.out.println("\nInteger LinkedList");
+                    System.out.println("_____________________________________________________");
+                    SizeSorting.bigSortSizeSortingLinked(numLinkedList, "counting");
 
                     System.out.println("\nSorting without duplicates");
                     SizeSorting.sortIntegerSet(numSet, "counting");
