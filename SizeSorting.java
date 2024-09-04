@@ -6,28 +6,49 @@ import java.util.Collections;
 import java.util.Set;
 
 public class SizeSorting {
-    public static void sortSizeSorting(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm) {
+    public static void smallSortSizeSortingArray(ArrayList<Integer> numArrayList, String sortAlgorithm) {
         
         // Define the list sizes to sort 
-        int[] sizes = {10000, 50000, 100000, 500000, 1000000, 10000000};
+        int[] sizes = {100000, 500000, 1000000};
 
         // Sort and measure time for each list size
         for (int size : sizes) {
             sortAndPrintTimeInteger(numArrayList, size, "arraylist integer", sortAlgorithm);
+        }
+    }
+
+    public static void smallSortSizeSortingLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
+        
+        // Define the list sizes to sort 
+        int[] sizes = {100000, 500000, 1000000};
+
+        // Sort and measure time for each list size
+        for (int size : sizes) {
             sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
         }
         
     }
 
-    public static void sortSizeSorting(ArrayList<String> wordArrayList, String sortAlgorithm) {
+    public static void bigSortSizeSortingArray(ArrayList<Integer> numArrayList, String sortAlgorithm) {
         
-        // Define the list sizes to sort
-        int[] sizes = {10000, 50000, 100000, 500000, 1000000};
+        // Define the list sizes to sort 
+        int[] sizes = {2000000, 5000000, 10000000, 20000000};
 
         // Sort and measure time for each list size
         for (int size : sizes) {
-            sortAndPrintTimeString(wordArrayList, size, "arraylist string", sortAlgorithm);
+            sortAndPrintTimeInteger(numArrayList, size, "arraylist integer", sortAlgorithm);
         }
+    }
+    public static void bigSortSizeSortingLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
+        
+        // Define the list sizes to sort 
+        int[] sizes = {2000000, 5000000, 10000000, 20000000};
+
+        // Sort and measure time for each list size
+        for (int size : sizes) {
+            sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
+        }
+        
     }
 
     // Sort duplicate integer arraylist and linkedlist
