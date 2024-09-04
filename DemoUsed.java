@@ -29,6 +29,7 @@ public class DemoUsed {
             List<T> list2 = new ArrayList<>(list);
             List<T> list3 = new ArrayList<>(list);
             List<T> list4 = new ArrayList<>(list);
+            List<T> list5 = new ArrayList<>(list);
 
             System.out.println("Sublist before sorting: \n" + list + "\n");
 
@@ -64,19 +65,21 @@ public class DemoUsed {
 
             // Test Counting sort
             if (((ArrayList<?>) list4).get(0) instanceof Integer) {
-                SortingAlgorithms.countingSort2((ArrayList<Integer>)list4);
+                SortingAlgorithms.countingSort((List<Integer>)list4);
+                SortingAlgorithms.MultithreadedCountingSort((List<Integer>)list5);
             }
             else{
                 SortingAlgorithms.countingSortWords((ArrayList<String>)list4);
             }
-            System.out.println("Sublist after counting sorting: \n" + list4 + "\n");
+            System.out.println("Sublist after counting sort: \n" + list4 + "\n");
+            System.out.println("Sublist after multithreaded counting sort: \n" + list5 + "\n");
 
         } else if (list instanceof LinkedList) {
             Node list1 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
             Node list2 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
             LinkedList<Integer> list3 = new LinkedList<>((List<Integer>)list);
             LinkedList<Integer> list4 = new LinkedList<>((List<Integer>)list);
-            //Node list4 = SortingAlgorithms.assignNode((LinkedList<Integer>)list);
+            LinkedList<Integer> list5 = new LinkedList<>((List<Integer>)list);
 
             System.out.println("Sublist before sorting: \n" + list + "\n");
 
@@ -98,7 +101,9 @@ public class DemoUsed {
 
             // Test Counting sort
             SortingAlgorithms.countingSort(list4);
-            System.out.println("Sublist after count sorting: \n" + list4 + "\n");
+            System.out.println("Sublist after counting sort: \n" + list4 + "\n");
+            SortingAlgorithms.MultithreadedCountingSort(list5);
+            System.out.println("Sublist after multithreaded counting sort: \n" + list5 + "\n");
 
         }
     }
