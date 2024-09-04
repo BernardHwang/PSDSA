@@ -43,6 +43,13 @@ public class DemoUsed {
             System.out.println("Sublist after selection sorting: \n" + list1 + "\n");
 
             // Test merge sort
+            if (list.get(0) instanceof Integer){
+                SortingAlgorithms.mergeSort((List<Integer>)list2);
+            } 
+            else if (list.get(0) instanceof String){
+                SortingAlgorithms.mergeSortWords((List<String>)list2);
+            }
+            System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
             //SortingAlgorithms.mergeSort(list2);
             //System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
             
@@ -79,8 +86,10 @@ public class DemoUsed {
             System.out.println();
 
             // Test Merge sort
-            //SortingAlgorithms.mergeSort(list2);
-            //System.out.println("Sublist after merge sorting: \n" + list2 + "\n");
+            Node sortedList2 = SortingAlgorithms.mergeSort(list2);
+            System.out.println("Sublist after merge sorting: ");
+            SortingAlgorithms.printList(sortedList2);
+            System.out.println();
             
             // Test Comb sort
             SortingAlgorithms.combSortNumber(list3);
