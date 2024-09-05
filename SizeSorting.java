@@ -53,15 +53,31 @@ public class SizeSorting {
 
     // Sort duplicate integer arraylist and linkedlist
     public static void sortDuplicateList(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, int size, String sortAlgorithm){
-        sortAndPrintTimeInteger(numArrayList, size, "arraylist integer", sortAlgorithm);
-        sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
+        if (sortAlgorithm.equals("selection")){
+            int newSize= 100000;
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
+        }
+        else{
+            sortAndPrintTimeInteger(numArrayList, size, "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
+        }
     }
 
     // Sort set
     public static void sortIntegerSet(Set<Integer> numSet, String sortAlgorithm) {
         // Convert the set to a list for sorting
-        ArrayList<Integer> numList = new ArrayList<>(numSet);
-        sortAndPrintTimeInteger(numList, numList.size(), "set integer", sortAlgorithm);
+        ArrayList<Integer> numArrayList = new ArrayList<>(numSet);
+        LinkedList<Integer> numLinkedList = new LinkedList<>(numSet);
+        if(sortAlgorithm.equals("selection")){
+            int newSize= 100000;
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
+        }
+        else{
+            sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+        }
     }
 
     // Sort duplicate string arraylist
@@ -78,15 +94,27 @@ public class SizeSorting {
     // Reverse the entire list
     public static void sortReverseList(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm){
         Collections.reverse(numArrayList);
-        sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
-
         Collections.reverse(numLinkedList);
-        sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+        if (sortAlgorithm.equals("selection")){
+            int newSize= 100000;
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
+        }
+        else{
+            sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+        }
     }
 
     public static void sortReverseList(ArrayList<String> wordArrayList, String sortAlgorithm){
         Collections.reverse(wordArrayList);
-        sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+        if (sortAlgorithm.equals("selection")){
+            int newSize= 100000;
+            sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
+        }
+        else{
+            sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+        }
     }
 
     // test Counting Sort on a list with different ranges of value
