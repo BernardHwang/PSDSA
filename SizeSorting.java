@@ -21,14 +21,31 @@ public class SizeSorting {
         
         // Define the list sizes to sort 
         int[] sizes = {100000, 500000, 1000000};
-
+        sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
         // Sort and measure time for each list size
         for (int size : sizes) {
             sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
         }
-        
     }
 
+    public static void sortSizeSorting(ArrayList<String> wordArrayList, String sortAlgorithm) {
+        
+        // Define the list sizes to sort
+        int[] sizes = {10000, 50000, 100000, 500000, 1000000};
+        int[] sizesSelection = {10000, 50000, 100000, 500000};
+        // Sort and measure time for each list size
+        if(sortAlgorithm.equals("selection")){
+            for (int size : sizesSelection) {
+                sortAndPrintTimeString(wordArrayList, size, "arraylist string", sortAlgorithm);
+            }
+        }   
+        else{
+            for (int size : sizes) {
+                sortAndPrintTimeString(wordArrayList, size, "arraylist string", sortAlgorithm);
+            }
+        }
+    }
+    
     public static void bigSortSizeSortingArray(ArrayList<Integer> numArrayList, String sortAlgorithm) {
         
         // Define the list sizes to sort 
@@ -228,6 +245,16 @@ public class SizeSorting {
         //long end = System.currentTimeMillis();
         long end = System.nanoTime();
 
+        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
+    }
+    
+    private static void sortAndPrintTimeIntegerSlow(List<Integer> list, int size, String listType, String sortAlgorithm) {
+        long start, end;
+        LinkedList<Integer> newList = new LinkedList<>(((LinkedList<Integer>) list).subList(0, Math.min(size, list.size())));
+        //start = System.currentTimeMillis();
+        start = System.nanoTime();
+        SortingAlgorithms.mergeSortSlow(newList);
+        end = System.nanoTime();
         System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
     }
 }
