@@ -9,7 +9,8 @@ public class SizeSorting {
     public static void smallSortSizeSortingArray(ArrayList<Integer> numArrayList, String sortAlgorithm) {
         
         // Define the list sizes to sort 
-        int[] sizes = {100000, 500000, 1000000};
+
+        int[] sizes = {1000000, 1000000, 1000000, 500000, 100000, 50000, 10000};
 
         // Sort and measure time for each list size
         for (int size : sizes) {
@@ -183,10 +184,7 @@ public class SizeSorting {
                 SortingAlgorithms.combSortNumber(newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(newList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(newList);
-            }
-            else{
+            }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
@@ -210,9 +208,7 @@ public class SizeSorting {
                 SortingAlgorithms.combSortNumber((LinkedList<Integer>) newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort((LinkedList<Integer>) newList); 
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort((LinkedList<Integer>) newList);}
-            else{
+            }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
@@ -241,8 +237,6 @@ public class SizeSorting {
             SortingAlgorithms.combSortWords(newList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(newList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSortWords(newList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }

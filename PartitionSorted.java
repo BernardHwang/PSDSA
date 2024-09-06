@@ -35,8 +35,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -83,8 +81,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("Multithreaded")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -132,8 +128,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -174,8 +168,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -216,8 +208,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -265,8 +255,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: " + algorithm);
             }
@@ -315,8 +303,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -358,8 +344,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -398,8 +382,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -446,8 +428,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -495,8 +475,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -537,8 +515,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -567,8 +543,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullArrayList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullArrayList);
-            }else if (algorithm.equals("multithreadedcounting")){
-                SortingAlgorithms.multithreadedcountingSort(fullArrayList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -590,8 +564,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -619,8 +591,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -642,8 +612,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -667,8 +635,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -697,8 +663,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullLinkedList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullLinkedList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -721,8 +685,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullLinkedList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullLinkedList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -751,8 +713,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -775,8 +735,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -801,8 +759,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSort(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -830,8 +786,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -853,8 +807,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -882,8 +834,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -905,8 +855,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -930,8 +878,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullList);
-        }else if (algorithm.equals("multithreadedcounting")){
-            SortingAlgorithms.multithreadedcountingSortWords(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
