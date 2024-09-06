@@ -83,7 +83,7 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("Multithreaded")){
+            }else if (algorithm.equals("multithreadedcounting")){
                 SortingAlgorithms.multithreadedcountingSort(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);

@@ -208,43 +208,43 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "MultithreadedCounting");
-                    SizeSorting.sortSizeSorting(wordArrayList, "MultithreadedCounting");
+                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "multithreadedcounting");
+                    SizeSorting.sortSizeSorting(wordArrayList, "multithreadedcounting");
 
                     System.out.println("\nSorting without duplicates");
-                    SizeSorting.sortIntegerSet(numSet, "MultithreadedCounting");
-                    SizeSorting.sortStringSet(wordSet, "MultithreadedCounting");
+                    SizeSorting.sortIntegerSet(numSet, "multithreadedcounting");
+                    SizeSorting.sortStringSet(wordSet, "multithreadedcounting");
 
                     System.out.println("\nSorting duplicates");
-                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "MultithreadedCounting");
-                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "MultithreadedCounting");
+                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "multithreadedcounting");
+                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "multithreadedcounting");
 
                     System.out.println("\nSorting with fully reverse-ordered list");
-                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "MultithreadedCounting");
-                    SizeSorting.sortReverseList(wordArrayList, "MultithreadedCounting");
+                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "multithreadedcounting");
+                    SizeSorting.sortReverseList(wordArrayList, "multithreadedcounting");
 
                     System.out.println("** Sorting ArrayList of Integers **\n");
-                    PartitionSorted.numArray1PartitionSorted(numArrayList, "MultithreadedCounting");
-                    PartitionSorted.numArray2PartitionSorted(numArrayList, "MultithreadedCounting");
-                    PartitionSorted.numArray3PartitionSorted(numArrayList, "MultithreadedCounting");
-                    PartitionSorted.numArray4PartitionSorted(numArrayList, "MultithreadedCounting");
-                    PartitionSorted.numArrayHalfSorted(numArrayList, "MultithreadedCounting");
-                    PartitionSorted.numArray75PercentSorted(numArrayList, "MultithreadedCounting");
-                    PartitionSorted.numArray100PercentSorted(numArrayList, "MultithreadedCounting");
+                    PartitionSorted.numArray1PartitionSorted(numArrayList, "multithreadedcounting");
+                    PartitionSorted.numArray2PartitionSorted(numArrayList, "multithreadedcounting");
+                    PartitionSorted.numArray3PartitionSorted(numArrayList, "multithreadedcounting");
+                    PartitionSorted.numArray4PartitionSorted(numArrayList, "multithreadedcounting");
+                    PartitionSorted.numArrayHalfSorted(numArrayList, "multithreadedcounting");
+                    PartitionSorted.numArray75PercentSorted(numArrayList, "multithreadedcounting");
+                    PartitionSorted.numArray100PercentSorted(numArrayList, "multithreadedcounting");
             
                     System.out.println("\n** Sorting LinkedList of Integers **\n");
-                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "MultithreadedCounting");
-                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "MultithreadedCounting");
-                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "MultithreadedCounting");
-                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "MultithreadedCounting");
-                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "MultithreadedCounting");
-                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "MultithreadedCounting");
+                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "multithreadedcounting");
+                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "multithreadedcounting");
+                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "multithreadedcounting");
+                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "multithreadedcounting");
+                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "multithreadedcounting");
+                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "multithreadedcounting");
             
                     System.out.println("\n** Sorting ArrayList of Strings **\n");
-                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "MultithreadedCounting");
-                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "MultithreadedCounting");
-                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "MultithreadedCounting");
-                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "MultithreadedCounting");
+                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "multithreadedcounting");
+                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "multithreadedcounting");
+                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "multithreadedcounting");
+                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "multithreadedcounting");
 
                     //Test counting sort with different ranges of value
                     System.out.println("\nSorting with different ranges of value (100, 10000, 1000000, 9999999)");

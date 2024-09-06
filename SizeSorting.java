@@ -9,7 +9,7 @@ public class SizeSorting {
     public static void sortSizeSorting(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList, String sortAlgorithm) {
         
         // Define the list sizes to sort 
-        int[] sizes = {10000, 50000, 100000, 500000, 1000000, 10000000};
+        int[] sizes = {10000000, 10000000, 1000000, 500000,100000, 50000, 10000};
 
         // Sort and measure time for each list size
         for (int size : sizes) {
