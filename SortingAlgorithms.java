@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 class Node {
     int data;
@@ -58,6 +60,96 @@ public class SortingAlgorithms {
                 list.set(i, temp);
             }
         }
+    }
+
+    // Upgraded Selection Sort Method for integers
+    public static void upgradedSelectionSortNumber(List<Integer> arr) {
+        int n = arr.size();
+
+        for (int i = 0; i < n / 2; i++) {
+            int locMin = i, locMax = i;
+
+            // Find the minimum and maximum elements in the current unsorted part of the array
+            for (int j = i + 1; j < n - i; j++) {
+                if (arr.get(j) > arr.get(locMax)) {
+                    locMax = j;
+                } else if (arr.get(j) < arr.get(locMin)) {
+                    locMin = j;
+                }
+            }
+
+            // Handle the special case where the min and max need to be swapped
+            if (i == locMax && n - 1 - i == locMin) {
+                swap(arr, locMin, locMax);
+            } else {
+                // Perform swaps to place the min and max in their correct positions
+                if (locMin == n - 1 - i && locMax != i) {
+                    swap(arr, i, locMin);
+                    swap(arr, n - 1 - i, locMax);
+                } else if (locMax == i && locMin != n - 1 - i) {
+                    swap(arr, n - 1 - i, locMax);
+                    swap(arr, i, locMin);
+                } else {
+                    if (locMin != i) {
+                        swap(arr, i, locMin);
+                    }
+                    if (locMax != n - 1 - i) {
+                        swap(arr, locMax, n - 1 - i);
+                    }
+                }
+            }
+        }
+    }
+
+    public static void upgradedSelectionSortWords(ArrayList<String> arr) {
+        int n = arr.size();
+
+        for (int i = 0; i < n / 2; i++) {
+            int locMin = i, locMax = i;
+
+            // Find the minimum and maximum elements in the current unsorted part of the array
+            for (int j = i + 1; j < n - i; j++) {
+                if (arr.get(j).compareTo(arr.get(locMax)) > 0) {
+                    locMax = j;
+                } else if (arr.get(j).compareTo(arr.get(locMax)) < 0) {
+                    locMin = j;
+                }
+            }
+
+            // Handle the special case where the min and max need to be swapped
+            if (i == locMax && n - 1 - i == locMin) {
+                swap(arr, locMin, locMax);
+            } else {
+                // Perform swaps to place the min and max in their correct positions
+                if (locMin == n - 1 - i && locMax != i) {
+                    swap(arr, i, locMin);
+                    swap(arr, n - 1 - i, locMax);
+                } else if (locMax == i && locMin != n - 1 - i) {
+                    swap(arr, n - 1 - i, locMax);
+                    swap(arr, i, locMin);
+                } else {
+                    if (locMin != i) {
+                        swap(arr, i, locMin);
+                    }
+                    if (locMax != n - 1 - i) {
+                        swap(arr, locMax, n - 1 - i);
+                    }
+                }
+            }
+        }
+    }
+
+    // Helper method to swap elements in the List
+    private static void swap(List<Integer> arr, int i, int j) {
+        int temp = arr.get(i);
+        arr.set(i, arr.get(j));
+        arr.set(j, temp);
+    }
+
+    private static void swap(ArrayList<String> arr, int i, int j) {
+        String temp = arr.get(i);
+        arr.set(i, arr.get(j));
+        arr.set(j, temp);
     }
 
     public static void selectionSortWords(List<String> list) {
@@ -429,6 +521,152 @@ public class SortingAlgorithms {
 
     // Method to perform counting sort on the words based on a specific character index
     private static void countingSortChar(ArrayList<String> words, int index) {
+        // Create a count array for characters A-Z, a-z, and '-'
+        int[] count = new int[53]; // 26 uppercase + lowercase letters + 1 for space
+
+        // Count occurrences of each character at the given index
+        for (String word : words) {
+            char charAtIdx = index < word.length() ? word.charAt(index) : ' ';
+            count[charToIndex(charAtIdx)]++;
+        }
+
+        // Update count array to positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Create a temporary list to store sorted words
+        ArrayList<String> temp = new ArrayList<>(Collections.nCopies(words.size(), ""));
+
+        // Build the temporary list
+        for (int i = words.size() - 1; i >= 0; i--) {
+            char charAtIdx = index < words.get(i).length() ? words.get(i).charAt(index) : ' ';
+            temp.set(--count[charToIndex(charAtIdx)], words.get(i));
+        }
+
+        // Copy the sorted words back to the original list
+        for (int i = 0; i < words.size(); i++) {
+            words.set(i, temp.get(i));
+        }
+    }
+    
+    //Multithreaded Counting Sort for ArrayList
+    public static void multithreadedcountingSort(List<Integer> list) {
+        if (list.isEmpty()) {
+            return;
+        }
+
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int range = max - min + 1;
+
+        int[] count = new int[range];
+        int[] output = new int[list.size()];
+
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool pool = new ForkJoinPool();
+
+        // Parallel Count
+        pool.submit(() -> list.parallelStream().forEach(number -> {
+            synchronized (count) {
+                count[number - min]++;
+            }
+        })).join();
+
+        // Modify count array to hold actual positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Parallel Build Output Array
+        pool.submit(() -> {
+            IntStream.range(0, list.size()).parallel().forEach(i -> {
+                int current = list.get(i);
+                synchronized (count) {
+                    output[--count[current - min]] = current;
+                }
+            });
+        }).join();
+
+        // Copy the output array to the list
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, output[i]);
+        }
+
+        pool.shutdown();
+    }
+
+    //Multithreaded Counting Sort for LinkedList
+    public static void multithreadedcountingSort(LinkedList<Integer> list) {
+        if (list.size() == 0) {
+            return;
+        }
+
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int range = max - min + 1;
+
+        int[] count = new int[range];
+        int[] output = new int[list.size()];
+
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool pool = new ForkJoinPool();
+
+        // Parallel Count
+        pool.submit(() -> list.parallelStream().forEach(number -> {
+            synchronized (count) {
+                count[number - min]++;
+            }
+        })).join();
+
+        // Modify count array to hold actual positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Parallel Build Output Array
+        pool.submit(() -> {
+            ListIterator<Integer> iter = list.listIterator(list.size());
+            while (iter.hasPrevious()) {
+                int val = iter.previous();
+                synchronized (count) {
+                    output[--count[val - min]] = val;
+                }
+            }
+        }).join();
+
+        // Copy the output array to the list
+        ListIterator<Integer> iter = list.listIterator();
+        for (int num : output) {
+            iter.next();
+            iter.set(num);
+        }
+
+        pool.shutdown();
+    }
+
+    //Multithreaded Counting sort for Words
+    public static void multithreadedcountingSortWords(ArrayList<String> words) {
+        if (words.isEmpty()) {
+            return;
+        }
+
+        // Find the maximum length of the words in the list
+        int maxLen = words.stream().mapToInt(String::length).max().orElse(0);
+
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool pool = new ForkJoinPool();
+
+        // Perform counting sort on each character position in parallel
+        for (int index = maxLen - 1; index >= 0; index--) {
+            final int charIndex = index;
+            pool.submit(() -> MultithreadedCountingSortChar(words, charIndex)).join();
+        }
+
+        pool.shutdown();
+    }
+
+    private static void MultithreadedCountingSortChar(ArrayList<String> words, int index) {
         // Create a count array for characters A-Z, a-z, and '-'
         int[] count = new int[53]; // 26 uppercase + lowercase letters + 1 for space
 
