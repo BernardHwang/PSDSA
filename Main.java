@@ -74,7 +74,7 @@ public class Main {
                                             SizeSorting.sizeSortingArray(numArrayList, "selection");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerArraySet(numSet, "selection");
                                             SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "selection");
@@ -150,7 +150,7 @@ public class Main {
                                             SizeSorting.sizeSortingLinked(numLinkedList, "selection");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerLinkedSet(numSet, "selection");
                                             SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "selection");
@@ -226,7 +226,7 @@ public class Main {
                                             SizeSorting.sizeSortingWord(wordArrayList, "selection");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "selection");
                                             SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "selection");
@@ -322,7 +322,7 @@ public class Main {
                                             SizeSorting.sizeSortingArray(numArrayList, "merge");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerArraySet(numSet, "merge");
                                             SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "merge");
@@ -398,7 +398,7 @@ public class Main {
                                             SizeSorting.sizeSortingLinked(numLinkedList, "merge");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerLinkedSet(numSet, "merge");
                                             SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "merge");
@@ -474,7 +474,7 @@ public class Main {
                                             SizeSorting.sizeSortingWord(wordArrayList, numFile);
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "merge");
                                             SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "merge");
@@ -570,7 +570,7 @@ public class Main {
                                             SizeSorting.sizeSortingArray(numArrayList, "comb");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerArraySet(numSet, "comb");
                                             SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "comb");
@@ -646,7 +646,7 @@ public class Main {
                                             SizeSorting.sizeSortingLinked(numLinkedList, "comb");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerLinkedSet(numSet, "comb");
                                             SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "comb");
@@ -722,7 +722,7 @@ public class Main {
                                             SizeSorting.sizeSortingWord(wordArrayList, "comb");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "comb");
                                             SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "comb");
@@ -819,7 +819,7 @@ public class Main {
                                             SizeSorting.sizeSortingArray(numArrayList, "counting");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerArraySet(numSet, "counting");
                                             SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "counting");
@@ -901,7 +901,7 @@ public class Main {
                                             SizeSorting.sizeSortingLinked(numLinkedList, "counting");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerLinkedSet(numSet, "counting");
                                             SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "counting");
@@ -982,7 +982,7 @@ public class Main {
                                             SizeSorting.sizeSortingWord(wordArrayList, "counting");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "counting");
                                             SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "counting");
@@ -1078,7 +1078,7 @@ public class Main {
                                             SizeSorting.sizeSortingArray(numArrayList, "upgradedselection");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerArraySet(numSet, "upgradedselection");
                                             SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "upgradedselection");
@@ -1154,7 +1154,7 @@ public class Main {
                                             SizeSorting.sizeSortingLinked(numLinkedList, "upgradedselection");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortIntegerLinkedSet(numSet, "upgradedselection");
                                             SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "upgradedselection");
@@ -1230,7 +1230,7 @@ public class Main {
                                             SizeSorting.sizeSortingWord(wordArrayList, "upgradedselection");
                                             break;
                                         case 2:
-                                            System.out.println("\nSorting with Non-duplicates and Dupliacates");
+                                            System.out.println("\nSorting with Non-duplicates and Duplicates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "upgradedselection");
                                             SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "upgradedselection");
