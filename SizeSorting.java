@@ -128,7 +128,7 @@ public class SizeSorting {
         }
     }
 
-    public static void sortReverseList(ArrayList<String> wordArrayList, String sortAlgorithm){
+    public static void sortReverseWord(ArrayList<String> wordArrayList, String sortAlgorithm){
         Collections.sort(wordArrayList, Collections.reverseOrder());
         if (sortAlgorithm.equals("selection")){
             int newSize= 100000;
@@ -140,12 +140,19 @@ public class SizeSorting {
     }
 
     // test Counting Sort on a list with different ranges of value
-    public static void rangeTestCountingSort(ArrayList<Integer> numArrayList, LinkedList<Integer> numLinkedList){
+    public static void rangeTestCountingSortArray(ArrayList<Integer> numArrayList){
         int [] ranges = {100, 10000, 1000000, 9999999};
 
         for (int range: ranges){
             List<Integer>numSubArrayList = filterNumbersByRange(numArrayList, range);            
             sortAndPrintTimeInteger(numSubArrayList, numSubArrayList.size(), "arraylist integer", "counting");
+        }
+    }
+
+    public static void rangeTestCountingSortLinked(LinkedList<Integer> numLinkedList){
+        int [] ranges = {100, 10000, 1000000, 9999999};
+
+        for (int range: ranges){
             List<Integer>numSubLinkedList = filterNumbersByRange(numLinkedList, range);
             sortAndPrintTimeInteger(numSubLinkedList, numSubLinkedList.size(), "linkedlist integer", "counting");
         }
