@@ -22,10 +22,10 @@ public class Main {
         Set<String> wordSet = new LinkedHashSet<>(wordArrayList);
 
         boolean exit = false;
-        boolean exit1 = false;
-        boolean exit2 = false;
+        
         Scanner in = new Scanner(System.in);;
         while (!exit) {
+            boolean exit1 = false;
             System.out.println("\tChoose Number:");
             System.out.println("\t[1] Demo of 4 Sorting Algorithms");
             System.out.println("\t[2] Selection Sort");
@@ -41,6 +41,7 @@ public class Main {
                     break;
                 case 2:
                     while (!exit1) {
+                        boolean exit2 = false;
                         System.out.println("\tChoose Number:");
                         System.out.println("\t[1] Integer ArrayList");
                         System.out.println("\t[2] Integer LinkedList");
@@ -124,6 +125,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 2:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -199,6 +201,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 3:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -275,6 +278,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 0:
                                 exit1 = true;
                                 break;
@@ -285,6 +289,7 @@ public class Main {
                     break;
                 case 3:
                     while (!exit1) {
+                        boolean exit2 = false;
                         System.out.println("\tChoose Number:");
                         System.out.println("\t[1] Integer ArrayList");
                         System.out.println("\t[2] Integer LinkedList");
@@ -368,6 +373,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 2:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -443,6 +449,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 3:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -519,6 +526,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 0:
                                 exit1 = true;
                                 break;
@@ -529,6 +537,7 @@ public class Main {
                     break;
                 case 4:
                     while (!exit1) {
+                        boolean exit2 = false;
                         System.out.println("\tChoose Number:");
                         System.out.println("\t[1] Integer ArrayList");
                         System.out.println("\t[2] Integer LinkedList");
@@ -612,6 +621,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 2:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -687,6 +697,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 3:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -763,6 +774,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 0:
                                 exit1 = true;
                                 break;
@@ -773,6 +785,7 @@ public class Main {
                     break;
                 case 5:
                     while (!exit1) {
+                        boolean exit2 = false;
                         System.out.println("\tChoose Number:");
                         System.out.println("\t[1] Integer ArrayList");
                         System.out.println("\t[2] Integer LinkedList");
@@ -856,6 +869,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 2:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -931,6 +945,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 3:
                                 while (!exit2) {
                                     System.out.println("\tChoose Number:");
@@ -1007,6 +1022,7 @@ public class Main {
                                             System.out.println("Invalid Input!");     
                                     }
                                 }
+                                break;
                             case 0:
                                 exit1 = true;
                                 break;
