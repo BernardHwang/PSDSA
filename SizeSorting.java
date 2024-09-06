@@ -183,8 +183,10 @@ public class SizeSorting {
                 SortingAlgorithms.combSortNumber(newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(newList);
-                //SortingAlgorithms.MultithreadedCountingSort(newList);
-            }else{
+            }else if (algorithm.equals("multithreadedcounting")){
+                SortingAlgorithms.multithreadedcountingSort(newList);
+            }
+            else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
@@ -207,9 +209,10 @@ public class SizeSorting {
             }else if (algorithm.equals("comb")){
                 SortingAlgorithms.combSortNumber((LinkedList<Integer>) newList);
             }else if (algorithm.equals("counting")){
-                SortingAlgorithms.countingSort((LinkedList<Integer>) newList);
-                //SortingAlgorithms.MultithreadedCountingSort((LinkedList<Integer>) newList);
-            }else{
+                SortingAlgorithms.countingSort((LinkedList<Integer>) newList); 
+            }else if (algorithm.equals("multithreadedcounting")){
+                SortingAlgorithms.multithreadedcountingSort((LinkedList<Integer>) newList);}
+            else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
@@ -238,6 +241,8 @@ public class SizeSorting {
             SortingAlgorithms.combSortWords(newList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(newList);
+        }else if (algorithm.equals("multithreadedcounting")){
+            SortingAlgorithms.multithreadedcountingSortWords(newList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
