@@ -66,10 +66,11 @@ public class DemoUsed {
             // Test Counting sort
             if (((ArrayList<?>) list4).get(0) instanceof Integer) {
                 SortingAlgorithms.countingSort((List<Integer>)list4);
-                SortingAlgorithms.MultithreadedCountingSort((List<Integer>)list5);
+                SortingAlgorithms.multithreadedcountingSort((List<Integer>)list5);
             }
             else{
                 SortingAlgorithms.countingSortWords((ArrayList<String>)list4);
+                SortingAlgorithms.multithreadedcountingSortWords((ArrayList<String>)list5);
             }
             System.out.println("Sublist after counting sort: \n" + list4 + "\n");
             System.out.println("Sublist after multithreaded counting sort: \n" + list5 + "\n");
@@ -102,7 +103,9 @@ public class DemoUsed {
             // Test Counting sort
             SortingAlgorithms.countingSort(list4);
             System.out.println("Sublist after counting sort: \n" + list4 + "\n");
-            SortingAlgorithms.MultithreadedCountingSort(list5);
+            
+            //Test Multithreaded counting sort
+            SortingAlgorithms.multithreadedcountingSort(list5);
             System.out.println("Sublist after multithreaded counting sort: \n" + list5 + "\n");
 
         }

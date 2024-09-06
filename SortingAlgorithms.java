@@ -341,31 +341,6 @@ public class SortingAlgorithms {
         }
     }
     
-    //testing for counting sort arraylist
-    public static void countingSort2(List<Integer> list) {
-        if (list == null || list.size() <= 1) return;
-    
-        // Find the maximum element to determine the size of the counting array
-        int max = Collections.max(list);
-    
-        // Create a counting array with a size of max + 1
-        int[] countArray = new int[max + 1];
-    
-        // Count each element in the original list
-        for (int num : list) {
-            countArray[num]++;
-        }
-    
-        // Reconstruct the original list in a single pass
-        int index = 0;
-        for (int i = 0; i < countArray.length; i++) {
-            while (countArray[i] > 0) {
-                list.set(index++, i);
-                countArray[i]--;
-            }
-        }
-    }
-    
     //Counting sort for ArrayList
     public static void countingSort(List<Integer> list) {
         if (list.isEmpty()) {
@@ -440,9 +415,53 @@ public class SortingAlgorithms {
             iter.set(num);
         }
     }
+
+    // Counting sort for Words
+     // Method to sort the words using counting sort on each character
+     public static void countingSortWords(ArrayList<String> words) {
+
+        // Find the maximum length of the words in the list
+        int maxLen = words.stream().mapToInt(String::length).max().orElse(0);
+
+        // Sort each character position starting from the last character
+        for (int index = maxLen - 1; index >= 0; index--) {
+            countingSortChar(words, index);
+        }
+    }
+
+    // Method to perform counting sort on the words based on a specific character index
+    private static void countingSortChar(ArrayList<String> words, int index) {
+        // Create a count array for characters A-Z, a-z, and '-'
+        int[] count = new int[53]; // 26 uppercase + lowercase letters + 1 for space
+
+        // Count occurrences of each character at the given index
+        for (String word : words) {
+            char charAtIdx = index < word.length() ? word.charAt(index) : ' ';
+            count[charToIndex(charAtIdx)]++;
+        }
+
+        // Update count array to positions
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // Create a temporary list to store sorted words
+        ArrayList<String> temp = new ArrayList<>(Collections.nCopies(words.size(), ""));
+
+        // Build the temporary list
+        for (int i = words.size() - 1; i >= 0; i--) {
+            char charAtIdx = index < words.get(i).length() ? words.get(i).charAt(index) : ' ';
+            temp.set(--count[charToIndex(charAtIdx)], words.get(i));
+        }
+
+        // Copy the sorted words back to the original list
+        for (int i = 0; i < words.size(); i++) {
+            words.set(i, temp.get(i));
+        }
+    }
     
     //Multithreaded Counting Sort for ArrayList
-    public static void MultithreadedCountingSort(List<Integer> list) {
+    public static void multithreadedcountingSort(List<Integer> list) {
         if (list.isEmpty()) {
             return;
         }
@@ -488,7 +507,7 @@ public class SortingAlgorithms {
     }
 
     //Multithreaded Counting Sort for LinkedList
-    public static void MultithreadedCountingSort(LinkedList<Integer> list) {
+    public static void multithreadedcountingSort(LinkedList<Integer> list) {
         if (list.size() == 0) {
             return;
         }
@@ -536,20 +555,28 @@ public class SortingAlgorithms {
         pool.shutdown();
     }
 
-    // Method to sort the words using counting sort on each character
-    public static void countingSortWords(ArrayList<String> words) {
+    //Multithreaded Counting sort for Words
+    public static void multithreadedcountingSortWords(ArrayList<String> words) {
+        if (words.isEmpty()) {
+            return;
+        }
 
         // Find the maximum length of the words in the list
         int maxLen = words.stream().mapToInt(String::length).max().orElse(0);
 
-        // Sort each character position starting from the last character
+        // Create a ForkJoinPool for parallel processing
+        ForkJoinPool pool = new ForkJoinPool();
+
+        // Perform counting sort on each character position in parallel
         for (int index = maxLen - 1; index >= 0; index--) {
-            countingSortChar(words, index);
+            final int charIndex = index;
+            pool.submit(() -> MultithreadedCountingSortChar(words, charIndex)).join();
         }
+
+        pool.shutdown();
     }
 
-    // Method to perform counting sort on the words based on a specific character index
-    private static void countingSortChar(ArrayList<String> words, int index) {
+    private static void MultithreadedCountingSortChar(ArrayList<String> words, int index) {
         // Create a count array for characters A-Z, a-z, and '-'
         int[] count = new int[53]; // 26 uppercase + lowercase letters + 1 for space
 
