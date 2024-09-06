@@ -213,11 +213,11 @@ public class PartitionSorted {
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer: " + (endFull - startFull) + " ms\n");
+            System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting partition" + (i+1) + ": " + (endFull - startFull) + " ms\n");
         }
     }
 
-    public static void numLinked2PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
+    public static void numLinked2PartitionSorted(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
         int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
@@ -228,7 +228,7 @@ public class PartitionSorted {
         };
 
         for (int[] pair : pairs) {
-            List<Integer> fullList = new LinkedList<>(numLinkedList.subList(0, totalSize));
+            LinkedList<Integer> fullList = new LinkedList<>(numLinkedList.subList(0, totalSize));
 
             for (int i : pair) {
                 int startIndex = i * partitionSize;
@@ -256,7 +256,7 @@ public class PartitionSorted {
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
             }else{
-                throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
+                throw new IllegalArgumentException("Unsupported algorithm: " + algorithm);
             }
 
             long endFull = System.currentTimeMillis();

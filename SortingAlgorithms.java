@@ -471,4 +471,56 @@ public class SortingAlgorithms {
         }
     }
 
+    //To prove why use node
+    public static void mergeSortSlow(LinkedList<Integer> list) {
+        if (list.size() <= 1) {
+            return; // Base case: no need to sort if the list has 0 or 1 element
+        }
+
+        // Find the middle point and divide the list into two halves
+        LinkedList<Integer> left = new LinkedList<>();
+        LinkedList<Integer> right = new LinkedList<>();
+        
+        int mid = list.size() / 2;
+
+        for (int i = 0; i < mid; i++) {
+            left.add(list.get(i)); // Add the first half of the list to the left
+        }
+
+        for (int i = mid; i < list.size(); i++) {
+            right.add(list.get(i)); // Add the second half to the right
+        }
+
+        // Recursively sort both halves
+        mergeSort(left);
+        mergeSort(right);
+
+        // Merge the sorted halves
+        merge(list, left, right);
+    }
+
+    private static void merge(LinkedList<Integer> result, LinkedList<Integer> left, LinkedList<Integer> right) {
+        result.clear(); // Clear the original list to store sorted elements
+
+        int i = 0, j = 0;
+
+        // Merge the two sorted lists
+        while (i < left.size() && j < right.size()) {
+            if (left.get(i) <= right.get(j)) {
+                result.add(left.get(i++)); // Add from left list
+            } else {
+                result.add(right.get(j++)); // Add from right list
+            }
+        }
+
+        // Add remaining elements from the left list
+        while (i < left.size()) {
+            result.add(left.get(i++));
+        }
+
+        // Add remaining elements from the right list
+        while (j < right.size()) {
+            result.add(right.get(j++));
+        }
+    }
 }
