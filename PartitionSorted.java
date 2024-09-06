@@ -227,54 +227,57 @@ public class PartitionSorted {
         }
     }
 
-    public static void numLinked2PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
+    public static void numLinked2PartitionSorted(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
         int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
-
+    
         // Define partition pairs to be sorted
         int[][] pairs = {
             {0, 1}, {0, 2}, {0, 3}, {1, 2}, {1, 3}, {2, 3}
         };
-
+    
         for (int[] pair : pairs) {
             List<Integer> fullList = new LinkedList<>(numLinkedList.subList(0, totalSize));
-
+    
             for (int i : pair) {
                 int startIndex = i * partitionSize;
                 int endIndex = (i + 1) * partitionSize;
-
+    
                 // Handle the last partition
                 if (i == 3) {
                     endIndex = totalSize;
                 }
-
-                // Extract the partition
+    
+                // Extract and sort the partition
                 List<Integer> partition = fullList.subList(startIndex, endIndex);
                 Collections.sort(partition);
             }
+    
             // Final step: Sort the entire list
             Node nodeList = SortingAlgorithms.assignNode(fullList);
             long startFull = System.currentTimeMillis();
-
-            if (algorithm.equals("selection")){
+    
+            if (algorithm.equals("selection")) {
                 SortingAlgorithms.selectionSortNode(nodeList);
-            }else if (algorithm.equals("merge")){
+            } else if (algorithm.equals("merge")) {
                 SortingAlgorithms.mergeSort(nodeList);
-            }else if (algorithm.equals("comb")){
-                SortingAlgorithms.combSortNumber(fullList);
-            }else if (algorithm.equals("counting")){
+            } else if (algorithm.equals("comb")) {
+                // Apply comb sort to the entire list without partitioning
+                SortingAlgorithms.combSortNumber(fullList); 
+            } else if (algorithm.equals("counting")) {
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("multithreadedcounting")){
+            } else if (algorithm.equals("multithreadedcounting")) {
                 SortingAlgorithms.multithreadedcountingSort(fullList);
-            }else{
-                throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
+            } else {
+                throw new IllegalArgumentException("Unsupported algorithm: " + algorithm);
             }
-
+    
             long endFull = System.currentTimeMillis();
             System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
+    
 
     public static void numLinked3PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
         int totalSize = 1000000;
