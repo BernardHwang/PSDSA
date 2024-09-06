@@ -70,18 +70,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingArray(numArrayList, "selection");
+                                            SizeSorting.sizeSortingArray(numArrayList, "selection");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "selection");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "selection");
+                                            SizeSorting.sortIntegerArraySet(numSet, "selection");
+                                            SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "selection");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
+                                            SizeSorting.sortReverseArray(numArrayList, "selection");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -146,18 +146,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingLinked(numLinkedList, "selection");
+                                            SizeSorting.sizeSortingLinked(numLinkedList, "selection");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "selection");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "selection");
+                                            SizeSorting.sortIntegerLinkedSet(numSet, "selection");
+                                            SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "selection");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "selection");
+                                            SizeSorting.sortReverseLinked(numLinkedList, "selection");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -222,18 +222,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortSizeSorting(wordArrayList, "selection");
+                                            SizeSorting.sizeSortingWord(wordArrayList, "selection");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "selection");
-                                            SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "selection");
+                                            SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "selection");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(wordArrayList, "selection");
+                                            SizeSorting.sortReverseWord(wordArrayList, "selection");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -318,18 +318,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingArray(numArrayList, "merge");
+                                            SizeSorting.sizeSortingArray(numArrayList, "merge");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "merge");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "merge");
+                                            SizeSorting.sortIntegerArraySet(numSet, "merge");
+                                            SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "merge");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "merge");
+                                            SizeSorting.sortReverseArray(numArrayList, "merge");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -394,18 +394,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingLinked(numLinkedList, "merge");
+                                            SizeSorting.sizeSortingLinked(numLinkedList, "merge");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "merge");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "merge");
+                                            SizeSorting.sortIntegerLinkedSet(numSet, "merge");
+                                            SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "merge");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "merge");
+                                            SizeSorting.sortReverseLinked(numLinkedList, "merge");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -470,18 +470,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortSizeSorting(wordArrayList, "merge");
+                                            SizeSorting.sizeSortingWord(wordArrayList, numFile);
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "merge");
-                                            SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "merge");
+                                            SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "merge");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(wordArrayList, "merge");
+                                            SizeSorting.sortReverseWord(wordArrayList, "merge");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -566,18 +566,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingArray(numArrayList, "comb");
+                                            SizeSorting.sizeSortingArray(numArrayList, "comb");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "comb");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "comb");
+                                            SizeSorting.sortIntegerArraySet(numSet, "comb");
+                                            SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "comb");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "comb");
+                                            SizeSorting.sortReverseArray(numArrayList, "comb");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -642,18 +642,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingLinked(numLinkedList, "comb");
+                                            SizeSorting.sizeSortingLinked(numLinkedList, "comb");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "comb");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "comb");
+                                            SizeSorting.sortIntegerLinkedSet(numSet, "comb");
+                                            SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "comb");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "comb");
+                                            SizeSorting.sortReverseLinked(numLinkedList, "comb");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -718,18 +718,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortSizeSorting(wordArrayList, "comb");
+                                            SizeSorting.sizeSortingWord(wordArrayList, "comb");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "comb");
-                                            SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "comb");
+                                            SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "comb");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(wordArrayList, "comb");
+                                            SizeSorting.sortReverseWord(wordArrayList, "comb");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -807,6 +807,7 @@ public class Main {
                                     System.out.println("\t[8] 50% Sorted");
                                     System.out.println("\t[9] 75% Sorted");
                                     System.out.println("\t[10] 100% Sorted");
+                                    System.out.println("\t[11] Range Test For Counting Sort");
                                     System.out.println("\t[0] Bye Bye");
                                     System.out.print("\nOption: ");
                                     int option2 = Integer.parseInt(in.nextLine());
@@ -814,18 +815,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingArray(numArrayList, "counting");
+                                            SizeSorting.sizeSortingArray(numArrayList, "counting");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "counting");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "counting");
+                                            SizeSorting.sortIntegerArraySet(numSet, "counting");
+                                            SizeSorting.sortDuplicateArray(numArrayList, numSet.size(), "counting");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
+                                            SizeSorting.sortReverseArray(numArrayList, "counting");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -862,6 +863,11 @@ public class Main {
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray100PercentSorted(numArrayList, "counting");
                                             break;
+                                        case 11:
+                                            System.out.println("** Range Test For Counting Sort**\n");
+                                            System.out.println("_____________________________________________________");
+                                            SizeSorting.rangeTestCountingSortArray(numArrayList);
+                                            break;
                                         case 0:
                                             exit2 = true;
                                             break;
@@ -883,6 +889,7 @@ public class Main {
                                     System.out.println("\t[8] 50% Sorted");
                                     System.out.println("\t[9] 75% Sorted");
                                     System.out.println("\t[10] 100% Sorted");
+                                    System.out.println("\t[11] Range Test For Counting Sort");
                                     System.out.println("\t[0] Bye Bye");
                                     System.out.print("\nOption: ");
                                     int option2 = Integer.parseInt(in.nextLine());
@@ -890,18 +897,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.smallSortSizeSortingLinked(numLinkedList, "counting");
+                                            SizeSorting.sizeSortingLinked(numLinkedList, "counting");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortIntegerSet(numSet, "counting");
-                                            SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "counting");
+                                            SizeSorting.sortIntegerLinkedSet(numSet, "counting");
+                                            SizeSorting.sortDuplicateLinked(numLinkedList, numSet.size(), "counting");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(numArrayList, numLinkedList, "counting");
+                                            SizeSorting.sortReverseLinked(numLinkedList, "counting");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
@@ -938,6 +945,11 @@ public class Main {
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked100PercentSorted(numLinkedList, "counting");
                                             break;
+                                        case 11:
+                                            System.out.println("** Range Test For Counting Sort**\n");
+                                            System.out.println("_____________________________________________________");
+                                            SizeSorting.rangeTestCountingSortLinked(numLinkedList);
+                                            break;
                                         case 0:
                                             exit2 = true;
                                             break;
@@ -966,18 +978,18 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortSizeSorting(wordArrayList, "counting");
+                                            SizeSorting.sizeSortingWord(wordArrayList, "counting");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Dupliacates");
                                             System.out.println("_____________________________________________________");
                                             SizeSorting.sortStringSet(wordSet, "counting");
-                                            SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "counting");
+                                            SizeSorting.sortDuplicateWord(wordArrayList, wordSet.size(), "counting");
                                             break;
                                         case 3:
                                             System.out.println("\nSorting with fully reverse-ordered list");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sortReverseList(wordArrayList, "counting");
+                                            SizeSorting.sortReverseWord(wordArrayList, "counting");
                                             break;
                                         case 4:
                                             System.out.println("** Sorting with 1 Partition / 25% Sorted **\n");
