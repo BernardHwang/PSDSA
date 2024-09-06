@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,7 +12,7 @@ public class SizeSorting {
 
     public static void sizeSortingArray(ArrayList<Integer> numArrayList, String sortAlgorithm) {
         // Sort and measure time for each list size
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection") || sortAlgorithm.equals("upgradedselection")){
             for (int size : smallIntegerSizes) {
                 sortAndPrintTimeInteger(numArrayList, size, "arraylist integer", sortAlgorithm);
             }
@@ -26,7 +25,7 @@ public class SizeSorting {
 
     public static void sizeSortingLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
         sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection") || sortAlgorithm.equals("upgradedselection")){
             for (int size : smallIntegerSizes) {
                 sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
             }
@@ -38,7 +37,7 @@ public class SizeSorting {
     }
 
     public static void sizeSortingWord(ArrayList<String> wordArrayList, String sortAlgorithm) {
-        if(sortAlgorithm.equals("selection")){
+        if(sortAlgorithm.equals("selection") || sortAlgorithm.equals("upgradedselection")){
             for (int size : smallStringSizes) {
                 sortAndPrintTimeString(wordArrayList, size, "arraylist string", sortAlgorithm);
             }
@@ -51,7 +50,7 @@ public class SizeSorting {
 
     // Sort duplicate integer arraylist and linkedlist
     public static void sortDuplicateArray(ArrayList<Integer> numArrayList, int size, String sortAlgorithm) {
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection") || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
@@ -61,7 +60,7 @@ public class SizeSorting {
     }
 
     public static void sortDuplicateLinked(LinkedList<Integer> numLinkedList, int size, String sortAlgorithm) {
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection") || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
@@ -78,7 +77,7 @@ public class SizeSorting {
     public static void sortIntegerArraySet(Set<Integer> numSet, String sortAlgorithm) {
         // Convert the set to a list for sorting
         ArrayList<Integer> numArrayList = new ArrayList<>(numSet);
-        if(sortAlgorithm.equals("selection")){
+        if(sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
@@ -90,7 +89,7 @@ public class SizeSorting {
     public static void sortIntegerLinkedSet(Set<Integer> numSet, String sortAlgorithm) {
         // Convert the set to a list for sorting
         LinkedList<Integer> numLinkedList = new LinkedList<>(numSet);
-        if(sortAlgorithm.equals("selection")){
+        if(sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
@@ -108,7 +107,7 @@ public class SizeSorting {
     // Reverse the entire list
     public static void sortReverseArray(ArrayList<Integer> numArrayList, String sortAlgorithm){
         Collections.sort(numArrayList, Collections.reverseOrder());
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
@@ -119,7 +118,7 @@ public class SizeSorting {
 
     public static void sortReverseLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm){
         Collections.sort(numLinkedList, Collections.reverseOrder());
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
@@ -130,7 +129,7 @@ public class SizeSorting {
 
     public static void sortReverseWord(ArrayList<String> wordArrayList, String sortAlgorithm){
         Collections.sort(wordArrayList, Collections.reverseOrder());
-        if (sortAlgorithm.equals("selection")){
+        if (sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
@@ -195,6 +194,8 @@ public class SizeSorting {
                 SortingAlgorithms.combSortNumber(newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(newList);
+            }else if (algorithm.equals("upgradedselection")){
+                SortingAlgorithms.upgradedSelectionSortNumber(newList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -219,6 +220,8 @@ public class SizeSorting {
                 SortingAlgorithms.combSortNumber((LinkedList<Integer>) newList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort((LinkedList<Integer>) newList); 
+            }else if (algorithm.equals("upgradedSelection")){
+                SortingAlgorithms.upgradedSelectionSortNumber((LinkedList<Integer>) newList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -248,6 +251,8 @@ public class SizeSorting {
             SortingAlgorithms.combSortWords(newList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(newList);
+        }else if (algorithm.equals("upgradedselection")){
+            SortingAlgorithms.upgradedSelectionSortWords(newList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
