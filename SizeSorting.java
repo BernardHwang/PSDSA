@@ -21,7 +21,7 @@ public class SizeSorting {
     public static void smallSortSizeSortingLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
         
         // Define the list sizes to sort 
-        int[] sizes = {100000, 500000, 1000000};
+        int[] sizes = {1000000, 1000000, 1000000, 500000, 100000, 50000, 10000};
         sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
         // Sort and measure time for each list size
         for (int size : sizes) {
