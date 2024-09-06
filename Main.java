@@ -30,7 +30,6 @@ public class Main {
             System.out.println("[3] Merge Sort");
             System.out.println("[4] Comb Sort");
             System.out.println("[5] Counting Sort");
-            System.out.println("[6] Multithreaded Counting Sort");
             System.out.println("[0] Bye Bye");
             System.out.print("Option: ");
             int option = Integer.parseInt(in.nextLine());
@@ -206,51 +205,6 @@ public class Main {
                     System.out.println("\nSorting with different ranges of value (100, 10000, 1000000, 9999999)");
                     SizeSorting.rangeTestCountingSort(numArrayList, numLinkedList);
                     break;
-                case 6:
-                    System.out.println("\nSorting with different Size (10k, 50k, 100k, 500k, 1M)");
-                    SizeSorting.sortSizeSorting(numArrayList, numLinkedList, "multithreadedcounting");
-                    SizeSorting.sortSizeSorting(wordArrayList, "multithreadedcounting");
-
-                    System.out.println("\nSorting without duplicates");
-                    SizeSorting.sortIntegerSet(numSet, "multithreadedcounting");
-                    SizeSorting.sortStringSet(wordSet, "multithreadedcounting");
-
-                    System.out.println("\nSorting duplicates");
-                    SizeSorting.sortDuplicateList(numArrayList, numLinkedList, numSet.size(), "multithreadedcounting");
-                    SizeSorting.sortDuplicateList(wordArrayList, wordSet.size(), "multithreadedcounting");
-
-                    System.out.println("\nSorting with fully reverse-ordered list");
-                    SizeSorting.sortReverseList(numArrayList, numLinkedList, "multithreadedcounting");
-                    SizeSorting.sortReverseList(wordArrayList, "multithreadedcounting");
-
-                    System.out.println("** Sorting ArrayList of Integers **\n");
-                    PartitionSorted.numArray1PartitionSorted(numArrayList, "multithreadedcounting");
-                    PartitionSorted.numArray2PartitionSorted(numArrayList, "multithreadedcounting");
-                    PartitionSorted.numArray3PartitionSorted(numArrayList, "multithreadedcounting");
-                    PartitionSorted.numArray4PartitionSorted(numArrayList, "multithreadedcounting");
-                    PartitionSorted.numArrayHalfSorted(numArrayList, "multithreadedcounting");
-                    PartitionSorted.numArray75PercentSorted(numArrayList, "multithreadedcounting");
-                    PartitionSorted.numArray100PercentSorted(numArrayList, "multithreadedcounting");
-            
-                    System.out.println("\n** Sorting LinkedList of Integers **\n");
-                    PartitionSorted.numLinked1PartitionSorted(numLinkedList, "multithreadedcounting");
-                    PartitionSorted.numLinked2PartitionSorted(numLinkedList, "multithreadedcounting");
-                    PartitionSorted.numLinked3PartitionSorted(numLinkedList, "multithreadedcounting");
-                    PartitionSorted.numLinked4PartitionSorted(numLinkedList, "multithreadedcounting");
-                    PartitionSorted.numLinkedHalfSorted(numLinkedList, "multithreadedcounting");
-                    PartitionSorted.numLinked75PercentSorted(numLinkedList, "multithreadedcounting");
-            
-                    System.out.println("\n** Sorting ArrayList of Strings **\n");
-                    PartitionSorted.wordArray1PartitionSorted(wordArrayList, "multithreadedcounting");
-                    PartitionSorted.wordArray2PartitionSorted(wordArrayList, "multithreadedcounting");
-                    PartitionSorted.wordArray3PartitionSorted(wordArrayList, "multithreadedcounting");
-                    PartitionSorted.wordArray4PartitionSorted(wordArrayList, "multithreadedcounting");
-
-                    //Test counting sort with different ranges of value
-                    System.out.println("\nSorting with different ranges of value (100, 10000, 1000000, 9999999)");
-                    SizeSorting.rangeTestCountingSort(numArrayList, numLinkedList);
-                    break;                
-
                 case 0:
                     exit = true;
                     break;
