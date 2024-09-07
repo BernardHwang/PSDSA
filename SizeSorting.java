@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class SizeSorting {
     private static int[] smallIntegerSizes = {1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
-    private static int[] bigIntegerSizes = {20000000, 18000000, 16000000, 14000000, 12000000, 10000000, 8000000, 6000000, 4000000, 2000000};
+    private static int[] bigIntegerSizes = {20000000, 18000000, 16000000, 14000000, 12000000, 10000000, 8000000, 6000000, 4000000, 2000000, 1000000};
     private static int[] smallStringSizes = {100000, 90000, 80000, 70000, 60000, 50000, 40000, 30000, 20000, 10000};
     private static int[] bigStringSizes = {1000000, 900000, 800000, 700000, 600000, 500000, 400000, 300000, 200000, 100000};
 
@@ -24,12 +24,20 @@ public class SizeSorting {
     }
 
     public static void sizeSortingLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
-        sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
+        
         if (sortAlgorithm.equals("selection") || sortAlgorithm.equals("upgradedselection")){
             for (int size : smallIntegerSizes) {
                 sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
             }
-        } else {
+        } 
+        else if(sortAlgorithm.equals("merge")){
+            for (int size : bigIntegerSizes) {
+                sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
+            }
+            //To prove why use singly linked list(predefine node) instead of java linked list
+            sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
+        }
+        else {
             for (int size : bigIntegerSizes) {
                 sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
             }
@@ -106,34 +114,45 @@ public class SizeSorting {
 
     // Reverse the entire list
     public static void sortReverseArray(ArrayList<Integer> numArrayList, String sortAlgorithm){
-        Collections.sort(numArrayList, Collections.reverseOrder());
+        //sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
         if (sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
+            Collections.sort(numArrayList, Collections.reverseOrder());
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
         else{
+            sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+            Collections.sort(numArrayList, Collections.reverseOrder());
             sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
         }
     }
 
     public static void sortReverseLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm){
-        Collections.sort(numLinkedList, Collections.reverseOrder());
         if (sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
+            Collections.sort(numLinkedList, Collections.reverseOrder());
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
         else{
+            sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+            Collections.sort(numLinkedList, Collections.reverseOrder());
             sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
         }
     }
 
     public static void sortReverseWord(ArrayList<String> wordArrayList, String sortAlgorithm){
-        Collections.sort(wordArrayList, Collections.reverseOrder());
+        
         if (sortAlgorithm.equals("selection")  || sortAlgorithm.equals("upgradedselection")){
             int newSize= 100000;
             sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
+            Collections.sort(wordArrayList, Collections.reverseOrder());
+            sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
         else{
+            sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+            Collections.sort(wordArrayList, Collections.reverseOrder());
             sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
         }
     }
@@ -183,8 +202,8 @@ public class SizeSorting {
         if (list instanceof ArrayList) {
             // Handle ArrayList
             newList = new ArrayList<>(((ArrayList<Integer>) list).subList(0, Math.min(size, list.size())));
-            //start = System.currentTimeMillis();
-            start = System.nanoTime();
+            start = System.currentTimeMillis();
+            //start = System.nanoTime();
 
             if (algorithm.equals("selection")){
                 SortingAlgorithms.selectionSortNumber(newList);
@@ -200,8 +219,8 @@ public class SizeSorting {
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
-            //end = System.currentTimeMillis();
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
+            // end = System.nanoTime();
             System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
 
         } else if (list instanceof LinkedList) {
@@ -209,8 +228,8 @@ public class SizeSorting {
             newList = new LinkedList<>(((LinkedList<Integer>) list).subList(0, Math.min(size, list.size())));
             Node nodeList = SortingAlgorithms.assignNode(newList);
             
-            //start = System.currentTimeMillis();
-            start = System.nanoTime();
+            start = System.currentTimeMillis();
+            //start = System.nanoTime();
 
             if (algorithm.equals("selection")){
                 SortingAlgorithms.selectionSortNode(nodeList);
@@ -226,22 +245,22 @@ public class SizeSorting {
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
-            //end = System.currentTimeMillis();
-            end = System.nanoTime();
-            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
+            end = System.currentTimeMillis();
+            // end = System.nanoTime();
+            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
         } else {
             throw new IllegalArgumentException("Unsupported list type: " + listType);
         }
     }
-
+    
     // Method to sort a new list created from the original list for Words and print elapsed time
     private static void sortAndPrintTimeString(ArrayList<String> list, int size, String listType, String sortAlgorithm) {
         // Handle ArrayList
         ArrayList<String> newList = new ArrayList<>(((ArrayList<String>) list).subList(0, Math.min(size, list.size())));
         String algorithm = sortAlgorithm.toLowerCase();
 
-        //long start = System.currentTimeMillis();
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
+        // long start = System.nanoTime();
 
         if (algorithm.equals("selection")){
             SortingAlgorithms.selectionSortWords(newList);
@@ -257,19 +276,20 @@ public class SizeSorting {
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
 
-        //long end = System.currentTimeMillis();
-        long end = System.nanoTime();
+        long end = System.currentTimeMillis();
+        // long end = System.nanoTime();
 
-        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
+        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
     }
     
     private static void sortAndPrintTimeIntegerSlow(List<Integer> list, int size, String listType, String sortAlgorithm) {
         long start, end;
         LinkedList<Integer> newList = new LinkedList<>(((LinkedList<Integer>) list).subList(0, Math.min(size, list.size())));
-        //start = System.currentTimeMillis();
-        start = System.nanoTime();
+        start = System.currentTimeMillis();
+        // start = System.nanoTime();
         SortingAlgorithms.mergeSortSlow(newList);
-        end = System.nanoTime();
-        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
+        // end = System.nanoTime();
+        end = System.currentTimeMillis();
+        System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
     }
 }
