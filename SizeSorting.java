@@ -122,9 +122,10 @@ public class SizeSorting {
             sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
         else{
-            sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+            int newSize= 1000000;
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
             Collections.sort(numArrayList, Collections.reverseOrder());
-            sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
     }
 
@@ -136,9 +137,10 @@ public class SizeSorting {
             sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
         else{
-            sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+            int newSize= 1000000;
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
             Collections.sort(numLinkedList, Collections.reverseOrder());
-            sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
     }
 
@@ -151,9 +153,10 @@ public class SizeSorting {
             sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
         else{
-            sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+            int newSize= 100000;
+            sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
             Collections.sort(wordArrayList, Collections.reverseOrder());
-            sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+            sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
     }
 
@@ -221,7 +224,7 @@ public class SizeSorting {
 
             end = System.currentTimeMillis();
             // end = System.nanoTime();
-            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ns");
+            System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
 
         } else if (list instanceof LinkedList) {
             // Handle LinkedList
