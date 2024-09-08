@@ -1,15 +1,20 @@
 package Plot;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
 import java.util.Arrays;
 
 public class SingleLineGraph extends JPanel {
-    // Data for Words ArrayList
-    double[] elapsedTimes = {69, 179, 423, 629, 908, 1153, 1611, 1784, 2226, 2386}; // Elapsed times (ms)
-    double[] dataSizes = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1}; // Data sizes in millions
+    private double[] elapsedTimes;  // Elapsed times (ms) for each data set
+    private double[] dataSizes;     // Data sizes in millions
+    private int margin = 60;        // Margins for the graph
 
-    int margin = 60; // Margins for the graph
+    // Constructor to accept custom dataset
+    public SingleLineGraph(double[] dataSizes, double[] elapsedTimes) {
+        this.dataSizes = dataSizes;
+        this.elapsedTimes = elapsedTimes;
+    }
 
     @Override
     protected void paintComponent(Graphics grf) {
@@ -87,18 +92,31 @@ public class SingleLineGraph extends JPanel {
         return Arrays.stream(elapsedTimes).max().orElse(0);
     }
 
-    // Main method to run the graph
+    // Function to create a new JFrame for each graph window
+    public static void createWindow(String title, double[] dataSizes, double[] elapsedTimes) {
+        JFrame frame = new JFrame(title);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only this window on exit
+        frame.setSize(800, 600);  // Set frame size
+        frame.add(new SingleLineGraph(dataSizes, elapsedTimes));  // Add the graph to the frame
+        frame.setLocationRelativeTo(null);  // Center the frame
+        frame.setVisible(true);  // Make frame visible
+    }
+
+    // Main method to create separate windows for different datasets
     public static void main(String[] args) {
-        // Create an instance of JFrame
-        JFrame frame = new JFrame();
+        // First dataset (Sorting 100k Words)
+        double[] dataSizes = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1};  // Data sizes in millions
+        double[] elapsedTimes1 = {69, 179, 423, 629, 908, 1153, 1611, 1784, 2226, 2386}; // Elapsed times
 
-        // Add the graph panel to the frame
-        frame.add(new SingleLineGraph());
+        // Second dataset (Another dataset for demonstration)
+        double[] elapsedTimes2 = {80, 190, 450, 700, 1100}; // Change here
 
-        // Set frame properties
-        frame.setSize(800, 600); // Width and height of the frame
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close operation
-        frame.setVisible(true); // Make frame visible
+        //Comb Sort
+        double[] elapsedTimes3 = {69, 179, 423, 629, 908, 1153, 1611, 1784, 2226, 2386};
+
+        // Create multiple windows for different datasets
+        createWindow("Sorting 100k Words - Comb Sort", dataSizes, elapsedTimes1);  // First window
+        createWindow("Sample Dataset - Graph 2", dataSizes, elapsedTimes2);  // Second window
+        createWindow("Sorting 100k Words - Comb Sort", dataSizes, elapsedTimes3);
     }
 }

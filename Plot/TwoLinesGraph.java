@@ -1,16 +1,24 @@
 package Plot;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
 import java.util.Arrays;
 
 public class TwoLinesGraph extends JPanel {
-    // Data arrays for ArrayList and LinkedList
-    double[] arrayListTimes = {405, 1555, 3883, 6063, 9115, 11466, 14474, 17677, 20597, 21813, 25318};  // ArrayList times
-    double[] linkedListTimes = {1257, 3104, 8024, 15503, 22951, 26361, 34380, 41375, 46893, 49961, 56633}; // LinkedList times
-    int[] dataSizes = {1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}; // Data sizes in millions
+    // Arrays to hold data for ArrayList and LinkedList
+    private double[] arrayListTimes;
+    private double[] linkedListTimes;
+    private int[] dataSizes;
 
     int margin = 100; // Margins for the graph
+
+    // Constructor to pass custom datasets
+    public TwoLinesGraph(int[] dataSizes, double[] arrayListTimes, double[] linkedListTimes) {
+        this.dataSizes = dataSizes;
+        this.arrayListTimes = arrayListTimes;
+        this.linkedListTimes = linkedListTimes;
+    }
 
     @Override
     protected void paintComponent(Graphics grf) {
@@ -92,18 +100,30 @@ public class TwoLinesGraph extends JPanel {
         return Math.max(Arrays.stream(arrayListTimes).max().orElse(0), Arrays.stream(linkedListTimes).max().orElse(0));
     }
 
-    // Main method to run the graph
+    // Function to create a new JFrame for each graph window
+    public static void createWindow(String title, int[] dataSizes, double[] arrayListTimes, double[] linkedListTimes) {
+        JFrame frame = new JFrame(title);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only this window on exit
+        frame.setSize(800, 600);  // Set frame size
+        frame.add(new TwoLinesGraph(dataSizes, arrayListTimes, linkedListTimes));  // Add the graph to the frame
+        frame.setLocationRelativeTo(null);  // Center the frame
+        frame.setVisible(true);  // Make frame visible
+    }
+
+    // Main method to create multiple windows for different datasets
     public static void main(String[] args) {
-        // Create an instance of JFrame
-        JFrame frame = new JFrame();
+        // First dataset (Data Sizes and Elapsed Times)
+        int[] dataSizes1 = {1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20};  // Data sizes in millions
+        double[] arrayListTimes1 = {405, 1555, 3883, 6063, 9115, 11466, 14474, 17677, 20597, 21813, 25318}; // ArrayList times
+        double[] linkedListTimes1 = {1257, 3104, 8024, 15503, 22951, 26361, 34380, 41375, 46893, 49961, 56633}; // LinkedList times
 
-        // Add the graph panel to the frame
-        frame.add(new TwoLinesGraph());
+        // Second dataset (You can add more datasets here)
+        int[] dataSizes2 = {1, 2, 3, 4, 5};  // A smaller dataset
+        double[] arrayListTimes2 = {500, 1200, 2400, 3800, 5000}; // Sample ArrayList times for second dataset
+        double[] linkedListTimes2 = {1000, 2200, 5000, 7600, 10200}; // Sample LinkedList times for second dataset
 
-        // Set frame properties
-        frame.setSize(800, 600); // Width and height of the frame
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close operation
-        frame.setVisible(true); // Make frame visible
+        // Create multiple windows for different datasets
+        createWindow("Graph for Dataset 1", dataSizes1, arrayListTimes1, linkedListTimes1);  // First window
+        createWindow("Graph for Dataset 2", dataSizes2, arrayListTimes2, linkedListTimes2);  // Second window
     }
 }

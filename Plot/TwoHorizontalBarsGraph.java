@@ -1,22 +1,13 @@
 package Plot;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class TwoHorizontalBarsGraph extends JPanel {
-    // Data for the horizontal bar graph
-    String[] categories = {
-        "25% sorted (4 partition sorted)", 
-        "25% sorted (3 partition sorted)", 
-        "25% sorted (2 partition sorted)", 
-        "25% sorted (1 partition sorted)", 
-        "50% sorted", 
-        "75% sorted", 
-        "100% sorted", 
-        "Reverse-ordered sorted"
-    };
-
-    double[] arrayListTimes = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times
-    double[] linkedListTimes = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times
+    // Instance variables for custom datasets
+    private String[] categories;
+    private double[] arrayListTimes;
+    private double[] linkedListTimes;
 
     int leftMargin = 300; // Left margin for category labels
     int barHeight = 15; // Height of each bar
@@ -24,6 +15,13 @@ public class TwoHorizontalBarsGraph extends JPanel {
     int barSpacing = 5; // Spacing between ArrayList and LinkedList bars
     int topMargin = 50; // Top margin to reduce blank space
     int bottomMargin = 100; // Bottom margin for x-axis label
+
+    // Constructor to accept custom datasets
+    public TwoHorizontalBarsGraph(String[] categories, double[] arrayListTimes, double[] linkedListTimes) {
+        this.categories = categories;
+        this.arrayListTimes = arrayListTimes;
+        this.linkedListTimes = linkedListTimes;
+    }
 
     @Override
     protected void paintComponent(Graphics grf) {
@@ -120,13 +118,49 @@ public class TwoHorizontalBarsGraph extends JPanel {
         return max;
     }
 
-    // Main method to display the graph
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Top-Bottom Horizontal Bar Graph");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 800);  // Increase frame height to avoid cut-off
-        frame.add(new TwoHorizontalBarsGraph());
+    // Function to create a new window for each graph
+    public static void createWindow(String title, String[] categories, double[] arrayListTimes, double[] linkedListTimes) {
+        JFrame frame = new JFrame(title);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only the current window
+        frame.setSize(1200, 800); // Increase frame height to avoid cut-off
+        frame.add(new TwoHorizontalBarsGraph(categories, arrayListTimes, linkedListTimes));
         frame.setLocationRelativeTo(null); // Center the frame
-        frame.setVisible(true); // Make frame visible
+        frame.setVisible(true); // Make the frame visible
+    }
+
+    // Main method to create multiple windows for different datasets
+    public static void main(String[] args) {
+        // First dataset
+        String[] categories = {
+            "25% sorted (4 partition sorted)", 
+            "25% sorted (3 partition sorted)", 
+            "25% sorted (2 partition sorted)", 
+            "25% sorted (1 partition sorted)", 
+            "50% sorted", 
+            "75% sorted", 
+            "100% sorted", 
+            "Reverse-ordered sorted"
+        };
+
+        double[] arrayListTimes1 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times for first dataset
+        double[] linkedListTimes1 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times for first dataset
+
+        // Second dataset (example, you can add more datasets)
+        double[] arrayListTimes2 = {200, 400, 600};     // ArrayList times for second dataset
+        double[] linkedListTimes2 = {300, 500, 700};    // LinkedList times for second dataset
+
+        // Comb Sort
+        double[] arrayListTimes3 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times for first dataset
+        double[] linkedListTimes3 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times for first dataset
+
+        // Counting Sort
+        double[] arrayListTimes4 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times for first dataset
+        double[] linkedListTimes4 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times for first dataset
+
+        // Create windows for the datasets
+        createWindow("Graph for Dataset 1", categories, arrayListTimes1, linkedListTimes1); // First graph window
+        createWindow("Graph for Dataset 2", categories, arrayListTimes2, linkedListTimes2); // Second graph window
+        createWindow("Graph for Comb Sort", categories, arrayListTimes3, linkedListTimes3); // First graph window
+        createWindow("Graph for Dataset 2", categories, arrayListTimes4, linkedListTimes4); // Second graph window
     }
 }

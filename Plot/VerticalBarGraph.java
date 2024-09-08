@@ -1,15 +1,23 @@
 package Plot;
+
 import java.awt.*;
 import javax.swing.*;
 
 public class VerticalBarGraph extends JPanel {
-    // Data for the bar graph (duplicate and non-duplicate times in milliseconds)
-    String[] categories = {"Number ArrayList", "Number LinkedList", "Words ArrayList"};
-    int[] duplicateTimes = {6406, 12320, 81};       // Duplicate times
-    int[] nonDuplicateTimes = {9544, 15603, 118};   // Non-duplicate times
+    // Instance variables for custom datasets
+    private String[] categories;
+    private int[] duplicateTimes;
+    private int[] nonDuplicateTimes;
 
     int margin = 60; // Margins for the graph
     int barWidth = 50; // Width of the bars
+
+    // Constructor to accept custom datasets
+    public VerticalBarGraph(String[] categories, int[] duplicateTimes, int[] nonDuplicateTimes) {
+        this.categories = categories;
+        this.duplicateTimes = duplicateTimes;
+        this.nonDuplicateTimes = nonDuplicateTimes;
+    }
 
     @Override
     protected void paintComponent(Graphics grf) {
@@ -81,11 +89,11 @@ public class VerticalBarGraph extends JPanel {
         graph.setPaint(Color.BLACK);
         graph.drawRect(legendX, legendY, 130, 60);
 
-        // Draw blue box for "duplicate"
+        // Draw gray box for "duplicate"
         graph.setPaint(Color.GRAY);
         graph.fillRect(legendX + 10, legendY + 10, 15, 15);
 
-        // Draw red box for "non-duplicate"
+        // Draw orange box for "non-duplicate"
         graph.setPaint(Color.ORANGE);
         graph.fillRect(legendX + 10, legendY + 35, 15, 15);
 
@@ -108,13 +116,29 @@ public class VerticalBarGraph extends JPanel {
         return max;
     }
 
-    // Main method to display the graph
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Bar Graph with Legend");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // Function to create a new window for each graph
+    public static void createWindow(String title, String[] categories, int[] duplicateTimes, int[] nonDuplicateTimes) {
+        JFrame frame = new JFrame(title);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only the current window
         frame.setSize(600, 400);
-        frame.add(new VerticalBarGraph());
+        frame.add(new VerticalBarGraph(categories, duplicateTimes, nonDuplicateTimes));
         frame.setLocationRelativeTo(null); // Center the frame
-        frame.setVisible(true); // Make frame visible
+        frame.setVisible(true); // Make the frame visible
+    }
+
+    // Main method to create multiple windows for different datasets
+    public static void main(String[] args) {
+        // First dataset
+        String[] categories = {"Number ArrayList", "Number LinkedList", "Words ArrayList"};
+        int[] duplicateTimes1 = {6406, 12320, 81};       // Duplicate times for first dataset
+        int[] nonDuplicateTimes1 = {9544, 15603, 118};   // Non-duplicate times for first dataset
+
+        // Second dataset (example, you can add more datasets)
+        int[] duplicateTimes2 = {1000, 2000, 3000};     // Duplicate times for second dataset
+        int[] nonDuplicateTimes2 = {1200, 2500, 3200};  // Non-duplicate times for second dataset
+
+        // Create windows for the datasets
+        createWindow("Graph for Dataset 1", categories, duplicateTimes1, nonDuplicateTimes1); // First graph window
+        createWindow("Graph for Dataset 2", categories, duplicateTimes2, nonDuplicateTimes2); // Second graph window
     }
 }

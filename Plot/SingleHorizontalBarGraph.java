@@ -4,25 +4,19 @@ import java.awt.*;
 import javax.swing.*;
 
 public class SingleHorizontalBarGraph extends JPanel {
-    // Data for the horizontal bar graph
-    String[] categories = {
-        "25% sorted (4 partition sorted)", 
-        "25% sorted (3 partition sorted)", 
-        "25% sorted (2 partition sorted)", 
-        "25% sorted (1 partition sorted)", 
-        "50% sorted", 
-        "75% sorted", 
-        "100% sorted", 
-        "Reverse-ordered sorted"
-    };
+    private String[] categories;   // Categories for the graph
+    private double[] elapsedTimes; // Data (elapsed times) for each category
+    private int leftMargin = 350;  // Left margin for category labels
+    private int barHeight = 15;    // Height of each bar
+    private int categorySpacing = 30; // Spacing between categories
+    private int topMargin = 50;    // Top margin to reduce blank space
+    private int bottomMargin = 100; // Bottom margin for x-axis label
 
-    double[] elapsedTimes = {49, 68, 71.16667, 80.5, 79.5, 76.5, 42, 114};  // Elapsed times for each case
-
-    int leftMargin = 350; // Increase left margin for category labels to prevent overlap
-    int barHeight = 15; // Height of each bar
-    int categorySpacing = 30; // Spacing between categories
-    int topMargin = 50; // Top margin to reduce blank space
-    int bottomMargin = 100; // Bottom margin for x-axis label
+    // Constructor to accept custom dataset
+    public SingleHorizontalBarGraph(String[] categories, double[] elapsedTimes) {
+        this.categories = categories;
+        this.elapsedTimes = elapsedTimes;
+    }
 
     @Override
     protected void paintComponent(Graphics grf) {
@@ -79,13 +73,38 @@ public class SingleHorizontalBarGraph extends JPanel {
         return max;
     }
 
-    // Main method to display the graph
+    // Function to create a new JFrame for each graph window
+    public static void createWindow(String title, String[] categories, double[] elapsedTimes) {
+        JFrame frame = new JFrame(title);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only this window on exit
+        frame.setSize(1000, 600);  // Set frame size
+        frame.add(new SingleHorizontalBarGraph(categories, elapsedTimes));  // Add the graph to the frame
+        frame.setLocationRelativeTo(null);  // Center the frame
+        frame.setVisible(true);  // Make frame visible
+    }
+
+    // Main method to create separate windows for different datasets
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Horizontal Bar Graph for Sorting 100k Words");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 600);  // Set frame size, increased for better layout
-        frame.add(new SingleHorizontalBarGraph());
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setVisible(true); // Make frame visible
+        // First dataset (Sorting 1M Numbers)
+        String[] categories = {
+            "25% sorted (4 partition sorted)",
+            "25% sorted (3 partition sorted)",
+            "25% sorted (2 partition sorted)",
+            "25% sorted (1 partition sorted)",
+            "50% sorted",
+            "75% sorted",
+            "100% sorted",
+            "Reverse-ordered sorted"
+        };
+        double[] elapsedTimes1 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};
+
+        // Second dataset 
+        double[] elapsedTimes2 = {114, 42, 76.5, 79.5, 80.5, 71.16667, 68, 49};
+
+        //
+
+        // Create multiple windows for different datasets
+        createWindow("Sorting 1M Numbers", categories, elapsedTimes1);  // First window
+        createWindow("Sorting 100k Words", categories, elapsedTimes2);  // Second window
     }
 }
