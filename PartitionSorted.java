@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PartitionSorted {
     public static void numArray1PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -45,7 +45,7 @@ public class PartitionSorted {
     }
 
     public static void numArray2PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -91,7 +91,7 @@ public class PartitionSorted {
     }
 
     public static void numArray3PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
     
@@ -138,7 +138,7 @@ public class PartitionSorted {
     }
 
     public static void numArray4PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -178,7 +178,7 @@ public class PartitionSorted {
 
     public static void numLinked1PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
 
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -218,7 +218,7 @@ public class PartitionSorted {
     }
 
     public static void numLinked2PartitionSorted(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -265,7 +265,7 @@ public class PartitionSorted {
     }
 
     public static void numLinked3PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
     
@@ -313,7 +313,7 @@ public class PartitionSorted {
     }
 
     public static void numLinked4PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -353,7 +353,7 @@ public class PartitionSorted {
     }
 
     public static void wordArray1PartitionSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -392,7 +392,7 @@ public class PartitionSorted {
     }
 
     public static void wordArray2PartitionSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -438,7 +438,7 @@ public class PartitionSorted {
     }
 
     public static void wordArray3PartitionSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
     
@@ -485,7 +485,7 @@ public class PartitionSorted {
     }
 
     public static void wordArray4PartitionSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -524,7 +524,7 @@ public class PartitionSorted {
     }
 
     public static void numArrayHalfSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 2;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -572,7 +572,7 @@ public class PartitionSorted {
     }
     
     public static void numArray75PercentSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = (int) (totalSize * 0.75);
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -620,7 +620,7 @@ public class PartitionSorted {
     }
 
     public static void numArray100PercentSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         String algorithm = sortAlgorithm.toLowerCase();
 
         ArrayList<Integer> fullList = new ArrayList<>(numArrayList.subList(0, totalSize));
@@ -643,7 +643,7 @@ public class PartitionSorted {
     }
 
     public static void numLinkedHalfSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 2;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -693,7 +693,7 @@ public class PartitionSorted {
     }
     
     public static void numLinked75PercentSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = (int) (totalSize * 0.75);
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -743,7 +743,7 @@ public class PartitionSorted {
     }
 
     public static void numLinked100PercentSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         String algorithm = sortAlgorithm.toLowerCase();
 
         ArrayList<Integer> fullList = new ArrayList<>(numLinkedList.subList(0, totalSize));
@@ -767,7 +767,7 @@ public class PartitionSorted {
     }
 
     public static void wordArrayHalfSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = totalSize / 2;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -815,7 +815,7 @@ public class PartitionSorted {
     }
     
     public static void wordArray75PercentSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         int partitionSize = (int) (totalSize * 0.75);
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -863,7 +863,7 @@ public class PartitionSorted {
     }
 
     public static void wordArray100PercentSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
-        int totalSize = 100000;
+        int totalSize = 1000000;
         String algorithm = sortAlgorithm.toLowerCase();
 
         ArrayList<String> fullList = new ArrayList<>(wordArrayList.subList(0, totalSize));
