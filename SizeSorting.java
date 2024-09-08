@@ -133,13 +133,15 @@ public class SizeSorting {
     }
 
     public static void sortReverseWord(ArrayList<String> wordArrayList, String sortAlgorithm){
-        Collections.sort(wordArrayList, Collections.reverseOrder());
         if (sortAlgorithm.equals("selection") ){
             int newSize= 100000;
+            Collections.sort(wordArrayList, Collections.reverseOrder());
             sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
         else{
-            sortAndPrintTimeString(wordArrayList, wordArrayList.size(), "arraylist string", sortAlgorithm);
+            int newSize= 100000;
+            Collections.sort(wordArrayList, Collections.reverseOrder());
+            sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
     }
 
@@ -188,7 +190,6 @@ public class SizeSorting {
         if (list instanceof ArrayList) {
             // Handle ArrayList
             newList = new ArrayList<>(((ArrayList<Integer>) list).subList(0, Math.min(size, list.size())));
-            //start = System.currentTimeMillis();
             start = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
@@ -202,8 +203,7 @@ public class SizeSorting {
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
-
-            //end = System.currentTimeMillis();
+            
             end = System.currentTimeMillis();
             System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
 
@@ -212,7 +212,6 @@ public class SizeSorting {
             newList = new LinkedList<>(((LinkedList<Integer>) list).subList(0, Math.min(size, list.size())));
             Node nodeList = SortingAlgorithms.assignNode(newList);
             
-            //start = System.currentTimeMillis();
             start = System.currentTimeMillis();
 
             if (algorithm.equals("selection")){
@@ -227,7 +226,6 @@ public class SizeSorting {
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
-            //end = System.currentTimeMillis();
             end = System.currentTimeMillis();
             System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
         } else {
@@ -241,9 +239,7 @@ public class SizeSorting {
         ArrayList<String> newList = new ArrayList<>(((ArrayList<String>) list).subList(0, Math.min(size, list.size())));
         String algorithm = sortAlgorithm.toLowerCase();
 
-        //long start = System.currentTimeMillis();
         long start = System.currentTimeMillis();
-
         if (algorithm.equals("selection")){
             SortingAlgorithms.selectionSortWords(newList);
         }else if (algorithm.equals("merge")){
@@ -255,8 +251,6 @@ public class SizeSorting {
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
-
-        //long end = System.currentTimeMillis();
         long end = System.currentTimeMillis();
 
         System.out.println("Elapsed Time " + size + " " + listType + ": " + (end - start) + " ms");
@@ -265,7 +259,6 @@ public class SizeSorting {
     private static void sortAndPrintTimeIntegerSlow(List<Integer> list, int size, String listType, String sortAlgorithm) {
         long start, end;
         LinkedList<Integer> newList = new LinkedList<>(((LinkedList<Integer>) list).subList(0, Math.min(size, list.size())));
-        //start = System.currentTimeMillis();
         start = System.currentTimeMillis();
         SortingAlgorithms.mergeSortSlow(newList);
         end = System.currentTimeMillis();
