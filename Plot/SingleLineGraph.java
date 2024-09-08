@@ -1,15 +1,16 @@
+package Plot;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
+import java.util.Arrays;
 
-public class Plot extends JPanel {
-    // Modify here
-    double[] elapsedTimes = {1.5, 3.0, 5.5, 10.0, 20.5};  // elapsed times
-    int[] dataSizes = {10000, 50000, 100000, 500000, 1000000}; // data sizes
+public class SingleLineGraph extends JPanel {
+    // Data for Words ArrayList
+    double[] elapsedTimes = {69, 179, 423, 629, 908, 1153, 1611, 1784, 2226, 2386}; // Elapsed times (ms)
+    double[] dataSizes = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1}; // Data sizes in millions
 
     int margin = 60; // Margins for the graph
 
-    // Paint the graph
     @Override
     protected void paintComponent(Graphics grf) {
         super.paintComponent(grf);
@@ -30,30 +31,15 @@ public class Plot extends JPanel {
         double xScale = (double) (width - 2 * margin) / (dataSizes.length - 1);
         double yScale = (double) (height - 2 * margin) / getMaxElapsedTime();
 
-        // Set color for the plot points
+        // Plot the data points and lines
         graph.setPaint(Color.BLUE);
-
-        // Plot each point
-        for (int i = 0; i < elapsedTimes.length; i++) {
-            double x = margin + i * xScale;
-            double y = height - margin - yScale * elapsedTimes[i];
-
-            // Draw the point
-            graph.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
-
-            // Draw a line connecting each point
-            if (i > 0) {
-                double xPrev = margin + (i - 1) * xScale;
-                double yPrev = height - margin - yScale * elapsedTimes[i - 1];
-                graph.draw(new Line2D.Double(xPrev, yPrev, x, y));
-            }
-        }
+        plotData(graph, elapsedTimes, dataSizes, xScale, yScale, height);
 
         // Set font for the axis titles
         graph.setFont(new Font("Arial", Font.BOLD, 14));
 
         // Draw x-axis title
-        graph.drawString("Data Sizes", (width - margin) / 2, height - margin / 4);
+        graph.drawString("Size (Million)", (width - margin) / 2, height - margin / 4);
 
         // Draw y-axis title (rotated 90 degrees)
         graph.rotate(-Math.PI / 2);
@@ -71,22 +57,34 @@ public class Plot extends JPanel {
         }
 
         // Label y-axis (Elapsed Times)
-        for (int i = 0; i <= getMaxElapsedTime(); i += 5) { // Adjust step size as needed
+        for (int i = 0; i <= getMaxElapsedTime(); i += 500) { // Adjust step size for elapsed time labels
             int y = height - margin - (int) (i * yScale);
             String label = String.valueOf(i);
-            graph.drawString(label, margin - 40, y + 5);
+            graph.drawString(label, margin - 50, y + 5);
+        }
+    }
+
+    // Function to plot the data points and lines
+    private void plotData(Graphics2D graph, double[] times, double[] dataSizes, double xScale, double yScale, int height) {
+        for (int i = 0; i < times.length; i++) {
+            double x = margin + i * xScale;
+            double y = height - margin - yScale * times[i];
+
+            // Draw the point
+            graph.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
+
+            // Draw a line connecting each point
+            if (i > 0) {
+                double xPrev = margin + (i - 1) * xScale;
+                double yPrev = height - margin - yScale * times[i - 1];
+                graph.draw(new Line2D.Double(xPrev, yPrev, x, y));
+            }
         }
     }
 
     // Find the maximum elapsed time for scaling the y-axis
     private double getMaxElapsedTime() {
-        double max = -Double.MAX_VALUE;
-        for (double elapsedTime : elapsedTimes) {
-            if (elapsedTime > max) {
-                max = elapsedTime;
-            }
-        }
-        return max;
+        return Arrays.stream(elapsedTimes).max().orElse(0);
     }
 
     // Main method to run the graph
@@ -95,10 +93,10 @@ public class Plot extends JPanel {
         JFrame frame = new JFrame();
 
         // Add the graph panel to the frame
-        frame.add(new Plot());
+        frame.add(new SingleLineGraph());
 
         // Set frame properties
-        frame.setSize(600, 400); // Width and height of the frame
+        frame.setSize(800, 600); // Width and height of the frame
         frame.setLocationRelativeTo(null); // Center the frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close operation
         frame.setVisible(true); // Make frame visible
