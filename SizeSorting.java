@@ -24,7 +24,6 @@ public class SizeSorting {
     }
 
     public static void sizeSortingLinked(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
-        sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
         if (sortAlgorithm.equals("selection")){
             for (int size : smallIntegerSizes) {
                 sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
