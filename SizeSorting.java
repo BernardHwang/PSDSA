@@ -28,6 +28,12 @@ public class SizeSorting {
             for (int size : smallIntegerSizes) {
                 sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
             }
+        } else if(sortAlgorithm.equals("merge")){
+            for (int size : bigIntegerSizes) {
+                sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
+            }
+            //To prove why use singly linked list(predefine node) instead of java linked list
+            sortAndPrintTimeIntegerSlow(numLinkedList, 100000, "linkedlist (build in) integer", sortAlgorithm);
         } else {
             for (int size : bigIntegerSizes) {
                 sortAndPrintTimeInteger(numLinkedList, size, "linkedlist integer", sortAlgorithm);
