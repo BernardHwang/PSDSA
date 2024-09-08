@@ -120,10 +120,11 @@ public class SingleLineGraph extends JPanel {
     // Main method to create separate windows for different datasets
     public static void main(String[] args) {
         // Selection sort
-        int[] dataSizes = {100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000};  // Data sizes in integers (millions)
+        int[] dataSizes1 = {10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000};
         double[] elapsedTimes1 = {161, 752, 1786, 3253, 5300, 7634, 10443, 13940, 17473, 22107}; // Elapsed times
 
         // Merge sort
+        int[] dataSizes2 = {100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000};
         double[] elapsedTimes2 = {24, 50, 111, 154, 186, 233, 285, 349, 378, 415}; 
 
         // Comb Sort
@@ -133,9 +134,9 @@ public class SingleLineGraph extends JPanel {
         double[] elapsedTimes4 = {54, 106, 296, 560, 754, 939, 1148, 1415, 1483, 1629};
 
         // Create multiple windows for different datasets
-        createWindow("Sorting 100k Words - Selection Sort", dataSizes, elapsedTimes1);  // First window
-        createWindow("Sample Dataset - Merge Sort", dataSizes, elapsedTimes2);  // Second window
-        createWindow("Sorting 100k Words - Comb Sort", dataSizes, elapsedTimes3);
-        createWindow("Sorting 100k Words - Counting Sort", dataSizes, elapsedTimes4);
+        createWindow("Sorting 100k Words - Selection Sort", dataSizes1, elapsedTimes1);  // First window
+        createWindow("Sample Dataset - Merge Sort", dataSizes2, elapsedTimes2);  // Second window
+        createWindow("Sorting 100k Words - Comb Sort", dataSizes2, elapsedTimes3);
+        createWindow("Sorting 100k Words - Counting Sort", dataSizes2, elapsedTimes4);
     }
 }
