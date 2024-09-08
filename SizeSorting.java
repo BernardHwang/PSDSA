@@ -117,6 +117,7 @@ public class SizeSorting {
             sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
         else{
+            int newSize= 1000000
             sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
         }
     }
@@ -128,19 +129,19 @@ public class SizeSorting {
             sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
         else{
-            sortAndPrintTimeInteger(numLinkedList, numLinkedList.size(), "linkedlist integer", sortAlgorithm);
+            int newSize= 1000000;
+            sortAndPrintTimeInteger(numLinkedList, newSize, "linkedlist integer", sortAlgorithm);
         }
     }
 
     public static void sortReverseWord(ArrayList<String> wordArrayList, String sortAlgorithm){
+        Collections.sort(wordArrayList, Collections.reverseOrder());
         if (sortAlgorithm.equals("selection") ){
             int newSize= 100000;
-            Collections.sort(wordArrayList, Collections.reverseOrder());
             sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
         else{
             int newSize= 100000;
-            Collections.sort(wordArrayList, Collections.reverseOrder());
             sortAndPrintTimeString(wordArrayList, newSize, "arraylist string", sortAlgorithm);
         }
     }
