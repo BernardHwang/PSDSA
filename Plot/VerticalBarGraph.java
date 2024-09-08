@@ -145,11 +145,17 @@ public class VerticalBarGraph extends JPanel {
         int[] duplicateTimes4= {570, 464, 32};       // Duplicate times
         int[] nonDuplicateTimes4 = {742, 494, 57};    // Non-duplicate times
 
+        // Comparison across 4 algorithms
+        String[] algorithms = {"Selection Sort", "Merge Sort", "Comb Sort", "Counting Sort"};
+        int[] arrayListData = {1381530, 206, 405, 312};   // ArrayList times for Selection, Merge, Comb, Counting sort
+        int[] linkedListData = {759447, 287, 1257, 183};   // LinkedList times for Selection, Merge, Comb, Counting sort
+
 
         // Create windows for the datasets
         createWindow("Graph for Selection Sort", categories, duplicateTimes1, nonDuplicateTimes1); // First graph window
         createWindow("Graph for Merge Sort", categories, duplicateTimes2, nonDuplicateTimes2); // Second graph window
         createWindow("Graph for Comb Sort", categories, duplicateTimes3, nonDuplicateTimes3); // First graph window
         createWindow("Graph for Counting Sort", categories, duplicateTimes4, nonDuplicateTimes4); 
+        createWindow("Graph for Comparison", algorithms, arrayListData, linkedListData); 
     }
 }
