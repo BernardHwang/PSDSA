@@ -142,25 +142,26 @@ public class TwoHorizontalBarsGraph extends JPanel {
             "Reverse-ordered sorted"
         };
 
-        double[] arrayListTimes1 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times for first dataset
-        double[] linkedListTimes1 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times for first dataset
+        // Selection Sort 
+        double[] arrayListTimes1 = {6576, 6689, 6625.333333, 7318, 6727, 7303, 7612, 22524};  // Reversed ArrayList times
+        double[] linkedListTimes1 = {6597, 6679.5, 6800, 6910.5, 6849, 7255, 7159, 7046};  // Reversed LinkedList times
 
-        // Second dataset (example, you can add more datasets)
-        double[] arrayListTimes2 = {200, 400, 600};     // ArrayList times for second dataset
-        double[] linkedListTimes2 = {300, 500, 700};    // LinkedList times for second dataset
+        // Merge Sort
+        double[] arrayListTimes2 = {124, 139.25, 157.1666667, 189.5, 150.5, 136.5, 117, 289};  // Reversed ArrayList times
+        double[] linkedListTimes2 = {66, 78.75, 110.5, 138.75, 112, 76, 42, 246};  // Reversed LinkedList times
 
         // Comb Sort
-        double[] arrayListTimes3 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times for first dataset
-        double[] linkedListTimes3 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times for first dataset
+        double[] arrayListTimes3 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times 
+        double[] linkedListTimes3 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times 
 
         // Counting Sort
-        double[] arrayListTimes4 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times for first dataset
-        double[] linkedListTimes4 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times for first dataset
+        double[] arrayListTimes4 = {60, 61.5, 63.83333333, 69.25, 99.5, 90, 64, 219};  // ArrayList times
+        double[] linkedListTimes4 = {43, 55.5, 58.33333333, 68.5, 140.5, 127, 107, 207}; 
 
         // Create windows for the datasets
-        createWindow("Graph for Dataset 1", categories, arrayListTimes1, linkedListTimes1); // First graph window
-        createWindow("Graph for Dataset 2", categories, arrayListTimes2, linkedListTimes2); // Second graph window
-        createWindow("Graph for Comb Sort", categories, arrayListTimes3, linkedListTimes3); // First graph window
-        createWindow("Graph for Dataset 2", categories, arrayListTimes4, linkedListTimes4); // Second graph window
+        createWindow("Graph for Selection Sort", categories, arrayListTimes1, linkedListTimes1);
+        createWindow("Graph for Merge Sort", categories, arrayListTimes2, linkedListTimes2); 
+        createWindow("Graph for Comb Sort", categories, arrayListTimes3, linkedListTimes3); 
+        createWindow("Graph for Counting Sort", categories, arrayListTimes4, linkedListTimes4); 
     }
 }
