@@ -471,7 +471,7 @@ public class Main {
                                         case 1:
                                             System.out.println("\nSorting with different Size (1M - 100k)");
                                             System.out.println("_____________________________________________________");
-                                            SizeSorting.sizeSortingWord(wordArrayList, numFile);
+                                            SizeSorting.sizeSortingWord(wordArrayList, "merge");
                                             break;
                                         case 2:
                                             System.out.println("\nSorting with Non-duplicates and Duplicates");
