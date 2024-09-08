@@ -358,12 +358,12 @@ public class Main {
                                             PartitionSorted.numArrayHalfSorted(numArrayList, "merge");
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray75PercentSorted(numArrayList, "merge");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray100PercentSorted(numArrayList, "merge");
                                             break;
@@ -434,12 +434,12 @@ public class Main {
                                             PartitionSorted.numLinkedHalfSorted(numLinkedList, "merge");
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked75PercentSorted(numLinkedList, "merge");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked100PercentSorted(numLinkedList, "merge");
                                             break;
@@ -511,12 +511,12 @@ public class Main {
                                             
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.wordArray75PercentSorted(wordArrayList, "merge");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.wordArray100PercentSorted(wordArrayList, "merge");
                                             break;
@@ -606,12 +606,12 @@ public class Main {
                                             PartitionSorted.numArrayHalfSorted(numArrayList, "comb");
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray75PercentSorted(numArrayList, "comb");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray100PercentSorted(numArrayList, "comb");
                                             break;
@@ -682,12 +682,12 @@ public class Main {
                                             PartitionSorted.numLinkedHalfSorted(numLinkedList, "comb");
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked75PercentSorted(numLinkedList, "comb");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked100PercentSorted(numLinkedList, "comb");
                                             break;
@@ -759,12 +759,12 @@ public class Main {
                                             
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.wordArray75PercentSorted(wordArrayList, "comb");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.wordArray100PercentSorted(wordArrayList, "comb");
                                             break;
@@ -855,12 +855,12 @@ public class Main {
                                             PartitionSorted.numArrayHalfSorted(numArrayList, "counting");
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray75PercentSorted(numArrayList, "counting");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numArray100PercentSorted(numArrayList, "counting");
                                             break;
@@ -937,12 +937,12 @@ public class Main {
                                             PartitionSorted.numLinkedHalfSorted(numLinkedList, "counting");
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked75PercentSorted(numLinkedList, "counting");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.numLinked100PercentSorted(numLinkedList, "counting");
                                             break;
@@ -1019,12 +1019,12 @@ public class Main {
                                             
                                             break;
                                         case 9:
-                                            System.out.println("** Sorting with 75% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 75% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.wordArray75PercentSorted(wordArrayList, "counting");
                                             break;
                                         case 10:
-                                            System.out.println("** Sorting with 100% Partition Sorted **\n");
+                                            System.out.println("** Sorting with 100% Sorted **\n");
                                             System.out.println("_____________________________________________________");
                                             PartitionSorted.wordArray100PercentSorted(wordArrayList, "counting");
                                             break;
