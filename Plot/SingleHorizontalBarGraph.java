@@ -96,15 +96,22 @@ public class SingleHorizontalBarGraph extends JPanel {
             "100% sorted",
             "Reverse-ordered sorted"
         };
-        double[] elapsedTimes1 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};
+        // Selection Sort
+        double[] elapsedTimes1 = {52026, 57761.75, 73724.33333, 81862.75, 77600, 66765.5, 45770, 852800}; 
 
-        // Second dataset 
-        double[] elapsedTimes2 = {114, 42, 76.5, 79.5, 80.5, 71.16667, 68, 49};
+        // Merge Sort
+        double[] elapsedTimes2 = {16, 18.75, 21.66666667, 24.25, 21.5, 16.5, 13, 31}; 
 
-        //
+        // Comb Sort
+        double[] elapsedTimes3 = {49, 68, 71.16667, 80.5, 79.5, 76.5, 42, 114}; 
+
+        //Counting Sort
+        double[] elapsedTimes4 = {33, 33.25, 34, 35.75, 54, 57, 33, 80};  // Elapsed times for the new dataset
 
         // Create multiple windows for different datasets
-        createWindow("Sorting 1M Numbers", categories, elapsedTimes1);  // First window
-        createWindow("Sorting 100k Words", categories, elapsedTimes2);  // Second window
+        createWindow("Sorting Selection Sort", categories, elapsedTimes1);
+        createWindow("Sorting Merge Sort", categories, elapsedTimes2);
+        createWindow("Sorting Comb Sort", categories, elapsedTimes3);
+        createWindow("Sorting Counting Sort", categories, elapsedTimes4);
     }
 }

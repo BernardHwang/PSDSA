@@ -7,12 +7,13 @@ import java.util.Arrays;
 
 public class SingleLineGraph extends JPanel {
     private double[] elapsedTimes;  // Elapsed times (ms) for each data set
-    private double[] dataSizes;     // Data sizes in millions
-    private int margin = 60;        // Margins for the graph
+    private int[] dataSizes;        // Data sizes in millions
+    private int margin = 50;        // Reduced margins for the graph
+    private int yAxisLabelOffset = 20; // Move the y-axis label closer to the graph
 
     // Constructor to accept custom dataset
-    public SingleLineGraph(double[] dataSizes, double[] elapsedTimes) {
-        this.dataSizes = dataSizes;
+    public SingleLineGraph(int[] dataSizes2, double[] elapsedTimes) {
+        this.dataSizes = dataSizes2;
         this.elapsedTimes = elapsedTimes;
     }
 
@@ -44,11 +45,11 @@ public class SingleLineGraph extends JPanel {
         graph.setFont(new Font("Arial", Font.BOLD, 14));
 
         // Draw x-axis title
-        graph.drawString("Size (Million)", (width - margin) / 2, height - margin / 4);
+        graph.drawString("Size (Million)", (width - margin) / 2, height - margin / 6); // Moved closer
 
-        // Draw y-axis title (rotated 90 degrees)
+        // Draw y-axis title (rotated 90 degrees), move it closer using `yAxisLabelOffset`
         graph.rotate(-Math.PI / 2);
-        graph.drawString("Elapsed Time (ms)", -height / 2, margin / 3);
+        graph.drawString("Elapsed Time (ms)", -height / 2, margin / 4);  // Reduced the offset to move it closer
         graph.rotate(Math.PI / 2);  // Rotate back
 
         // Set font for the axis labels
@@ -61,16 +62,19 @@ public class SingleLineGraph extends JPanel {
             graph.drawString(label, x - 10, height - margin + 20);
         }
 
-        // Label y-axis (Elapsed Times)
-        for (int i = 0; i <= getMaxElapsedTime(); i += 500) { // Adjust step size for elapsed time labels
+        // Label y-axis (Elapsed Times) with dynamic step size
+        double maxElapsedTime = getMaxElapsedTime();
+        double yStep = calculateYStep(maxElapsedTime); // Use a dynamic step size based on data range
+
+        for (double i = 0; i <= maxElapsedTime; i += yStep) { // Adjust step size for elapsed time labels
             int y = height - margin - (int) (i * yScale);
-            String label = String.valueOf(i);
-            graph.drawString(label, margin - 50, y + 5);
+            String label = String.format("%.0f", i); // Format to remove decimals
+            graph.drawString(label, margin - 30, y + 5);  // Moved y-axis labels closer by adjusting `-30`
         }
     }
 
     // Function to plot the data points and lines
-    private void plotData(Graphics2D graph, double[] times, double[] dataSizes, double xScale, double yScale, int height) {
+    private void plotData(Graphics2D graph, double[] times, int[] dataSizes2, double xScale, double yScale, int height) {
         for (int i = 0; i < times.length; i++) {
             double x = margin + i * xScale;
             double y = height - margin - yScale * times[i];
@@ -92,31 +96,46 @@ public class SingleLineGraph extends JPanel {
         return Arrays.stream(elapsedTimes).max().orElse(0);
     }
 
+    // Calculate dynamic y-axis step size based on max value
+    private double calculateYStep(double maxElapsedTime) {
+        double[] steps = {10, 50, 100, 500, 1000, 5000, 10000, 50000};
+        for (double step : steps) {
+            if (maxElapsedTime / step <= 10) {
+                return step;
+            }
+        }
+        return 10000; // Fallback step size if the maxElapsedTime is too large
+    }
+
     // Function to create a new JFrame for each graph window
-    public static void createWindow(String title, double[] dataSizes, double[] elapsedTimes) {
+    public static void createWindow(String title, int[] dataSizes2, double[] elapsedTimes) {
         JFrame frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only this window on exit
         frame.setSize(800, 600);  // Set frame size
-        frame.add(new SingleLineGraph(dataSizes, elapsedTimes));  // Add the graph to the frame
+        frame.add(new SingleLineGraph(dataSizes2, elapsedTimes));  // Add the graph to the frame
         frame.setLocationRelativeTo(null);  // Center the frame
         frame.setVisible(true);  // Make frame visible
     }
 
     // Main method to create separate windows for different datasets
     public static void main(String[] args) {
-        // First dataset (Sorting 100k Words)
-        double[] dataSizes = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1};  // Data sizes in millions
-        double[] elapsedTimes1 = {69, 179, 423, 629, 908, 1153, 1611, 1784, 2226, 2386}; // Elapsed times
+        // Selection sort
+        int[] dataSizes = {100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000};  // Data sizes in integers (millions)
+        double[] elapsedTimes1 = {161, 752, 1786, 3253, 5300, 7634, 10443, 13940, 17473, 22107}; // Elapsed times
 
-        // Second dataset (Another dataset for demonstration)
-        double[] elapsedTimes2 = {80, 190, 450, 700, 1100}; // Change here
+        // Merge sort
+        double[] elapsedTimes2 = {24, 50, 111, 154, 186, 233, 285, 349, 378, 415}; 
 
-        //Comb Sort
+        // Comb Sort
         double[] elapsedTimes3 = {69, 179, 423, 629, 908, 1153, 1611, 1784, 2226, 2386};
 
+        // Counting Sort
+        double[] elapsedTimes4 = {54, 106, 296, 560, 754, 939, 1148, 1415, 1483, 1629};
+
         // Create multiple windows for different datasets
-        createWindow("Sorting 100k Words - Comb Sort", dataSizes, elapsedTimes1);  // First window
-        createWindow("Sample Dataset - Graph 2", dataSizes, elapsedTimes2);  // Second window
+        createWindow("Sorting 100k Words - Selection Sort", dataSizes, elapsedTimes1);  // First window
+        createWindow("Sample Dataset - Merge Sort", dataSizes, elapsedTimes2);  // Second window
         createWindow("Sorting 100k Words - Comb Sort", dataSizes, elapsedTimes3);
+        createWindow("Sorting 100k Words - Counting Sort", dataSizes, elapsedTimes4);
     }
 }

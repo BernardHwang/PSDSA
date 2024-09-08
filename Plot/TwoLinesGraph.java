@@ -65,16 +65,21 @@ public class TwoLinesGraph extends JPanel {
         // Label x-axis (Data Sizes)
         for (int i = 0; i < dataSizes.length; i++) {
             int x = margin + (int) (i * xScale);
-            String label = String.valueOf(dataSizes[i] * 1000000);  // Converting million to actual number
+            String label = String.valueOf(dataSizes[i]);  // Converting million to actual number
             graph.drawString(label, x - 10, height - margin + 20);
         }
 
-        // Label y-axis (Elapsed Times)
-        for (int i = 0; i <= getMaxElapsedTime(); i += 10000) { // Adjust step size for elapsed time labels
+        // Label y-axis (Elapsed Times) with dynamic step size
+        double maxElapsedTime = getMaxElapsedTime();
+        int yStep = (int) (maxElapsedTime / 10); // Dynamic step size (adjust as needed)
+        
+        for (int i = 0; i <= maxElapsedTime; i += yStep) { // Adjust step size for elapsed time labels
             int y = height - margin - (int) (i * yScale);
             String label = String.valueOf(i);
             graph.drawString(label, margin - 50, y + 5);
         }
+
+        drawLegend(graph, width, height);
     }
 
     // Function to plot the data points and lines
@@ -95,35 +100,69 @@ public class TwoLinesGraph extends JPanel {
         }
     }
 
+    // Draw the legend with lines instead of boxes
+    private void drawLegend(Graphics2D graph, int width, int height) {
+        int legendX = width - 150;  // Position for legend
+        int legendY = 50;
+
+        // Draw line for "ArrayList" (blue)
+        graph.setPaint(Color.BLUE);
+        graph.drawLine(legendX + 10, legendY + 10, legendX + 40, legendY + 10);  // Draw blue line
+        graph.drawString("ArrayList", legendX + 50, legendY + 12);  // Label for ArrayList
+
+        // Draw line for "LinkedList" (red)
+        graph.setPaint(Color.RED);
+        graph.drawLine(legendX + 10, legendY + 30, legendX + 40, legendY + 30);  // Draw red line
+        graph.drawString("LinkedList", legendX + 50, legendY + 32);  // Label for LinkedList
+    }
+
+
     // Find the maximum elapsed time for scaling the y-axis
     private double getMaxElapsedTime() {
         return Math.max(Arrays.stream(arrayListTimes).max().orElse(0), Arrays.stream(linkedListTimes).max().orElse(0));
     }
 
     // Function to create a new JFrame for each graph window
-    public static void createWindow(String title, int[] dataSizes, double[] arrayListTimes, double[] linkedListTimes) {
+    public static void createWindow(String title, int[] dataSizes1, double[] arrayListTimes, double[] linkedListTimes) {
         JFrame frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only this window on exit
         frame.setSize(800, 600);  // Set frame size
-        frame.add(new TwoLinesGraph(dataSizes, arrayListTimes, linkedListTimes));  // Add the graph to the frame
+        frame.add(new TwoLinesGraph(dataSizes1, arrayListTimes, linkedListTimes));  // Add the graph to the frame
         frame.setLocationRelativeTo(null);  // Center the frame
         frame.setVisible(true);  // Make frame visible
     }
 
     // Main method to create multiple windows for different datasets
     public static void main(String[] args) {
-        // First dataset (Data Sizes and Elapsed Times)
-        int[] dataSizes1 = {1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20};  // Data sizes in millions
-        double[] arrayListTimes1 = {405, 1555, 3883, 6063, 9115, 11466, 14474, 17677, 20597, 21813, 25318}; // ArrayList times
-        double[] linkedListTimes1 = {1257, 3104, 8024, 15503, 22951, 26361, 34380, 41375, 46893, 49961, 56633}; // LinkedList times
+        // Selection Sort
+        int[] dataSizes1 = {100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000};
+        double[] arrayListTimes1 = {6603, 26500, 59054, 126284, 180360, 262625, 462926, 575877, 987318, 1381530}; // ArrayList times
+        double[] linkedListTimes1 = {6482, 26272, 60933, 105289, 168740, 248888, 346984, 460327, 606931, 759447}; // LinkedList times
 
-        // Second dataset (You can add more datasets here)
-        int[] dataSizes2 = {1, 2, 3, 4, 5};  // A smaller dataset
-        double[] arrayListTimes2 = {500, 1200, 2400, 3800, 5000}; // Sample ArrayList times for second dataset
-        double[] linkedListTimes2 = {1000, 2200, 5000, 7600, 10200}; // Sample LinkedList times for second dataset
+        // Merge Sort
+        int[] dataSizes2 = {1000000, 2000000, 4000000, 6000000, 8000000, 10000000, 12000000, 14000000, 16000000, 18000000, 20000000};  
+        double[] arrayListTimes2 = {206, 468, 1158, 1758, 2120, 2662, 3112, 3641, 4132, 4357, 4649}; // ArrayList times
+        double[] linkedListTimes2 = {183, 494, 1488, 2553, 3667, 5504, 6096, 8539, 11208, 13215, 14281}; // LinkedList times
+
+        // Comb Sort
+        double[] arrayListTimes3 = {405, 1555, 3883, 6063, 9115, 11466, 14474, 17677, 20597, 21813, 25318}; // ArrayList times
+        double[] linkedListTimes3 = {1257, 3104, 8024, 15503, 22951, 26361, 34380, 41375, 46893, 49961, 56633}; // LinkedList times
+
+        // Counting Sort
+        double[] arrayListTimes4 = {76, 128, 293, 437, 568, 603, 803, 958, 995, 1154, 1205}; // ArrayList times
+        double[] linkedListTimes4 = {183, 354, 727, 1036, 1413, 1277, 1972, 2159, 2191, 2212, 3326}; // LinkedList times
+
+        // Counting Sort Range of Values
+        int[] dataSizes = {100, 10000, 1000000, 9999999};  // Data sizes
+        double[] arrayListTimes5 = {136, 310, 561, 572};    // ArrayList times
+        double[] linkedListTimes5 = {273, 421, 1034, 1475}; // LinkedList times
+
 
         // Create multiple windows for different datasets
-        createWindow("Graph for Dataset 1", dataSizes1, arrayListTimes1, linkedListTimes1);  // First window
-        createWindow("Graph for Dataset 2", dataSizes2, arrayListTimes2, linkedListTimes2);  // Second window
+        createWindow("Graph for Selection Sort", dataSizes1, arrayListTimes1, linkedListTimes1);  
+        createWindow("Graph for Merge Sort", dataSizes2, arrayListTimes2, linkedListTimes2);  
+        createWindow("Graph for Comb Sort", dataSizes2, arrayListTimes3, linkedListTimes3);  
+        createWindow("Graph for Counting Sort", dataSizes2, arrayListTimes4, linkedListTimes4);
+        createWindow("Graph for Counting Sort", dataSizes, arrayListTimes5, linkedListTimes5);
     }
 }
