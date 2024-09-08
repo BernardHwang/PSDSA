@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PartitionSorted {
     public static void numArray1PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -35,19 +35,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer: " + (endFull - startFull) + " ms\n");
+            System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer: " + (endFull - startFull) + " ms\n");
         }
     }
 
     public static void numArray2PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -83,19 +81,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
+            System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
 
     public static void numArray3PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
     
@@ -132,19 +128,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting partitions " + (triple[0] + 1) + ", " + (triple[1] + 1) + ", and " + (triple[2] + 1) + ": " + (endFull - startFull) + " ms");
+            System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting partitions " + (triple[0] + 1) + ", " + (triple[1] + 1) + ", and " + (triple[2] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
 
     public static void numArray4PartitionSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -174,19 +168,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting each partition individually: " + (endFull - startFull) + " ms\n");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting each partition individually: " + (endFull - startFull) + " ms\n");
     }
 
     public static void numLinked1PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
 
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -216,19 +208,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting partition" + (i+1) + ": " + (endFull - startFull) + " ms\n");
+            System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting partition" + (i+1) + ": " + (endFull - startFull) + " ms\n");
         }
     }
 
     public static void numLinked2PartitionSorted(LinkedList<Integer> numLinkedList, String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -265,19 +255,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: " + algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
+            System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting partitions " + (pair[0] + 1) + " and " + (pair[1] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
 
     public static void numLinked3PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
     
@@ -315,19 +303,17 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-            System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting partitions " + (triple[0] + 1) + ", " + (triple[1] + 1) + ", and " + (triple[2] + 1) + ": " + (endFull - startFull) + " ms");
+            System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting partitions " + (triple[0] + 1) + ", " + (triple[1] + 1) + ", and " + (triple[2] + 1) + ": " + (endFull - startFull) + " ms");
         }
     }
 
     public static void numLinked4PartitionSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 4;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -358,14 +344,12 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
 
             long endFull = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting each partition individually: " + (endFull - startFull) + " ms\n");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting each partition individually: " + (endFull - startFull) + " ms\n");
     }
 
     public static void wordArray1PartitionSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
@@ -398,8 +382,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -446,8 +428,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -495,8 +475,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -537,8 +515,6 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortWords(fullList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSortWords(fullList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortWords(fullList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
@@ -548,7 +524,7 @@ public class PartitionSorted {
     }
 
     public static void numArrayHalfSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 2;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -567,13 +543,11 @@ public class PartitionSorted {
                 SortingAlgorithms.combSortNumber(fullArrayList);
             }else if (algorithm.equals("counting")){
                 SortingAlgorithms.countingSort(fullArrayList);
-            }else if (algorithm.equals("upgradedselection")){
-                SortingAlgorithms.upgradedSelectionSortNumber(fullArrayList);
             }else{
                 throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
             }
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting first half: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting first half: " + (end - start) + " ms");
 
         // Second case: Sort the second half
         fullArrayList = new ArrayList<>(numArrayList.subList(0, totalSize));
@@ -590,17 +564,15 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting second half: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting second half: " + (end - start) + " ms");
     }
     
     public static void numArray75PercentSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = (int) (totalSize * 0.75);
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -619,13 +591,11 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting first 75%: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting first 75%: " + (end - start) + " ms");
 
         // Second case: Sort the last 75%
         fullArrayList = new ArrayList<>(numArrayList.subList(0, totalSize));
@@ -642,17 +612,15 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after sorting last 75%: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after sorting last 75%: " + (end - start) + " ms");
     }
 
     public static void numArray100PercentSorted(ArrayList<Integer> numArrayList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         String algorithm = sortAlgorithm.toLowerCase();
 
         ArrayList<Integer> fullList = new ArrayList<>(numArrayList.subList(0, totalSize));
@@ -667,17 +635,15 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) arraylist Integer after 100% sorted: " + (end - start) + "ms\n");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " arraylist Integer after 100% sorted: " + (end - start) + "ms\n");
     }
 
     public static void numLinkedHalfSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = totalSize / 2;
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -697,13 +663,11 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullLinkedList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullLinkedList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting first half: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting first half: " + (end - start) + " ms");
 
         // Second case: Sort the second half
         fullLinkedList = new LinkedList<>(numLinkedList.subList(0, totalSize));
@@ -721,17 +685,15 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullLinkedList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullLinkedList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullLinkedList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting second half: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting second half: " + (end - start) + " ms");
     }
     
     public static void numLinked75PercentSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         int partitionSize = (int) (totalSize * 0.75);
         String algorithm = sortAlgorithm.toLowerCase();
 
@@ -751,13 +713,11 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after sorting first 75%: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after sorting first 75%: " + (end - start) + " ms");
 
         // Second case: Sort the last 75%
         fullArrayList = new ArrayList<>(numLinkedList.subList(0, totalSize));
@@ -775,17 +735,15 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) Linkedlist Integer after sorting last 75%: " + (end - start) + " ms");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " Linkedlist Integer after sorting last 75%: " + (end - start) + " ms");
     }
 
     public static void numLinked100PercentSorted(LinkedList<Integer> numLinkedList,String sortAlgorithm) {
-        int totalSize = 1000000;
+        int totalSize = 100000;
         String algorithm = sortAlgorithm.toLowerCase();
 
         ArrayList<Integer> fullList = new ArrayList<>(numLinkedList.subList(0, totalSize));
@@ -801,13 +759,11 @@ public class PartitionSorted {
             SortingAlgorithms.combSortNumber(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSort(fullList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortNumber(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Elapsed Time for sorting entire (1M) linkedlist Integer after 100% sorted: " + (end - start) + "ms\n");
+        System.out.println("Elapsed Time for sorting entire " + totalSize + " linkedlist Integer after 100% sorted: " + (end - start) + "ms\n");
     }
 
     public static void wordArrayHalfSorted(ArrayList<String> wordArrayList,String sortAlgorithm) {
@@ -830,8 +786,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -853,8 +807,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -882,8 +834,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -905,8 +855,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullArrayList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullArrayList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortWords(fullArrayList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
@@ -930,8 +878,6 @@ public class PartitionSorted {
             SortingAlgorithms.combSortWords(fullList);
         }else if (algorithm.equals("counting")){
             SortingAlgorithms.countingSortWords(fullList);
-        }else if (algorithm.equals("upgradedselection")){
-            SortingAlgorithms.upgradedSelectionSortWords(fullList);
         }else{
             throw new IllegalArgumentException("Unsupported algorithm: "+algorithm);
         }
