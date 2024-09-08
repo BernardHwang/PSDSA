@@ -130,7 +130,7 @@ public class VerticalBarGraph extends JPanel {
     public static void main(String[] args) {
         // Selection Sort
         String[] categories = {"Number ArrayList", "Number LinkedList", "Words ArrayList"};
-        int[] duplicateTimes1 = {22924, 6482, 25144};       // Duplicate times
+        int[] duplicateTimes1 = {6729, 6482, 25144};       // Duplicate times
         int[] nonDuplicateTimes1 = {7156, 6430, 42286};    // Non-duplicate times
 
         // Merge Sort
