@@ -118,7 +118,7 @@ public class SizeSorting {
         }
         else{
             int newSize= 1000000;
-            sortAndPrintTimeInteger(numArrayList, numArrayList.size(), "arraylist integer", sortAlgorithm);
+            sortAndPrintTimeInteger(numArrayList, newSize, "arraylist integer", sortAlgorithm);
         }
     }
 
