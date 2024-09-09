@@ -143,8 +143,8 @@ public class TwoHorizontalBarsGraph extends JPanel {
         };
 
         // Selection Sort 
-        double[] arrayListTimes1 = {6576, 6689, 6625.333333, 7318, 6727, 7303, 7612, 22524};  // Reversed ArrayList times
-        double[] linkedListTimes1 = {6597, 6679.5, 6800, 6910.5, 6849, 7255, 7159, 7046};  // Reversed LinkedList times
+        double[] arrayListTimes1 = {6576, 6689, 6625.333333, 7318, 6727, 7279, 7612, 22524};  // Reversed ArrayList times
+        double[] linkedListTimes1 = {6597, 6679.5, 6800, 6910.5, 6849, 6734.5, 7159, 7046};  // Reversed LinkedList times
 
         // Merge Sort
         double[] arrayListTimes2 = {124, 139.25, 157.1666667, 189.5, 150.5, 136.5, 117, 289};  // Reversed ArrayList times
