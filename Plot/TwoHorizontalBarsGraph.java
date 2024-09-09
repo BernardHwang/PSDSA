@@ -151,7 +151,7 @@ public class TwoHorizontalBarsGraph extends JPanel {
         double[] linkedListTimes2 = {66, 78.75, 110.5, 138.75, 112, 76, 42, 246};  // Reversed LinkedList times
 
         // Comb Sort
-        double[] arrayListTimes3 = {274, 379.75, 433.1667, 388, 382.5, 374, 223, 992};  // Number ArrayList times 
+        double[] arrayListTimes3 = {274, 379.75, 434.833333, 388, 382.5, 374, 223, 992};  // Number ArrayList times 
         double[] linkedListTimes3 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times 
 
         // Counting Sort
