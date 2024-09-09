@@ -121,7 +121,7 @@ public class SingleLineGraph extends JPanel {
     public static void main(String[] args) {
         // Selection sort
         int[] dataSizes1 = {10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000};
-        double[] elapsedTimes1 = {161, 752, 1786, 3253, 5300, 7634, 10443, 13940, 17473, 22107}; // Elapsed times
+        double[] elapsedTimes1 = {168, 792, 1820, 3342, 5446, 8014, 10641, 13997, 17862, 21990}; // Elapsed times
 
         // Merge sort
         int[] dataSizes2 = {100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000};
