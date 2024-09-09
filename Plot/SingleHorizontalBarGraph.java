@@ -97,7 +97,7 @@ public class SingleHorizontalBarGraph extends JPanel {
             "Reverse-ordered sorted"
         };
         // Selection Sort
-        double[] elapsedTimes1 = {52026, 57761.75, 73724.33333, 81862.75, 77600, 66765.5, 45770, 852800}; 
+        double[] elapsedTimes1 = {52026, 57761.75, 73724.33333, 81862.75, 77600, 66765.5, 45770, 85280}; 
 
         // Merge Sort
         double[] elapsedTimes2 = {16, 18.75, 21.66666667, 24.25, 21.5, 16.5, 13, 31}; 
