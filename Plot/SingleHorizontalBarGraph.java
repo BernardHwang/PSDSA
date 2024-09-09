@@ -106,7 +106,7 @@ public class SingleHorizontalBarGraph extends JPanel {
         double[] elapsedTimes3 = {49, 68, 71.16667, 80.5, 79.5, 76.5, 42, 114}; 
 
         //Counting Sort
-        double[] elapsedTimes4 = {33, 33.25, 34, 35.75, 54, 57, 33, 80};  // Elapsed times for the new dataset
+        double[] elapsedTimes4 = {33, 33.25, 34, 35.75, 34, 33, 32, 80};  // Elapsed times for the new dataset
 
         // Create multiple windows for different datasets
         createWindow("Sorting Selection Sort", categories, elapsedTimes1);
