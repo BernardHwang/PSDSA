@@ -155,8 +155,8 @@ public class TwoHorizontalBarsGraph extends JPanel {
         double[] linkedListTimes3 = {703, 1190.75, 1450.5, 1668.5, 1873, 1498.5, 387, 2266};  // Number LinkedList times 
 
         // Counting Sort
-        double[] arrayListTimes4 = {60, 61.5, 63.83333333, 69.25, 99.5, 90, 64, 219};  // ArrayList times
-        double[] linkedListTimes4 = {43, 55.5, 58.33333333, 68.5, 140.5, 127, 107, 207}; 
+        double[] arrayListTimes4 = {60, 61.5, 63.83333333, 69.25, 64, 60.5, 59, 219};  // ArrayList times
+        double[] linkedListTimes4 = {43, 55.5, 58.33333333, 68.5, 52, 45, 42, 207}; 
 
         // Create windows for the datasets
         createWindow("Graph for Selection Sort", categories, arrayListTimes1, linkedListTimes1);
