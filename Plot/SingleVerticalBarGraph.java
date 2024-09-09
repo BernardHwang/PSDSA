@@ -90,7 +90,7 @@ public class SingleVerticalBarGraph extends JPanel {
         String[] algorithms = {"Selection Sort", "Merge Sort", "Comb Sort", "Counting Sort"};
         
         // Elapsed times for ArrayList (Word) - 10k
-        double[] elapsedTimes = {104112, 24, 69, 32};   
+        double[] elapsedTimes = {21990, 24, 82, 54};   
 
         // Create the graph window for elapsed times
         createWindow("Sorting Algorithm Elapsed Times (ArrayList Word - 10k)", algorithms, elapsedTimes);

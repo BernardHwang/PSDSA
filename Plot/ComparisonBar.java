@@ -1,22 +1,28 @@
 package Plot;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 
-public class VerticalBarGraph extends JPanel {
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ComparisonBar extends JPanel {
     // Instance variables for custom datasets
     private String[] categories;
-    private int[] duplicateTimes;
-    private int[] nonDuplicateTimes;
+    private int[] arrayListTimes;
+    private int[] linkedListTimes;
 
     int margin = 60; // Margins for the graph
     int barWidth = 50; // Width of the bars
 
     // Constructor to accept custom datasets
-    public VerticalBarGraph(String[] categories, int[] duplicateTimes, int[] nonDuplicateTimes) {
+    public ComparisonBar(String[] categories, int[] arrayListTimes, int[] linkedListTimes) {
         this.categories = categories;
-        this.duplicateTimes = duplicateTimes;
-        this.nonDuplicateTimes = nonDuplicateTimes;
+        this.arrayListTimes = arrayListTimes;
+        this.linkedListTimes = linkedListTimes;
     }
 
     @Override
@@ -49,12 +55,12 @@ public class VerticalBarGraph extends JPanel {
             int x = margin + i * xScale + xScale / 4;
 
             // Bar height for duplicate times
-            int duplicateBarHeight = (int) (duplicateTimes[i] * yScale);
+            int duplicateBarHeight = (int) (arrayListTimes[i] * yScale);
             graph.setPaint(Color.GRAY);
             graph.fillRect(x, height - margin - duplicateBarHeight, barWidth, duplicateBarHeight);
 
             // Bar height for non-duplicate times
-            int nonDuplicateBarHeight = (int) (nonDuplicateTimes[i] * yScale);
+            int nonDuplicateBarHeight = (int) (linkedListTimes[i] * yScale);
             graph.setPaint(Color.ORANGE);
             graph.fillRect(x + barWidth + 10, height - margin - nonDuplicateBarHeight, barWidth, nonDuplicateBarHeight);
 
@@ -63,8 +69,8 @@ public class VerticalBarGraph extends JPanel {
             graph.drawString(categories[i], x, height - margin + 20);
 
             // Draw values above bars
-            graph.drawString(String.valueOf(duplicateTimes[i]), x, height - margin - duplicateBarHeight - 5);
-            graph.drawString(String.valueOf(nonDuplicateTimes[i]), x + barWidth + 10, height - margin - nonDuplicateBarHeight - 5);
+            graph.drawString(String.valueOf(arrayListTimes[i]), x, height - margin - duplicateBarHeight - 5);
+            graph.drawString(String.valueOf(linkedListTimes[i]), x + barWidth + 10, height - margin - nonDuplicateBarHeight - 5);
         }
 
         // Label y-axis (Elapsed Time)
@@ -100,17 +106,17 @@ public class VerticalBarGraph extends JPanel {
         // Add text labels
         graph.setPaint(Color.BLACK);
         graph.setFont(new Font("Arial", Font.PLAIN, 12));
-        graph.drawString("Duplicate", legendX + 30, legendY + 22);
-        graph.drawString("Non-duplicate", legendX + 30, legendY + 47);
+        graph.drawString("ArrayList", legendX + 30, legendY + 22);
+        graph.drawString("LinkedList", legendX + 30, legendY + 47);
     }
 
     // Get the maximum time value to scale the bars
     private int getMaxTime() {
         int max = Integer.MIN_VALUE;
-        for (int time : duplicateTimes) {
+        for (int time : arrayListTimes) {
             if (time > max) max = time;
         }
-        for (int time : nonDuplicateTimes) {
+        for (int time : linkedListTimes) {
             if (time > max) max = time;
         }
         return max;
@@ -121,34 +127,21 @@ public class VerticalBarGraph extends JPanel {
         JFrame frame = new JFrame(title);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  // Close only the current window
         frame.setSize(600, 400);
-        frame.add(new VerticalBarGraph(categories, duplicateTimes, nonDuplicateTimes));
+        frame.add(new ComparisonBar(categories, duplicateTimes, nonDuplicateTimes));
         frame.setLocationRelativeTo(null); // Center the frame
         frame.setVisible(true); // Make the frame visible
     }
 
     // Main method to create multiple windows for different datasets
     public static void main(String[] args) {
-        // Selection Sort
-        String[] categories = {"Number ArrayList", "Number LinkedList", "Words ArrayList"};
-        int[] duplicateTimes1 = {6729, 6482, 25144};       // Duplicate times
-        int[] nonDuplicateTimes1 = {7156, 6430, 42286};    // Non-duplicate times
 
-        // Merge Sort
-        int[] duplicateTimes2 = {798, 521, 30};       // Duplicate times
-        int[] nonDuplicateTimes2 = {896, 971, 46};    // Non-duplicate times
+        // Comparison across 4 algorithms
+        String[] algorithms = {"Selection Sort", "Merge Sort", "Comb Sort", "Counting Sort"};
+        int[] arrayListData = {1381530, 206, 405, 76};   // ArrayList times for Selection, Merge, Comb, Counting sort
+        int[] linkedListData = {759447, 183, 1257, 183};   // LinkedList times for Selection, Merge, Comb, Counting sort
 
-        // Comb Sort
-        int[] duplicateTimes3 = {6406, 12320, 81};       
-        int[] nonDuplicateTimes3 = {9544, 15603, 118};
-
-        // Counting Sort
-        int[] duplicateTimes4= {570, 464, 32};       // Duplicate times
-        int[] nonDuplicateTimes4 = {742, 494, 57};    // Non-duplicate times
 
         // Create windows for the datasets
-        createWindow("Graph for Selection Sort", categories, duplicateTimes1, nonDuplicateTimes1); // First graph window
-        createWindow("Graph for Merge Sort", categories, duplicateTimes2, nonDuplicateTimes2); // Second graph window
-        createWindow("Graph for Comb Sort", categories, duplicateTimes3, nonDuplicateTimes3); // First graph window
-        createWindow("Graph for Counting Sort", categories, duplicateTimes4, nonDuplicateTimes4); 
+        createWindow("Graph for Comparison", algorithms, arrayListData, linkedListData); 
     }
 }
